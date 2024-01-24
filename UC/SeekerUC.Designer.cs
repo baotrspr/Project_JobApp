@@ -32,6 +32,10 @@
             this.lblDockerInfo = new System.Windows.Forms.Label();
             this.pnNavigation = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
+            this.btnJobFeeds = new System.Windows.Forms.Button();
+            this.btnAppliedJobs = new System.Windows.Forms.Button();
+            this.btnAccount = new System.Windows.Forms.Button();
+            this.btnMyProfile = new System.Windows.Forms.Button();
             this.pnDocker.SuspendLayout();
             this.pnNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -60,22 +64,81 @@
             // 
             // pnNavigation
             // 
+            this.pnNavigation.Controls.Add(this.btnMyProfile);
+            this.pnNavigation.Controls.Add(this.btnAccount);
+            this.pnNavigation.Controls.Add(this.btnAppliedJobs);
+            this.pnNavigation.Controls.Add(this.btnJobFeeds);
             this.pnNavigation.Controls.Add(this.btnHome);
             this.pnNavigation.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnNavigation.Location = new System.Drawing.Point(0, 50);
             this.pnNavigation.Name = "pnNavigation";
-            this.pnNavigation.Size = new System.Drawing.Size(80, 550);
+            this.pnNavigation.Size = new System.Drawing.Size(150, 550);
             this.pnNavigation.TabIndex = 1;
             // 
             // btnHome
             // 
+            this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.Location = new System.Drawing.Point(0, 0);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(80, 50);
+            this.btnHome.Size = new System.Drawing.Size(150, 50);
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.UseVisualStyleBackColor = true;
+            // 
+            // btnJobFeeds
+            // 
+            this.btnJobFeeds.FlatAppearance.BorderSize = 0;
+            this.btnJobFeeds.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJobFeeds.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJobFeeds.Location = new System.Drawing.Point(0, 50);
+            this.btnJobFeeds.Name = "btnJobFeeds";
+            this.btnJobFeeds.Size = new System.Drawing.Size(150, 50);
+            this.btnJobFeeds.TabIndex = 0;
+            this.btnJobFeeds.Text = "Job Feeds";
+            this.btnJobFeeds.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnJobFeeds.UseVisualStyleBackColor = true;
+            // 
+            // btnAppliedJobs
+            // 
+            this.btnAppliedJobs.FlatAppearance.BorderSize = 0;
+            this.btnAppliedJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAppliedJobs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppliedJobs.Location = new System.Drawing.Point(0, 100);
+            this.btnAppliedJobs.Name = "btnAppliedJobs";
+            this.btnAppliedJobs.Size = new System.Drawing.Size(150, 50);
+            this.btnAppliedJobs.TabIndex = 0;
+            this.btnAppliedJobs.Text = "Applied Jobs";
+            this.btnAppliedJobs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAppliedJobs.UseVisualStyleBackColor = true;
+            // 
+            // btnAccount
+            // 
+            this.btnAccount.FlatAppearance.BorderSize = 0;
+            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccount.Location = new System.Drawing.Point(0, 500);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(150, 50);
+            this.btnAccount.TabIndex = 0;
+            this.btnAccount.Text = "My Account";
+            this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAccount.UseVisualStyleBackColor = true;
+            // 
+            // btnMyProfile
+            // 
+            this.btnMyProfile.FlatAppearance.BorderSize = 0;
+            this.btnMyProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMyProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMyProfile.Location = new System.Drawing.Point(0, 450);
+            this.btnMyProfile.Name = "btnMyProfile";
+            this.btnMyProfile.Size = new System.Drawing.Size(150, 50);
+            this.btnMyProfile.TabIndex = 0;
+            this.btnMyProfile.Text = "My Profile";
+            this.btnMyProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMyProfile.UseVisualStyleBackColor = true;
             // 
             // SeekerUC
             // 
@@ -98,5 +161,9 @@
         private System.Windows.Forms.Label lblDockerInfo;
         private System.Windows.Forms.Panel pnNavigation;
         private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button btnAccount;
+        private System.Windows.Forms.Button btnAppliedJobs;
+        private System.Windows.Forms.Button btnJobFeeds;
+        private System.Windows.Forms.Button btnMyProfile;
     }
 }
