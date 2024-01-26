@@ -33,16 +33,16 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.pnInfo = new System.Windows.Forms.Panel();
-            this.pnLogin = new System.Windows.Forms.Panel();
-            this.lblName = new System.Windows.Forms.Label();
             this.lblRule = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.rbtJobSeeker = new System.Windows.Forms.RadioButton();
-            this.lblRole = new System.Windows.Forms.Label();
-            this.rbtHirer = new System.Windows.Forms.RadioButton();
-            this.lblOr = new System.Windows.Forms.Label();
-            this.btnSignUp = new System.Windows.Forms.Button();
+            this.lblName = new System.Windows.Forms.Label();
+            this.pnLogin = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.lblOr = new System.Windows.Forms.Label();
+            this.rbtHirer = new System.Windows.Forms.RadioButton();
+            this.rbtJobSeeker = new System.Windows.Forms.RadioButton();
+            this.btnSignUp = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.lblRole = new System.Windows.Forms.Label();
             this.pnInfo.SuspendLayout();
             this.pnLogin.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +91,28 @@
             this.pnInfo.Size = new System.Drawing.Size(311, 400);
             this.pnInfo.TabIndex = 2;
             // 
+            // lblRule
+            // 
+            this.lblRule.AutoSize = true;
+            this.lblRule.Font = new System.Drawing.Font("SVN-Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRule.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblRule.Location = new System.Drawing.Point(50, 96);
+            this.lblRule.Name = "lblRule";
+            this.lblRule.Size = new System.Drawing.Size(188, 19);
+            this.lblRule.TabIndex = 0;
+            this.lblRule.Text = "Nền tảng tìm việc - tuyển dụng";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Tai Le", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblName.Location = new System.Drawing.Point(63, 62);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(161, 34);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "KeenOnJob";
+            // 
             // pnLogin
             // 
             this.pnLogin.Controls.Add(this.lblTitle);
@@ -110,57 +132,24 @@
             this.pnLogin.Size = new System.Drawing.Size(289, 400);
             this.pnLogin.TabIndex = 3;
             // 
-            // lblName
+            // lblTitle
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Tai Le", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblName.Location = new System.Drawing.Point(63, 62);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(161, 34);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "KeenOnJob";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(75, 10);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(155, 31);
+            this.lblTitle.TabIndex = 5;
+            this.lblTitle.Text = "Đăng nhập";
             // 
-            // lblRule
+            // lblOr
             // 
-            this.lblRule.AutoSize = true;
-            this.lblRule.Font = new System.Drawing.Font("SVN-Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRule.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblRule.Location = new System.Drawing.Point(50, 96);
-            this.lblRule.Name = "lblRule";
-            this.lblRule.Size = new System.Drawing.Size(188, 19);
-            this.lblRule.TabIndex = 0;
-            this.lblRule.Text = "Nền tảng tìm việc - tuyển dụng";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnLogin.Location = new System.Drawing.Point(35, 210);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(230, 40);
-            this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            // 
-            // rbtJobSeeker
-            // 
-            this.rbtJobSeeker.AutoSize = true;
-            this.rbtJobSeeker.Location = new System.Drawing.Point(35, 176);
-            this.rbtJobSeeker.Name = "rbtJobSeeker";
-            this.rbtJobSeeker.Size = new System.Drawing.Size(76, 17);
-            this.rbtJobSeeker.TabIndex = 3;
-            this.rbtJobSeeker.TabStop = true;
-            this.rbtJobSeeker.Text = "JobSeeker";
-            this.rbtJobSeeker.UseVisualStyleBackColor = true;
-            // 
-            // lblRole
-            // 
-            this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(32, 147);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(43, 13);
-            this.lblRole.TabIndex = 0;
-            this.lblRole.Text = "Bạn là?";
+            this.lblOr.AutoSize = true;
+            this.lblOr.Location = new System.Drawing.Point(136, 284);
+            this.lblOr.Name = "lblOr";
+            this.lblOr.Size = new System.Drawing.Size(31, 13);
+            this.lblOr.TabIndex = 4;
+            this.lblOr.Text = "hoặc";
             // 
             // rbtHirer
             // 
@@ -173,14 +162,16 @@
             this.rbtHirer.Text = "HR";
             this.rbtHirer.UseVisualStyleBackColor = true;
             // 
-            // lblOr
+            // rbtJobSeeker
             // 
-            this.lblOr.AutoSize = true;
-            this.lblOr.Location = new System.Drawing.Point(136, 284);
-            this.lblOr.Name = "lblOr";
-            this.lblOr.Size = new System.Drawing.Size(31, 13);
-            this.lblOr.TabIndex = 4;
-            this.lblOr.Text = "hoặc";
+            this.rbtJobSeeker.AutoSize = true;
+            this.rbtJobSeeker.Location = new System.Drawing.Point(35, 176);
+            this.rbtJobSeeker.Name = "rbtJobSeeker";
+            this.rbtJobSeeker.Size = new System.Drawing.Size(76, 17);
+            this.rbtJobSeeker.TabIndex = 3;
+            this.rbtJobSeeker.TabStop = true;
+            this.rbtJobSeeker.Text = "JobSeeker";
+            this.rbtJobSeeker.UseVisualStyleBackColor = true;
             // 
             // btnSignUp
             // 
@@ -192,15 +183,26 @@
             this.btnSignUp.Text = "Đăng kí";
             this.btnSignUp.UseVisualStyleBackColor = false;
             // 
-            // lblTitle
+            // btnLogin
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(75, 10);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(155, 31);
-            this.lblTitle.TabIndex = 5;
-            this.lblTitle.Text = "Đăng nhập";
+            this.btnLogin.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(35, 210);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(230, 40);
+            this.btnLogin.TabIndex = 2;
+            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            // 
+            // lblRole
+            // 
+            this.lblRole.AutoSize = true;
+            this.lblRole.Location = new System.Drawing.Point(32, 147);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(43, 13);
+            this.lblRole.TabIndex = 0;
+            this.lblRole.Text = "Bạn là?";
             // 
             // LoginUC
             // 

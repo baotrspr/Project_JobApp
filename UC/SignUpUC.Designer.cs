@@ -37,14 +37,14 @@
             this.btnSignUp = new System.Windows.Forms.Button();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
+            this.txtRePassword = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblRePassword = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.pnInfo = new System.Windows.Forms.Panel();
             this.lblRule = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.lblRePassword = new System.Windows.Forms.Label();
-            this.txtRePassword = new System.Windows.Forms.TextBox();
             this.pnLogin.SuspendLayout();
             this.pnInfo.SuspendLayout();
             this.SuspendLayout();
@@ -123,7 +123,9 @@
             // 
             // btnSignUp
             // 
-            this.btnSignUp.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSignUp.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignUp.ForeColor = System.Drawing.Color.White;
             this.btnSignUp.Location = new System.Drawing.Point(35, 254);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(230, 40);
@@ -147,6 +149,14 @@
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Tên đăng nhập";
             // 
+            // txtRePassword
+            // 
+            this.txtRePassword.Location = new System.Drawing.Point(130, 156);
+            this.txtRePassword.Name = "txtRePassword";
+            this.txtRePassword.PasswordChar = '*';
+            this.txtRePassword.Size = new System.Drawing.Size(135, 20);
+            this.txtRePassword.TabIndex = 1;
+            // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(130, 111);
@@ -154,6 +164,15 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(135, 20);
             this.txtPassword.TabIndex = 1;
+            // 
+            // lblRePassword
+            // 
+            this.lblRePassword.AutoSize = true;
+            this.lblRePassword.Location = new System.Drawing.Point(32, 159);
+            this.lblRePassword.Name = "lblRePassword";
+            this.lblRePassword.Size = new System.Drawing.Size(93, 13);
+            this.lblRePassword.TabIndex = 0;
+            this.lblRePassword.Text = "Nhập lại mật khẩu";
             // 
             // lblRole
             // 
@@ -205,23 +224,6 @@
             this.lblName.Size = new System.Drawing.Size(161, 34);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "KeenOnJob";
-            // 
-            // lblRePassword
-            // 
-            this.lblRePassword.AutoSize = true;
-            this.lblRePassword.Location = new System.Drawing.Point(32, 159);
-            this.lblRePassword.Name = "lblRePassword";
-            this.lblRePassword.Size = new System.Drawing.Size(93, 13);
-            this.lblRePassword.TabIndex = 0;
-            this.lblRePassword.Text = "Nhập lại mật khẩu";
-            // 
-            // txtRePassword
-            // 
-            this.txtRePassword.Location = new System.Drawing.Point(130, 156);
-            this.txtRePassword.Name = "txtRePassword";
-            this.txtRePassword.PasswordChar = '*';
-            this.txtRePassword.Size = new System.Drawing.Size(135, 20);
-            this.txtRePassword.TabIndex = 1;
             // 
             // SignUpUC
             // 
