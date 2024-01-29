@@ -16,5 +16,13 @@ namespace Project_JobApp
         {
             InitializeComponent();
         }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            UC.LoginUC loginUC = new UC.LoginUC();
+            loginUC.Dock = DockStyle.Fill;
+            pnProgram.Controls.Add(loginUC);
+
+        }
     }
 }

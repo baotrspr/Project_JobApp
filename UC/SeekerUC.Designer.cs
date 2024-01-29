@@ -80,7 +80,7 @@
             // 
             this.btnMyProfile.FlatAppearance.BorderSize = 0;
             this.btnMyProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMyProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMyProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMyProfile.Image = global::Project_JobApp.Properties.Resources.document;
             this.btnMyProfile.Location = new System.Drawing.Point(0, 450);
             this.btnMyProfile.Name = "btnMyProfile";
@@ -95,7 +95,7 @@
             // 
             this.btnAccount.FlatAppearance.BorderSize = 0;
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.Image = global::Project_JobApp.Properties.Resources.user;
             this.btnAccount.Location = new System.Drawing.Point(0, 500);
             this.btnAccount.Name = "btnAccount";
@@ -109,20 +109,22 @@
             // 
             this.btnAppliedJobs.FlatAppearance.BorderSize = 0;
             this.btnAppliedJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAppliedJobs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppliedJobs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppliedJobs.Image = global::Project_JobApp.Properties.Resources.bookmark;
             this.btnAppliedJobs.Location = new System.Drawing.Point(0, 100);
             this.btnAppliedJobs.Name = "btnAppliedJobs";
             this.btnAppliedJobs.Size = new System.Drawing.Size(150, 50);
             this.btnAppliedJobs.TabIndex = 0;
             this.btnAppliedJobs.Text = "Applied Jobs";
             this.btnAppliedJobs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAppliedJobs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAppliedJobs.UseVisualStyleBackColor = true;
             // 
             // btnJobFeeds
             // 
             this.btnJobFeeds.FlatAppearance.BorderSize = 0;
             this.btnJobFeeds.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnJobFeeds.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJobFeeds.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJobFeeds.Image = global::Project_JobApp.Properties.Resources.users_alt;
             this.btnJobFeeds.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnJobFeeds.Location = new System.Drawing.Point(0, 50);
@@ -139,7 +141,7 @@
             // 
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.Image = global::Project_JobApp.Properties.Resources.home;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(0, 0);

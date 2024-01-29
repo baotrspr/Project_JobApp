@@ -135,6 +135,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsername.Location = new System.Drawing.Point(130, 67);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(135, 20);
@@ -151,6 +152,7 @@
             // 
             // txtRePassword
             // 
+            this.txtRePassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRePassword.Location = new System.Drawing.Point(130, 156);
             this.txtRePassword.Name = "txtRePassword";
             this.txtRePassword.PasswordChar = '*';
@@ -159,6 +161,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Location = new System.Drawing.Point(130, 111);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';

@@ -25,3 +25,12 @@ create table TKNhaTuyenDung(
 	hoten varchar(255),
 	maso varchar(255)
 )
+
+create table Feeds(
+	feedid varchar(255) primary key,
+	userid varchar(255),
+	content text,
+	photo varbinary(max),
+
+
+)
