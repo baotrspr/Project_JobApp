@@ -45,12 +45,15 @@
             this.pnInfo = new System.Windows.Forms.Panel();
             this.lblRule = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.tblpSignUp = new System.Windows.Forms.TableLayoutPanel();
             this.pnLogin.SuspendLayout();
             this.pnInfo.SuspendLayout();
+            this.tblpSignUp.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnLogin
             // 
+            this.pnLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnLogin.Controls.Add(this.lblTitle);
             this.pnLogin.Controls.Add(this.lblOr);
             this.pnLogin.Controls.Add(this.rbtHirer);
@@ -65,9 +68,9 @@
             this.pnLogin.Controls.Add(this.lblRole);
             this.pnLogin.Controls.Add(this.lblPassword);
             this.pnLogin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnLogin.Location = new System.Drawing.Point(311, 0);
+            this.pnLogin.Location = new System.Drawing.Point(703, 288);
             this.pnLogin.Name = "pnLogin";
-            this.pnLogin.Size = new System.Drawing.Size(289, 400);
+            this.pnLogin.Size = new System.Drawing.Size(274, 374);
             this.pnLogin.TabIndex = 5;
             // 
             // lblTitle
@@ -76,18 +79,18 @@
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(96, 12);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(113, 31);
+            this.lblTitle.Size = new System.Drawing.Size(112, 31);
             this.lblTitle.TabIndex = 5;
-            this.lblTitle.Text = "Đăng kí";
+            this.lblTitle.Text = "Sign up";
             // 
             // lblOr
             // 
             this.lblOr.AutoSize = true;
             this.lblOr.Location = new System.Drawing.Point(138, 308);
             this.lblOr.Name = "lblOr";
-            this.lblOr.Size = new System.Drawing.Size(31, 13);
+            this.lblOr.Size = new System.Drawing.Size(16, 13);
             this.lblOr.TabIndex = 4;
-            this.lblOr.Text = "hoặc";
+            this.lblOr.Text = "or";
             // 
             // rbtHirer
             // 
@@ -118,7 +121,7 @@
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(230, 30);
             this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.Text = "Log in";
             this.btnLogin.UseVisualStyleBackColor = false;
             // 
             // btnSignUp
@@ -130,7 +133,7 @@
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(230, 40);
             this.btnSignUp.TabIndex = 2;
-            this.btnSignUp.Text = "Đăng kí tài khoản";
+            this.btnSignUp.Text = "Sign up now";
             this.btnSignUp.UseVisualStyleBackColor = false;
             // 
             // txtUsername
@@ -146,9 +149,9 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.Location = new System.Drawing.Point(32, 70);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(81, 13);
+            this.lblUsername.Size = new System.Drawing.Size(43, 13);
             this.lblUsername.TabIndex = 0;
-            this.lblUsername.Text = "Tên đăng nhập";
+            this.lblUsername.Text = "User ID";
             // 
             // txtRePassword
             // 
@@ -173,37 +176,37 @@
             this.lblRePassword.AutoSize = true;
             this.lblRePassword.Location = new System.Drawing.Point(32, 159);
             this.lblRePassword.Name = "lblRePassword";
-            this.lblRePassword.Size = new System.Drawing.Size(93, 13);
+            this.lblRePassword.Size = new System.Drawing.Size(97, 13);
             this.lblRePassword.TabIndex = 0;
-            this.lblRePassword.Text = "Nhập lại mật khẩu";
+            this.lblRePassword.Text = "Re-enter Password";
             // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
             this.lblRole.Location = new System.Drawing.Point(32, 193);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(43, 13);
+            this.lblRole.Size = new System.Drawing.Size(47, 13);
             this.lblRole.TabIndex = 0;
-            this.lblRole.Text = "Bạn là?";
+            this.lblRole.Text = "You are:";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Location = new System.Drawing.Point(32, 114);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(52, 13);
+            this.lblPassword.Size = new System.Drawing.Size(53, 13);
             this.lblPassword.TabIndex = 0;
-            this.lblPassword.Text = "Mật khẩu";
+            this.lblPassword.Text = "Password";
             // 
             // pnInfo
             // 
             this.pnInfo.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pnInfo.Controls.Add(this.lblRule);
             this.pnInfo.Controls.Add(this.lblName);
-            this.pnInfo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnInfo.Location = new System.Drawing.Point(0, 0);
+            this.pnInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnInfo.Location = new System.Drawing.Point(423, 288);
             this.pnInfo.Name = "pnInfo";
-            this.pnInfo.Size = new System.Drawing.Size(311, 400);
+            this.pnInfo.Size = new System.Drawing.Size(274, 374);
             this.pnInfo.TabIndex = 4;
             // 
             // lblRule
@@ -213,9 +216,9 @@
             this.lblRule.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblRule.Location = new System.Drawing.Point(50, 96);
             this.lblRule.Name = "lblRule";
-            this.lblRule.Size = new System.Drawing.Size(188, 19);
+            this.lblRule.Size = new System.Drawing.Size(181, 19);
             this.lblRule.TabIndex = 0;
-            this.lblRule.Text = "Nền tảng tìm việc - tuyển dụng";
+            this.lblRule.Text = "Job Seeking - Hiring Platform";
             // 
             // lblName
             // 
@@ -228,18 +231,38 @@
             this.lblName.TabIndex = 0;
             this.lblName.Text = "KeenOnJob";
             // 
+            // tblpSignUp
+            // 
+            this.tblpSignUp.BackColor = System.Drawing.Color.Transparent;
+            this.tblpSignUp.ColumnCount = 4;
+            this.tblpSignUp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tblpSignUp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblpSignUp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblpSignUp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tblpSignUp.Controls.Add(this.pnLogin, 2, 1);
+            this.tblpSignUp.Controls.Add(this.pnInfo, 1, 1);
+            this.tblpSignUp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblpSignUp.Location = new System.Drawing.Point(0, 0);
+            this.tblpSignUp.Name = "tblpSignUp";
+            this.tblpSignUp.RowCount = 3;
+            this.tblpSignUp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tblpSignUp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tblpSignUp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tblpSignUp.Size = new System.Drawing.Size(1400, 950);
+            this.tblpSignUp.TabIndex = 6;
+            // 
             // SignUpUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pnLogin);
-            this.Controls.Add(this.pnInfo);
+            this.Controls.Add(this.tblpSignUp);
             this.Name = "SignUpUC";
-            this.Size = new System.Drawing.Size(600, 400);
+            this.Size = new System.Drawing.Size(1400, 950);
             this.pnLogin.ResumeLayout(false);
             this.pnLogin.PerformLayout();
             this.pnInfo.ResumeLayout(false);
             this.pnInfo.PerformLayout();
+            this.tblpSignUp.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -263,5 +286,6 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtRePassword;
         private System.Windows.Forms.Label lblRePassword;
+        private System.Windows.Forms.TableLayoutPanel tblpSignUp;
     }
 }

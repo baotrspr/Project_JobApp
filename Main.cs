@@ -24,5 +24,15 @@ namespace Project_JobApp
             pnProgram.Controls.Add(loginUC);
 
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
     }
 }
