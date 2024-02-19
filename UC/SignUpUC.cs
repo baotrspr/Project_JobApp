@@ -16,5 +16,15 @@ namespace Project_JobApp.UC
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            UC.LoginUC loginUC = new UC.LoginUC();
+            loginUC.Dock = DockStyle.Fill;
+            Main.MainForm.container.Controls.Add(loginUC);
+            Main.MainForm.container.Controls["loginUC"].BringToFront();
+            foreach (Main main in Main.MainForm.container.Controls.OfType<Main>())
+                Main.MainForm.container.Controls.Remove(main);
+        }
     }
 }

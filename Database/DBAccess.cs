@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_JobApp.Database
 {
+    //Chứa thủ tục thực thi truy vấn csdl
     internal class DBAccess
     {
 
