@@ -47,46 +47,100 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\DBAccess.cs" />
-    <Compile Include="Main.cs">
+    <Compile Include="Forms\FormHirer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
+    <Compile Include="Forms\FormHirer.Designer.cs">
+      <DependentUpon>FormHirer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSeeker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSeeker.Designer.cs">
+      <DependentUpon>FormSeeker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSignup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSignup.Designer.cs">
+      <DependentUpon>FormSignup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\SeekerMOD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC\UCAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCAccount.Designer.cs">
+      <DependentUpon>UCAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCAppliedJob.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCAppliedJob.Designer.cs">
+      <DependentUpon>UCAppliedJob.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCCV.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC\UCCV.Designer.cs">
       <DependentUpon>UCCV.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCHirer.cs">
+    <Compile Include="UC\UCHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UCHirer.Designer.cs">
-      <DependentUpon>UCHirer.cs</DependentUpon>
+    <Compile Include="UC\UCHome.Designer.cs">
+      <DependentUpon>UCHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCLogin.cs">
+    <Compile Include="UC\UCJobFeed.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UCLogin.Designer.cs">
-      <DependentUpon>UCLogin.cs</DependentUpon>
+    <Compile Include="UC\UCJobFeed.Designer.cs">
+      <DependentUpon>UCJobFeed.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCSeeker.cs">
+    <Compile Include="UC\UCList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UCSeeker.Designer.cs">
-      <DependentUpon>UCSeeker.cs</DependentUpon>
+    <Compile Include="UC\UCList.Designer.cs">
+      <DependentUpon>UCList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCSignUp.cs">
+    <Compile Include="UC\UCPostedJob.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\UCSignUp.Designer.cs">
-      <DependentUpon>UCSignUp.cs</DependentUpon>
+    <Compile Include="UC\UCPostedJob.Designer.cs">
+      <DependentUpon>UCPostedJob.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Main.resx">
+    <Compile Include="UC\UCProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCProfile.Designer.cs">
+      <DependentUpon>UCProfile.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\FormHirer.resx">
+      <DependentUpon>FormHirer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSeeker.resx">
+      <DependentUpon>FormSeeker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSignup.resx">
+      <DependentUpon>FormSignup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -99,20 +153,29 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UC\UCAccount.resx">
+      <DependentUpon>UCAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCAppliedJob.resx">
+      <DependentUpon>UCAppliedJob.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCCV.resx">
       <DependentUpon>UCCV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCHirer.resx">
-      <DependentUpon>UCHirer.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UCHome.resx">
+      <DependentUpon>UCHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCLogin.resx">
-      <DependentUpon>UCLogin.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UCJobFeed.resx">
+      <DependentUpon>UCJobFeed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCSeeker.resx">
-      <DependentUpon>UCSeeker.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UCList.resx">
+      <DependentUpon>UCList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCSignUp.resx">
-      <DependentUpon>UCSignUp.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UCPostedJob.resx">
+      <DependentUpon>UCPostedJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCProfile.resx">
+      <DependentUpon>UCProfile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

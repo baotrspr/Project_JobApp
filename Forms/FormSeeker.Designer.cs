@@ -1,13 +1,13 @@
-﻿namespace Project_JobApp.UC
+﻿namespace Project_JobApp.Forms
 {
-    partial class UCHirer
+    partial class FormSeeker
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,80 +20,111 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnDocker = new System.Windows.Forms.Panel();
-            this.lblDockerInfo = new System.Windows.Forms.Label();
+            this.docker = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.pnTab = new System.Windows.Forms.Panel();
             this.pnNavigation = new System.Windows.Forms.Panel();
-            this.btnAp = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.btnMyProfile = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnAppliedJobs = new System.Windows.Forms.Button();
             this.btnJobFeeds = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.pnTab = new System.Windows.Forms.Panel();
-            this.pnDocker.SuspendLayout();
+            this.docker.SuspendLayout();
             this.pnNavigation.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnDocker
+            // docker
             // 
-            this.pnDocker.BackColor = System.Drawing.Color.DarkCyan;
-            this.pnDocker.Controls.Add(this.lblDockerInfo);
-            this.pnDocker.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnDocker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnDocker.Location = new System.Drawing.Point(0, 0);
-            this.pnDocker.Name = "pnDocker";
-            this.pnDocker.Size = new System.Drawing.Size(1400, 50);
-            this.pnDocker.TabIndex = 2;
+            this.docker.BackColor = System.Drawing.Color.SeaGreen;
+            this.docker.Controls.Add(this.btnBack);
+            this.docker.Controls.Add(this.btnMinimize);
+            this.docker.Controls.Add(this.btnExit);
+            this.docker.Dock = System.Windows.Forms.DockStyle.Top;
+            this.docker.Location = new System.Drawing.Point(0, 0);
+            this.docker.Name = "docker";
+            this.docker.Size = new System.Drawing.Size(1000, 30);
+            this.docker.TabIndex = 0;
+            this.docker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.docker_MouseDown);
             // 
-            // lblDockerInfo
+            // btnExit
             // 
-            this.lblDockerInfo.AutoSize = true;
-            this.lblDockerInfo.Font = new System.Drawing.Font("Malgun Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDockerInfo.ForeColor = System.Drawing.Color.White;
-            this.lblDockerInfo.Location = new System.Drawing.Point(16, 13);
-            this.lblDockerInfo.Name = "lblDockerInfo";
-            this.lblDockerInfo.Size = new System.Drawing.Size(51, 30);
-            this.lblDockerInfo.TabIndex = 0;
-            this.lblDockerInfo.Text = "Info";
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnExit.Location = new System.Drawing.Point(940, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(60, 30);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnMinimize.Location = new System.Drawing.Point(890, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(50, 30);
+            this.btnMinimize.TabIndex = 1;
+            this.btnMinimize.Text = "-";
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // pnTab
+            // 
+            this.pnTab.BackColor = System.Drawing.SystemColors.Control;
+            this.pnTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnTab.Location = new System.Drawing.Point(200, 30);
+            this.pnTab.Name = "pnTab";
+            this.pnTab.Size = new System.Drawing.Size(800, 600);
+            this.pnTab.TabIndex = 4;
             // 
             // pnNavigation
             // 
             this.pnNavigation.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pnNavigation.Controls.Add(this.btnAp);
             this.pnNavigation.Controls.Add(this.btnMyProfile);
             this.pnNavigation.Controls.Add(this.btnAccount);
             this.pnNavigation.Controls.Add(this.btnAppliedJobs);
             this.pnNavigation.Controls.Add(this.btnJobFeeds);
             this.pnNavigation.Controls.Add(this.btnHome);
             this.pnNavigation.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnNavigation.Location = new System.Drawing.Point(0, 50);
+            this.pnNavigation.Location = new System.Drawing.Point(0, 30);
             this.pnNavigation.Name = "pnNavigation";
-            this.pnNavigation.Size = new System.Drawing.Size(200, 900);
+            this.pnNavigation.Size = new System.Drawing.Size(200, 600);
             this.pnNavigation.TabIndex = 3;
             // 
-            // btnAp
+            // btnBack
             // 
-            this.btnAp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAp.FlatAppearance.BorderSize = 0;
-            this.btnAp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAp.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAp.Image = global::Project_JobApp.Properties.Resources.bookmark;
-            this.btnAp.Location = new System.Drawing.Point(0, 300);
-            this.btnAp.Name = "btnAp";
-            this.btnAp.Size = new System.Drawing.Size(200, 100);
-            this.btnAp.TabIndex = 1;
-            this.btnAp.Text = "    Applicants List";
-            this.btnAp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAp.UseVisualStyleBackColor = true;
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBack.Location = new System.Drawing.Point(0, 0);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(50, 30);
+            this.btnBack.TabIndex = 2;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnMyProfile
             // 
@@ -102,14 +133,15 @@
             this.btnMyProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMyProfile.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMyProfile.Image = global::Project_JobApp.Properties.Resources.document;
-            this.btnMyProfile.Location = new System.Drawing.Point(0, 700);
+            this.btnMyProfile.Location = new System.Drawing.Point(0, 400);
             this.btnMyProfile.Name = "btnMyProfile";
             this.btnMyProfile.Size = new System.Drawing.Size(200, 100);
             this.btnMyProfile.TabIndex = 0;
-            this.btnMyProfile.Text = "    Profile";
+            this.btnMyProfile.Text = "    My Profile";
             this.btnMyProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMyProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMyProfile.UseVisualStyleBackColor = true;
+            this.btnMyProfile.Click += new System.EventHandler(this.btnMyProfile_Click);
             // 
             // btnAccount
             // 
@@ -118,13 +150,14 @@
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.Image = global::Project_JobApp.Properties.Resources.user;
-            this.btnAccount.Location = new System.Drawing.Point(0, 800);
+            this.btnAccount.Location = new System.Drawing.Point(0, 500);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(200, 100);
             this.btnAccount.TabIndex = 0;
             this.btnAccount.Text = "    My Account";
             this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAccount.UseVisualStyleBackColor = true;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnAppliedJobs
             // 
@@ -137,10 +170,11 @@
             this.btnAppliedJobs.Name = "btnAppliedJobs";
             this.btnAppliedJobs.Size = new System.Drawing.Size(200, 100);
             this.btnAppliedJobs.TabIndex = 0;
-            this.btnAppliedJobs.Text = "    Posted Jobs";
+            this.btnAppliedJobs.Text = "    Applied Jobs";
             this.btnAppliedJobs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAppliedJobs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAppliedJobs.UseVisualStyleBackColor = true;
+            this.btnAppliedJobs.Click += new System.EventHandler(this.btnAppliedJobs_Click);
             // 
             // btnJobFeeds
             // 
@@ -159,6 +193,7 @@
             this.btnJobFeeds.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnJobFeeds.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnJobFeeds.UseVisualStyleBackColor = true;
+            this.btnJobFeeds.Click += new System.EventHandler(this.btnJobFeeds_Click);
             // 
             // btnHome
             // 
@@ -176,26 +211,23 @@
             this.btnHome.Text = "    Home";
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // pnTab
-            // 
-            this.pnTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnTab.Location = new System.Drawing.Point(200, 50);
-            this.pnTab.Name = "pnTab";
-            this.pnTab.Size = new System.Drawing.Size(1200, 900);
-            this.pnTab.TabIndex = 4;
-            // 
-            // UCHirer
+            // FormSeeker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ClientSize = new System.Drawing.Size(1000, 630);
             this.Controls.Add(this.pnTab);
             this.Controls.Add(this.pnNavigation);
-            this.Controls.Add(this.pnDocker);
-            this.Name = "UCHirer";
-            this.Size = new System.Drawing.Size(1400, 950);
-            this.pnDocker.ResumeLayout(false);
-            this.pnDocker.PerformLayout();
+            this.Controls.Add(this.docker);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FormSeeker";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FormSeeker";
+            this.Load += new System.EventHandler(this.FormSeeker_Load);
+            this.docker.ResumeLayout(false);
             this.pnNavigation.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -203,15 +235,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnDocker;
-        private System.Windows.Forms.Label lblDockerInfo;
+        private System.Windows.Forms.Panel docker;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Panel pnTab;
         private System.Windows.Forms.Panel pnNavigation;
         private System.Windows.Forms.Button btnMyProfile;
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Button btnAppliedJobs;
         private System.Windows.Forms.Button btnJobFeeds;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnAp;
-        private System.Windows.Forms.Panel pnTab;
+        private System.Windows.Forms.Button btnBack;
     }
 }

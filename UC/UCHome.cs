@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_JobApp.UC
 {
-    public partial class UCSeeker : UserControl
+    public partial class UCHome : UserControl
     {
-        public UCSeeker()
+        public UCHome()
         {
             InitializeComponent();
         }

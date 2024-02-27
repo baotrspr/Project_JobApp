@@ -57,11 +57,7 @@ namespace Project_JobApp
 
         private void Main_Load(object sender, EventArgs e)
         {
-            mainform = this;
-            UC.UCLogin loginUC = new UC.UCLogin();
-            loginUC.Dock = DockStyle.Fill;
-            mainform.container.Controls.Add(loginUC);
-            mainform.container.Controls["loginUC"].BringToFront();
+
         }
         
         private void btnExit_Click(object sender, EventArgs e)
