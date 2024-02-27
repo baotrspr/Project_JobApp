@@ -1,6 +1,6 @@
 ﻿namespace Project_JobApp.UC
 {
-    partial class CVUC
+    partial class UCCV
     {
         /// <summary> 
         /// Required designer variable.

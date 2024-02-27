@@ -1,6 +1,6 @@
 ﻿namespace Project_JobApp.UC
 {
-    partial class SeekerUC
+    partial class UCSeeker
     {
         /// <summary> 
         /// Required designer variable.
@@ -36,6 +36,7 @@
             this.btnAppliedJobs = new System.Windows.Forms.Button();
             this.btnJobFeeds = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
+            this.pnTab = new System.Windows.Forms.FlowLayoutPanel();
             this.pnDocker.SuspendLayout();
             this.pnNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -158,13 +159,22 @@
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHome.UseVisualStyleBackColor = true;
             // 
-            // SeekerUC
+            // pnTab
+            // 
+            this.pnTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnTab.Location = new System.Drawing.Point(200, 50);
+            this.pnTab.Name = "pnTab";
+            this.pnTab.Size = new System.Drawing.Size(1200, 900);
+            this.pnTab.TabIndex = 2;
+            // 
+            // UCSeeker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pnTab);
             this.Controls.Add(this.pnNavigation);
             this.Controls.Add(this.pnDocker);
-            this.Name = "SeekerUC";
+            this.Name = "UCSeeker";
             this.Size = new System.Drawing.Size(1400, 950);
             this.pnDocker.ResumeLayout(false);
             this.pnDocker.PerformLayout();
@@ -183,5 +193,6 @@
         private System.Windows.Forms.Button btnAppliedJobs;
         private System.Windows.Forms.Button btnJobFeeds;
         private System.Windows.Forms.Button btnMyProfile;
+        private System.Windows.Forms.FlowLayoutPanel pnTab;
     }
 }

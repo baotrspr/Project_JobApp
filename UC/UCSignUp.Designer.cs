@@ -1,6 +1,6 @@
 ﻿namespace Project_JobApp.UC
 {
-    partial class SignUpUC
+    partial class UCSignUp
     {
         /// <summary> 
         /// Required designer variable.

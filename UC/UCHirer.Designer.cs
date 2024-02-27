@@ -1,6 +1,6 @@
 ﻿namespace Project_JobApp.UC
 {
-    partial class HirerUC
+    partial class UCHirer
     {
         /// <summary> 
         /// Required designer variable.
@@ -37,6 +37,7 @@
             this.btnAppliedJobs = new System.Windows.Forms.Button();
             this.btnJobFeeds = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
+            this.pnTab = new System.Windows.Forms.Panel();
             this.pnDocker.SuspendLayout();
             this.pnNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -105,7 +106,7 @@
             this.btnMyProfile.Name = "btnMyProfile";
             this.btnMyProfile.Size = new System.Drawing.Size(200, 100);
             this.btnMyProfile.TabIndex = 0;
-            this.btnMyProfile.Text = "    My Profile";
+            this.btnMyProfile.Text = "    Profile";
             this.btnMyProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMyProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMyProfile.UseVisualStyleBackColor = true;
@@ -176,13 +177,22 @@
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHome.UseVisualStyleBackColor = true;
             // 
-            // HirerUC
+            // pnTab
+            // 
+            this.pnTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnTab.Location = new System.Drawing.Point(200, 50);
+            this.pnTab.Name = "pnTab";
+            this.pnTab.Size = new System.Drawing.Size(1200, 900);
+            this.pnTab.TabIndex = 4;
+            // 
+            // UCHirer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pnTab);
             this.Controls.Add(this.pnNavigation);
             this.Controls.Add(this.pnDocker);
-            this.Name = "HirerUC";
+            this.Name = "UCHirer";
             this.Size = new System.Drawing.Size(1400, 950);
             this.pnDocker.ResumeLayout(false);
             this.pnDocker.PerformLayout();
@@ -202,5 +212,6 @@
         private System.Windows.Forms.Button btnJobFeeds;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnAp;
+        private System.Windows.Forms.Panel pnTab;
     }
 }

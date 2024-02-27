@@ -56,35 +56,35 @@
     <Compile Include="Model\SeekerMOD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UC\CVUC.cs">
+    <Compile Include="UC\UCCV.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\CVUC.Designer.cs">
-      <DependentUpon>CVUC.cs</DependentUpon>
+    <Compile Include="UC\UCCV.Designer.cs">
+      <DependentUpon>UCCV.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\HirerUC.cs">
+    <Compile Include="UC\UCHirer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\HirerUC.Designer.cs">
-      <DependentUpon>HirerUC.cs</DependentUpon>
+    <Compile Include="UC\UCHirer.Designer.cs">
+      <DependentUpon>UCHirer.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\LoginUC.cs">
+    <Compile Include="UC\UCLogin.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\LoginUC.Designer.cs">
-      <DependentUpon>LoginUC.cs</DependentUpon>
+    <Compile Include="UC\UCLogin.Designer.cs">
+      <DependentUpon>UCLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\SeekerUC.cs">
+    <Compile Include="UC\UCSeeker.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\SeekerUC.Designer.cs">
-      <DependentUpon>SeekerUC.cs</DependentUpon>
+    <Compile Include="UC\UCSeeker.Designer.cs">
+      <DependentUpon>UCSeeker.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\SignUpUC.cs">
+    <Compile Include="UC\UCSignUp.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\SignUpUC.Designer.cs">
-      <DependentUpon>SignUpUC.cs</DependentUpon>
+    <Compile Include="UC\UCSignUp.Designer.cs">
+      <DependentUpon>UCSignUp.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -99,20 +99,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UC\CVUC.resx">
-      <DependentUpon>CVUC.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UCCV.resx">
+      <DependentUpon>UCCV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\HirerUC.resx">
-      <DependentUpon>HirerUC.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UCHirer.resx">
+      <DependentUpon>UCHirer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\LoginUC.resx">
-      <DependentUpon>LoginUC.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UCLogin.resx">
+      <DependentUpon>UCLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\SeekerUC.resx">
-      <DependentUpon>SeekerUC.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UCSeeker.resx">
+      <DependentUpon>UCSeeker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\SignUpUC.resx">
-      <DependentUpon>SignUpUC.cs</DependentUpon>
+    <EmbeddedResource Include="UC\UCSignUp.resx">
+      <DependentUpon>UCSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

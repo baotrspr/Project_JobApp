@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Project_JobApp.UC
 {
-    public partial class SignUpUC : UserControl
+    public partial class UCSignUp : UserControl
     {
-        public SignUpUC()
+        public UCSignUp()
         {
             InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            UC.LoginUC loginUC = new UC.LoginUC();
+            UC.UCLogin loginUC = new UC.UCLogin();
             loginUC.Dock = DockStyle.Fill;
             Main.MainForm.container.Controls.Add(loginUC);
             Main.MainForm.container.Controls["loginUC"].BringToFront();

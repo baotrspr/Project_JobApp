@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_JobApp.UC
 {
-    public partial class SeekerUC : UserControl
+    public partial class UCCV : UserControl
     {
-        public SeekerUC()
+        public UCCV()
         {
             InitializeComponent();
         }
