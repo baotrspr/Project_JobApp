@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\DBAccess.cs" />
+    <Compile Include="Forms\FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormHirer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,12 @@
     <Compile Include="UC\UCAccount.Designer.cs">
       <DependentUpon>UCAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCAccountManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCAccountManager.Designer.cs">
+      <DependentUpon>UCAccountManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCAppliedJob.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,12 +134,21 @@
     <Compile Include="UC\UCPostedJob.Designer.cs">
       <DependentUpon>UCPostedJob.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCPostManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCPostManager.Designer.cs">
+      <DependentUpon>UCPostManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCProfile.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC\UCProfile.Designer.cs">
       <DependentUpon>UCProfile.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHirer.resx">
       <DependentUpon>FormHirer.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +177,9 @@
     <EmbeddedResource Include="UC\UCAccount.resx">
       <DependentUpon>UCAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCAccountManager.resx">
+      <DependentUpon>UCAccountManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCAppliedJob.resx">
       <DependentUpon>UCAppliedJob.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCPostedJob.resx">
       <DependentUpon>UCPostedJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCPostManager.resx">
+      <DependentUpon>UCPostManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCProfile.resx">
       <DependentUpon>UCProfile.cs</DependentUpon>

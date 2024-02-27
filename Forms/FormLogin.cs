@@ -33,6 +33,12 @@ namespace Project_JobApp.Forms
                 hirer.ShowDialog();
                 this.Close();
             }
+            else
+            {
+                FormAdmin formAdmin = new FormAdmin();
+                formAdmin.ShowDialog();
+                this.Close();
+            }
         }
 
         public void SendMessage()
