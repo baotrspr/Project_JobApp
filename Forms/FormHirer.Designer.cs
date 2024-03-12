@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.docker = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.pnTab = new System.Windows.Forms.Panel();
@@ -39,7 +40,8 @@
             this.btnPostedJobs = new System.Windows.Forms.Button();
             this.btnJobFeeds = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.docker.SuspendLayout();
             this.pnNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +58,21 @@
             this.docker.Size = new System.Drawing.Size(1000, 30);
             this.docker.TabIndex = 1;
             this.docker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.docker_MouseDown);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBack.Location = new System.Drawing.Point(0, 0);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(50, 30);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnMinimize
             // 
@@ -91,10 +108,10 @@
             // 
             // pnTab
             // 
-            this.pnTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnTab.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTab.Location = new System.Drawing.Point(200, 30);
             this.pnTab.Name = "pnTab";
-            this.pnTab.Size = new System.Drawing.Size(800, 600);
+            this.pnTab.Size = new System.Drawing.Size(800, 560);
             this.pnTab.TabIndex = 6;
             // 
             // pnNavigation
@@ -222,27 +239,32 @@
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // btnBack
+            // btnEdit
             // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBack.Location = new System.Drawing.Point(0, 0);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(50, 30);
-            this.btnBack.TabIndex = 4;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnEdit.Location = new System.Drawing.Point(373, 596);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(163, 23);
+            this.btnEdit.TabIndex = 0;
+            this.btnEdit.Text = "Chỉnh sửa thông tin";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(622, 596);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(163, 23);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "Lưu thông tin";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // FormHirer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 630);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.pnTab);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.pnNavigation);
             this.Controls.Add(this.docker);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -270,5 +292,7 @@
         private System.Windows.Forms.Button btnJobFeeds;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnSave;
     }
 }

@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Hirer.cs" />
+    <Compile Include="Classes\Info.cs" />
+    <Compile Include="Classes\Seeker.cs" />
     <Compile Include="Database\DBAccess.cs" />
     <Compile Include="Forms\FormAdmin.cs">
       <SubType>Form</SubType>

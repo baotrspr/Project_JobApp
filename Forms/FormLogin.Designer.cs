@@ -43,6 +43,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pnInfo.SuspendLayout();
             this.pnLogin.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +84,7 @@
             // pnLogin
             // 
             this.pnLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnLogin.Controls.Add(this.btnExit);
             this.pnLogin.Controls.Add(this.lblTitle);
             this.pnLogin.Controls.Add(this.lblOr);
             this.pnLogin.Controls.Add(this.rbtHirer);
@@ -209,6 +211,19 @@
             this.lblPassword.TabIndex = 0;
             this.lblPassword.Text = "Password";
             // 
+            // btnExit
+            // 
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.Brown;
+            this.btnExit.Location = new System.Drawing.Point(220, -1);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(49, 23);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,5 +260,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Button btnExit;
     }
 }

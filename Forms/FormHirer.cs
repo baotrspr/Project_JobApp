@@ -45,6 +45,9 @@ namespace Project_JobApp.Forms
             UC.UCHome ucHome = new UC.UCHome();
             pnTab.Controls.Add(ucHome);
             pnTab.Controls["ucHome"].BringToFront();
+            btnHome.BackColor = Color.FromArgb(192, 255, 192);
+            btnEdit.Hide();
+            btnSave.Hide();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -62,6 +65,8 @@ namespace Project_JobApp.Forms
             foreach (UserControl userControl in pnTab.Controls)
                 if (userControl != ucHome)
                     pnTab.Controls.Remove(userControl);
+            btnEdit.Hide();
+            btnSave.Hide();
         }
 
         private void btnJobFeeds_Click(object sender, EventArgs e)
@@ -79,6 +84,8 @@ namespace Project_JobApp.Forms
             foreach (UserControl userControl in pnTab.Controls)
                 if (userControl != ucJobFeed)
                     pnTab.Controls.Remove(userControl);
+            btnEdit.Hide();
+            btnSave.Hide();
         }
 
         private void btnPostedJobs_Click(object sender, EventArgs e)
@@ -113,6 +120,8 @@ namespace Project_JobApp.Forms
             foreach (UserControl userControl in pnTab.Controls)
                 if (userControl != ucProfile)
                     pnTab.Controls.Remove(userControl);
+            btnEdit.Show();
+            btnSave.Show();
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
@@ -130,6 +139,8 @@ namespace Project_JobApp.Forms
             foreach (UserControl userControl in pnTab.Controls)
                 if (userControl != ucAccount)
                     pnTab.Controls.Remove(userControl);
+            btnEdit.Hide();
+            btnSave.Hide();
         }
 
         private void btnList_Click(object sender, EventArgs e)
@@ -147,10 +158,13 @@ namespace Project_JobApp.Forms
             foreach (UserControl userControl in pnTab.Controls)
                 if (userControl != ucList)
                     pnTab.Controls.Remove(userControl);
+            btnEdit.Hide();
+            btnSave.Hide();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            Hide();
             FormLogin formLogin = new FormLogin();
             formLogin.ShowDialog();
             this.Close();

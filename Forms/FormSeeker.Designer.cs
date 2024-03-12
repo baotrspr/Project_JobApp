@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.docker = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pnTab = new System.Windows.Forms.Panel();
             this.pnNavigation = new System.Windows.Forms.Panel();
-            this.btnBack = new System.Windows.Forms.Button();
             this.btnMyProfile = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnAppliedJobs = new System.Windows.Forms.Button();
             this.btnJobFeeds = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.docker.SuspendLayout();
             this.pnNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -56,21 +58,20 @@
             this.docker.TabIndex = 0;
             this.docker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.docker_MouseDown);
             // 
-            // btnExit
+            // btnBack
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnExit.Location = new System.Drawing.Point(940, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(60, 30);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBack.Location = new System.Drawing.Point(0, 0);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(50, 30);
+            this.btnBack.TabIndex = 2;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnMinimize
             // 
@@ -88,13 +89,29 @@
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnExit.Location = new System.Drawing.Point(940, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(60, 30);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // pnTab
             // 
             this.pnTab.BackColor = System.Drawing.SystemColors.Control;
-            this.pnTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnTab.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTab.Location = new System.Drawing.Point(200, 30);
             this.pnTab.Name = "pnTab";
-            this.pnTab.Size = new System.Drawing.Size(800, 600);
+            this.pnTab.Size = new System.Drawing.Size(800, 560);
             this.pnTab.TabIndex = 4;
             // 
             // pnNavigation
@@ -110,21 +127,6 @@
             this.pnNavigation.Name = "pnNavigation";
             this.pnNavigation.Size = new System.Drawing.Size(200, 600);
             this.pnNavigation.TabIndex = 3;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBack.Location = new System.Drawing.Point(0, 0);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(50, 30);
-            this.btnBack.TabIndex = 2;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnMyProfile
             // 
@@ -213,12 +215,32 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(658, 596);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(163, 23);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "Lưu thông tin";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(414, 596);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(163, 23);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "Chỉnh sửa thông tin";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
             // FormSeeker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1000, 630);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.pnTab);
             this.Controls.Add(this.pnNavigation);
             this.Controls.Add(this.docker);
@@ -246,5 +268,7 @@
         private System.Windows.Forms.Button btnJobFeeds;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

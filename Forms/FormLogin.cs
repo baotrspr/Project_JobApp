@@ -21,8 +21,10 @@ namespace Project_JobApp.Forms
         {
             if (rbtJobSeeker.Checked)
             {
+                
                 FormSeeker seeker = new FormSeeker();
                 SendMessage();
+                Hide();
                 seeker.ShowDialog();
                 this.Close();
             }
@@ -30,12 +32,14 @@ namespace Project_JobApp.Forms
             {
                 FormHirer hirer = new FormHirer();
                 SendMessage();
+                Hide();
                 hirer.ShowDialog();
                 this.Close();
             }
             else
             {
                 FormAdmin formAdmin = new FormAdmin();
+                Hide();
                 formAdmin.ShowDialog();
                 this.Close();
             }
@@ -51,6 +55,11 @@ namespace Project_JobApp.Forms
             FormSignup formSignup = new FormSignup();
             formSignup.ShowDialog();
             this.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
