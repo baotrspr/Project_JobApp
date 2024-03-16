@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project_JobApp.Classes;
+using Project_JobApp.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace Project_JobApp.Forms
 {
     public partial class FormLogin : Form
     {
+        LoginDAO loginDAO = new LoginDAO();
         public FormLogin()
         {
             InitializeComponent();
@@ -19,35 +22,18 @@ namespace Project_JobApp.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (rbtJobSeeker.Checked)
-            {
-                
-                FormSeeker seeker = new FormSeeker();
-                SendMessage();
-                Hide();
-                seeker.ShowDialog();
-                this.Close();
-            }
-            else if (rbtHirer.Checked)
-            {
-                FormHirer hirer = new FormHirer();
-                SendMessage();
-                Hide();
-                hirer.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                FormAdmin formAdmin = new FormAdmin();
-                Hide();
-                formAdmin.ShowDialog();
-                this.Close();
-            }
+            Account acc = new Account(txtUsername.Text, txtPassword.Text);
+
+            
         }
 
-        public void SendMessage()
+        public void Success()
         {
             MessageBox.Show("Đăng nhập thành công!", "Thông báo");
+        }
+        public void Fail()
+        {
+            MessageBox.Show("Thông tin không khớp với hệ thống!", "Thông báo");
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)

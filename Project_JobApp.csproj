@@ -46,10 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Hirer.cs" />
-    <Compile Include="Classes\Info.cs" />
-    <Compile Include="Classes\Seeker.cs" />
+    <Compile Include="Classes\Feeds.cs" />
+    <Compile Include="Classes\Account.cs" />
+    <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DAO\SignupDAO.cs" />
     <Compile Include="Database\DBAccess.cs" />
+    <Compile Include="Database\SeekerDAO.cs" />
     <Compile Include="Forms\FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +115,12 @@
     <Compile Include="UC\UCCV.Designer.cs">
       <DependentUpon>UCCV.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCDetail.Designer.cs">
+      <DependentUpon>UCDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,6 +156,12 @@
     </Compile>
     <Compile Include="UC\UCProfile.Designer.cs">
       <DependentUpon>UCProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCThumbnail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCThumbnail.Designer.cs">
+      <DependentUpon>UCThumbnail.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
@@ -189,6 +203,9 @@
     <EmbeddedResource Include="UC\UCCV.resx">
       <DependentUpon>UCCV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCDetail.resx">
+      <DependentUpon>UCDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCHome.resx">
       <DependentUpon>UCHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +224,9 @@
     <EmbeddedResource Include="UC\UCProfile.resx">
       <DependentUpon>UCProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCThumbnail.resx">
+      <DependentUpon>UCThumbnail.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -220,9 +240,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\add.png" />
   </ItemGroup>

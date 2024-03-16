@@ -32,10 +32,11 @@
             this.lblRule = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.pnLogin = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblOr = new System.Windows.Forms.Label();
-            this.rbtHirer = new System.Windows.Forms.RadioButton();
-            this.rbtJobSeeker = new System.Windows.Forms.RadioButton();
+            this.rdbHirer = new System.Windows.Forms.RadioButton();
+            this.rdbJobSeeker = new System.Windows.Forms.RadioButton();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
             this.pnInfo.SuspendLayout();
             this.pnLogin.SuspendLayout();
             this.SuspendLayout();
@@ -87,8 +87,8 @@
             this.pnLogin.Controls.Add(this.btnExit);
             this.pnLogin.Controls.Add(this.lblTitle);
             this.pnLogin.Controls.Add(this.lblOr);
-            this.pnLogin.Controls.Add(this.rbtHirer);
-            this.pnLogin.Controls.Add(this.rbtJobSeeker);
+            this.pnLogin.Controls.Add(this.rdbHirer);
+            this.pnLogin.Controls.Add(this.rdbJobSeeker);
             this.pnLogin.Controls.Add(this.btnSignUp);
             this.pnLogin.Controls.Add(this.btnLogin);
             this.pnLogin.Controls.Add(this.txtUsername);
@@ -101,6 +101,19 @@
             this.pnLogin.Name = "pnLogin";
             this.pnLogin.Size = new System.Drawing.Size(270, 400);
             this.pnLogin.TabIndex = 5;
+            // 
+            // btnExit
+            // 
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.Brown;
+            this.btnExit.Location = new System.Drawing.Point(220, -1);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(49, 23);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblTitle
             // 
@@ -121,27 +134,27 @@
             this.lblOr.TabIndex = 4;
             this.lblOr.Text = "hay";
             // 
-            // rbtHirer
+            // rdbHirer
             // 
-            this.rbtHirer.AutoSize = true;
-            this.rbtHirer.Location = new System.Drawing.Point(173, 176);
-            this.rbtHirer.Name = "rbtHirer";
-            this.rbtHirer.Size = new System.Drawing.Size(41, 17);
-            this.rbtHirer.TabIndex = 3;
-            this.rbtHirer.TabStop = true;
-            this.rbtHirer.Text = "HR";
-            this.rbtHirer.UseVisualStyleBackColor = true;
+            this.rdbHirer.AutoSize = true;
+            this.rdbHirer.Location = new System.Drawing.Point(173, 176);
+            this.rdbHirer.Name = "rdbHirer";
+            this.rdbHirer.Size = new System.Drawing.Size(41, 17);
+            this.rdbHirer.TabIndex = 3;
+            this.rdbHirer.TabStop = true;
+            this.rdbHirer.Text = "HR";
+            this.rdbHirer.UseVisualStyleBackColor = true;
             // 
-            // rbtJobSeeker
+            // rdbJobSeeker
             // 
-            this.rbtJobSeeker.AutoSize = true;
-            this.rbtJobSeeker.Location = new System.Drawing.Point(19, 176);
-            this.rbtJobSeeker.Name = "rbtJobSeeker";
-            this.rbtJobSeeker.Size = new System.Drawing.Size(76, 17);
-            this.rbtJobSeeker.TabIndex = 3;
-            this.rbtJobSeeker.TabStop = true;
-            this.rbtJobSeeker.Text = "JobSeeker";
-            this.rbtJobSeeker.UseVisualStyleBackColor = true;
+            this.rdbJobSeeker.AutoSize = true;
+            this.rdbJobSeeker.Location = new System.Drawing.Point(19, 176);
+            this.rdbJobSeeker.Name = "rdbJobSeeker";
+            this.rdbJobSeeker.Size = new System.Drawing.Size(76, 17);
+            this.rdbJobSeeker.TabIndex = 3;
+            this.rdbJobSeeker.TabStop = true;
+            this.rdbJobSeeker.Text = "JobSeeker";
+            this.rdbJobSeeker.UseVisualStyleBackColor = true;
             // 
             // btnSignUp
             // 
@@ -189,7 +202,7 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassword.Location = new System.Drawing.Point(114, 111);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(135, 20);
             this.txtPassword.TabIndex = 1;
             // 
@@ -210,19 +223,6 @@
             this.lblPassword.Size = new System.Drawing.Size(53, 13);
             this.lblPassword.TabIndex = 0;
             this.lblPassword.Text = "Password";
-            // 
-            // btnExit
-            // 
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.Brown;
-            this.btnExit.Location = new System.Drawing.Point(220, -1);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(49, 23);
-            this.btnExit.TabIndex = 6;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormLogin
             // 
@@ -251,8 +251,8 @@
         private System.Windows.Forms.Panel pnLogin;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblOr;
-        private System.Windows.Forms.RadioButton rbtHirer;
-        private System.Windows.Forms.RadioButton rbtJobSeeker;
+        private System.Windows.Forms.RadioButton rdbHirer;
+        private System.Windows.Forms.RadioButton rdbJobSeeker;
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txtUsername;

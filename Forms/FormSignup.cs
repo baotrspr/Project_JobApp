@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Project_JobApp.Classes;
+using Project_JobApp.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +15,7 @@ namespace Project_JobApp.Forms
 {
     public partial class FormSignup : Form
     {
+        SignupDAO signupdao = new SignupDAO();
         public FormSignup()
         {
             InitializeComponent();
@@ -19,17 +23,34 @@ namespace Project_JobApp.Forms
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            try
+            if (string.Compare(txtPassword.Text, txtRePassword.Text) == 0)
             {
-                if (Validation())
+                string vaitro = "admin";
+                if (rdbHirer.Checked)
                 {
-                    SendMessage();
-                    btnLogin_Click(sender, e);
+                    vaitro = "hirer";
                 }
+                else if (rdbJobSeeker.Checked)
+                {
+                    vaitro = "seeker";
+                }
+
+                Account acc = new Account(txtUsername.Text, txtPassword.Text, vaitro);
+
+                signupdao.Signup(acc);
+                //if (signupdao.Signup(acc))
+                //{
+                //    MessageBox.Show("Đăng kí tài khoản thành công, vui lòng đăng nhập lại!", "Thông báo");
+                //    btnLogin_Click(sender, e);
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Tài khoản không hợp lệ hoặc đã tồn tại!", "Thông báo");
+                //}
             }
-            catch(Exception ex) 
-            { 
-                MessageBox.Show(ex.Message); 
+            else
+            {
+                MessageBox.Show("Mật khẩu không trùng khớp!", "Thông báo");
             }
         }
         
@@ -39,19 +60,6 @@ namespace Project_JobApp.Forms
             formLogin.ShowDialog();
             this.Close();
         }
-        public void SendMessage()
-        {
-            MessageBox.Show("Đăng kí thành công!\n Vui lòng đăng nhập lại.", "Thông báo");
-        }
-
-        private bool Validation()
-        {
-            if (String.IsNullOrWhiteSpace(txtUsername.Text) || String.IsNullOrWhiteSpace(txtPassword.Text) ||
-                String.IsNullOrWhiteSpace(txtRePassword.Text))
-                return false;
-            return true;
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);

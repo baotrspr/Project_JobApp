@@ -14,23 +14,13 @@ namespace Project_JobApp.Database
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.cnn);
 
-        public void Excute(string sqlStr)
+        public bool Execute(string sqlStr)
         {
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(sqlStr, conn);
-                if (cmd.ExecuteNonQuery() > 0)
-                    MessageBox.Show("Thao tac thanh cong!", "Action Success");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Thao tac khong thanh cong!\n" + ex.Message, "Action Failed");
-            }
-            finally
-            { 
-                conn.Close(); 
-            }
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sqlStr, conn);
+            var query = cmd.ExecuteNonQuery();
+            conn.Close();
+            return (query > 0);
         }
 
         public DataTable Reload(string sqlStr)
@@ -42,5 +32,14 @@ namespace Project_JobApp.Database
             conn.Close();
             return dt;
         }
+        public DataRow SelectRow(string sqlStr)
+        {
+            DataRow dr = null;
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sqlStr, conn);
+            return dr;
+            conn.Close();
+        }
+
     }
 }

@@ -1,51 +1,54 @@
 ﻿use JobApp
-create table TKUngVien(
-	id varchar(255) primary key not null,
-	matkhau varchar(255),
-	hoten varchar(255),
-	doituong varchar(255),
-	ngsinh varchar(10),
+
+create table TAIKHOAN(
+	userid varchar(255) constraint PK_Account primary key,
+	matkhau varchar(255) not null,
+	vaitro varchar(30),
+	ho varchar(255) ,
+	ten varchar(255),
+	ngsinh date check (datediff(year, ngsinh, getdate()) >= 18),
+	cmnd varchar(12) check (len(cmnd)=12),
 	gioitinh varchar(10),
 	diachi varchar(255),
-	sdt varchar(10),
-	hocvan varchar(10),
-	email varchar(255),
+	sdt varchar(10) check (len(sdt) = 10),
+	email varchar(255) check (email like '_@'),
 	hinhanh varbinary(MAX),
 	thongtin text,
 )
 
-create table TKNhaTuyenDung(
-	id varchar(255),
-	matkhau varchar(255),
-	hoten varchar(255),
-	doituong varchar(255),
-	ngaysinh varchar(10),
-	gioitinh varchar(10),
-	diachi varchar(255),
-	sdt varchar(10),
-	email varchar(255),
+alter table TAIKHOAN alter column cmnd varchar(255)
+
+create table BAIDANG(
+	idbai varchar(255) constraint PK_BAIDANG primary key,
+	loaibai varchar(255) not null,
+	tieude varchar(255) not null,
+	noidung text,
+	ngaydang date,
 	hinhanh varbinary(max),
-	donvi varchar(255),
-	thongtin text,
+	luotthich int,
+	userid varchar(255) constraint FK_BAIDANG_TK foreign key references TAIKHOAN(userid),
 )
 
-create table Feeds(
-	feedid varchar(255) primary key,
-	userid varchar(255),
-	tieude varchar(255),
-	content text,
-	photo varbinary(max),
-	luong varchar(255),
-	linhvuc varchar(255),
-	ngaydang varchar(10),
-	solike int,
-)
-
-create table CongViec(
-	macongviec varchar(255),
-	tencongviec varchar(255),
+create table CONGVIEC(
+	idcongviec varchar(255) constraint PK_CONGVIEC primary key,
+	tencongviec varchar(255) not null,
 	mucluong varchar(255),
 	linhvuc varchar(255),
 	thongtin text,
-	manguoitao varchar(255),
+	trinhdo varchar(255),
 )
+
+create table UNGTUYEN(
+	userid varchar(255) constraint FK_UNGTUYEN_TK foreign key references TAIKHOAN(userid),
+	idcongviec varchar(255) constraint FK_UNGTUYEN_CV foreign key references CONGVIEC(idcongviec),
+	thoigian datetime,
+	trangthaiphanhoi varchar(255),
+	cv varbinary(max),
+	constraint PK_UNGTUYEN primary key (userid, idcongviec)
+)
+
+insert into TAIKHOAN(userid, matkhau, vaitro) values ('xuanbao2302', 'xuanbao2302','seeker')
+delete from TAIKHOAN
+
+select * from TAIKHOAN
+select userid, matkhau, vaitro from TAIKHOAN where userid = 'xuanbao2302'

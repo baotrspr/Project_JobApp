@@ -42,110 +42,56 @@ namespace Project_JobApp.Forms
 
         private void FormSeeker_Load(object sender, EventArgs e)
         {
-            UC.UCHome ucHome = new UC.UCHome();
-            pnTab.Controls.Add(ucHome);
-            pnTab.Controls["ucHome"].BringToFront();
-            btnHome.BackColor = Color.FromArgb(192, 255, 192);
-            btnEdit.Hide();
-            btnSave.Hide();
+            ucHome.BringToFront();
+            rdbHome.Checked = true;
         }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            btnHome.BackColor = Color.FromArgb(192, 255, 192);
-            btnJobFeeds.BackColor = Color.FromArgb(224, 224, 224);
-            btnAccount.BackColor = Color.FromArgb(224, 224, 224);
-            btnAppliedJobs.BackColor = Color.FromArgb(224, 224, 224);
-            btnMyProfile.BackColor = Color.FromArgb(224, 224, 224);
-
-            UC.UCHome ucHome = new UC.UCHome();
-            pnTab.Controls.Add(ucHome);
-            pnTab.Controls["ucHome"].BringToFront();
-            foreach (UserControl userControl in pnTab.Controls)
-                if (userControl != ucHome)
-                    pnTab.Controls.Remove(userControl);
-            btnEdit.Hide();
-            btnSave.Hide();
-        }
-
-        private void btnJobFeeds_Click(object sender, EventArgs e)
-        {
-            btnHome.BackColor = Color.FromArgb(224, 224, 224);
-            btnJobFeeds.BackColor = Color.FromArgb(192, 255, 192);
-            btnAccount.BackColor = Color.FromArgb(224, 224, 224);
-            btnAppliedJobs.BackColor = Color.FromArgb(224, 224, 224);
-            btnMyProfile.BackColor = Color.FromArgb(224, 224, 224);
-
-            UC.UCJobFeed ucJobFeed = new UC.UCJobFeed();
-            pnTab.Controls.Add(ucJobFeed);
-            pnTab.Controls["ucJobFeed"].BringToFront();
-            foreach (UserControl userControl in pnTab.Controls)
-                if (userControl != ucJobFeed)
-                    pnTab.Controls.Remove(userControl);
-            btnEdit.Hide();
-            btnSave.Hide();
-        }
-
-        private void btnAppliedJobs_Click(object sender, EventArgs e)
-        {
-            btnHome.BackColor = Color.FromArgb(224, 224, 224);
-            btnJobFeeds.BackColor = Color.FromArgb(224, 224, 224);
-            btnAccount.BackColor = Color.FromArgb(224, 224, 224);
-            btnAppliedJobs.BackColor = Color.FromArgb(192, 255, 192);
-            btnMyProfile.BackColor = Color.FromArgb(224, 224, 224);
-
-            UC.UCAppliedJob ucAppliedJob = new UC.UCAppliedJob();
-            pnTab.Controls.Add(ucAppliedJob);
-            pnTab.Controls["ucAppliedJob"].BringToFront();
-            foreach (UserControl userControl in pnTab.Controls)
-                if (userControl != ucAppliedJob)
-                    pnTab.Controls.Remove(userControl);
-            btnEdit.Hide();
-            btnSave.Hide();
-        }
-
-        private void btnMyProfile_Click(object sender, EventArgs e)
-        {
-            btnHome.BackColor = Color.FromArgb(224, 224, 224);
-            btnJobFeeds.BackColor = Color.FromArgb(224, 224, 224);
-            btnAccount.BackColor = Color.FromArgb(224, 224, 224);
-            btnAppliedJobs.BackColor = Color.FromArgb(224, 224, 224);
-            btnMyProfile.BackColor = Color.FromArgb(192, 255, 192);
-
-            UC.UCProfile ucProfile = new UC.UCProfile();
-            pnTab.Controls.Add(ucProfile);
-            pnTab.Controls["ucProfile"].BringToFront();
-            foreach (UserControl userControl in pnTab.Controls)
-                if (userControl != ucProfile)
-                    pnTab.Controls.Remove(userControl);
-            btnEdit.Show();
-            btnSave.Show();
-        }
-
-        private void btnAccount_Click(object sender, EventArgs e)
-        {
-            btnHome.BackColor = Color.FromArgb(224, 224, 224);
-            btnJobFeeds.BackColor = Color.FromArgb(224, 224, 224);
-            btnAccount.BackColor = Color.FromArgb(192, 255, 192);
-            btnAppliedJobs.BackColor = Color.FromArgb(224, 224, 224);
-            btnMyProfile.BackColor = Color.FromArgb(224, 224, 224);
-
-            UC.UCAccount ucAccount = new UC.UCAccount();
-            pnTab.Controls.Add(ucAccount);
-            pnTab.Controls["ucAccount"].BringToFront();
-            foreach (UserControl userControl in pnTab.Controls)
-                if (userControl != ucAccount)
-                    pnTab.Controls.Remove(userControl);
-            btnEdit.Hide();
-            btnSave.Hide();
-        }
-
+        
         private void btnBack_Click(object sender, EventArgs e)
         {
             Hide();
             FormLogin formLogin = new FormLogin();
             formLogin.ShowDialog();
             this.Close();
+        }
+
+        private void rdbHome_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbHome.Checked)
+            {
+                ucHome.BringToFront();
+            }
+        }
+
+        private void rdbFeed_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbFeed.Checked)
+            {
+                ucJobFeed.BringToFront();
+            }
+        }
+
+        private void rdbApplied_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbApplied.Checked)
+            {
+                ucAppliedJob.BringToFront();
+            }
+        }
+
+        private void rdbInfo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbInfo.Checked)
+            {
+                ucProfile.BringToFront();
+            }
+        }
+
+        private void rdbAccount_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbAccount.Checked)
+            {
+                ucAccount.BringToFront();
+            }
         }
     }
 }

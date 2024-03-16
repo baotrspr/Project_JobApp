@@ -15,6 +15,20 @@ namespace Project_JobApp.UC
         public UCHome()
         {
             InitializeComponent();
+            count.Start();
+        }
+
+        private void UCHome_Load(object sender, EventArgs e)
+        {
+            lblFullDay.Text = DateTime.Now.ToString("dddd");
+            lblDay.Text = DateTime.Now.ToString("dd");
+            lblMonth.Text = "Tháng " + DateTime.Now.ToString("MM");
+            lblYear.Text = DateTime.Now.ToString("yyyy");
+        }
+
+        private void count_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }
