@@ -20,7 +20,26 @@ namespace Project_JobApp.Database
             SqlCommand cmd = new SqlCommand(sqlStr, conn);
             var query = cmd.ExecuteNonQuery();
             conn.Close();
-            return (query > 0);
+            if (query > 0) return true; else return false;
+        }
+
+        public DataTable ExecuteSelect(string sqlStr)
+        {
+            try
+            {
+                conn.Open();
+
+                SqlDataAdapter da = new SqlDataAdapter(sqlStr, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                conn.Close();
+                return dt;
+            }
+            catch
+            {
+                conn.Close();
+                return null;
+            }
         }
 
         public DataTable Reload(string sqlStr)
@@ -37,8 +56,8 @@ namespace Project_JobApp.Database
             DataRow dr = null;
             conn.Open();
             SqlCommand cmd = new SqlCommand(sqlStr, conn);
-            return dr;
             conn.Close();
+            return dr;
         }
 
     }

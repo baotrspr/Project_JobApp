@@ -15,7 +15,7 @@ namespace Project_JobApp.Forms
 {
     public partial class FormSignup : Form
     {
-        SignupDAO signupdao = new SignupDAO();
+        SignupDAO signupDAO = new SignupDAO();
         public FormSignup()
         {
             InitializeComponent();
@@ -25,28 +25,20 @@ namespace Project_JobApp.Forms
         {
             if (string.Compare(txtPassword.Text, txtRePassword.Text) == 0)
             {
-                string vaitro = "admin";
+                string vaitro = "Admin";
                 if (rdbHirer.Checked)
                 {
-                    vaitro = "hirer";
+                    vaitro = "Hirer";
                 }
                 else if (rdbJobSeeker.Checked)
                 {
-                    vaitro = "seeker";
+                    vaitro = "JobSeeker";
                 }
 
                 Account acc = new Account(txtUsername.Text, txtPassword.Text, vaitro);
 
-                signupdao.Signup(acc);
-                //if (signupdao.Signup(acc))
-                //{
-                //    MessageBox.Show("Đăng kí tài khoản thành công, vui lòng đăng nhập lại!", "Thông báo");
-                //    btnLogin_Click(sender, e);
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Tài khoản không hợp lệ hoặc đã tồn tại!", "Thông báo");
-                //}
+                signupDAO.Signup(acc);
+                
             }
             else
             {
@@ -57,6 +49,7 @@ namespace Project_JobApp.Forms
         private void btnLogin_Click(object sender, EventArgs e)
         {
             FormLogin formLogin = new FormLogin();
+            Hide();
             formLogin.ShowDialog();
             this.Close();
         }

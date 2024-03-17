@@ -22,9 +22,32 @@ namespace Project_JobApp.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Account acc = new Account(txtUsername.Text, txtPassword.Text);
-
+            Account acc = new Account(txtUsername.Text, txtPassword.Text, cbxRole.SelectedItem.ToString());
             
+            if (loginDAO.CheckLogin(acc))
+            {
+                if (acc.Vaitro == "JobSeeker")
+                {
+                    FormSeeker seeker = new FormSeeker();
+                    seeker.GetAccount = acc;
+                    Success();
+                    Hide();
+                    seeker.ShowDialog();
+                    this.Close();
+                }
+                else if (acc.Vaitro == "Hirer")
+                {
+                    FormHirer hirer = new FormHirer();
+                    Success();
+                    Hide();
+                    hirer.ShowDialog();
+                    this.Close();
+                }
+            }
+            else
+            {
+                Fail();
+            }
         }
 
         public void Success()
@@ -39,6 +62,7 @@ namespace Project_JobApp.Forms
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             FormSignup formSignup = new FormSignup();
+            Hide();
             formSignup.ShowDialog();
             this.Close();
         }

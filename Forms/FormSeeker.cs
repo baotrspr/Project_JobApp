@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project_JobApp.Classes;
+using Project_JobApp.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,7 @@ namespace Project_JobApp.Forms
 {
     public partial class FormSeeker : Form
     {
+        SeekerDAO seekerDAO = new SeekerDAO();
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -22,6 +25,19 @@ namespace Project_JobApp.Forms
         public FormSeeker()
         {
             InitializeComponent();
+        }
+
+        Account acc;
+        string userID;
+        public Account GetAccount
+        {
+            get { return acc; }
+            set { acc = value; }
+        }
+        public string GetUserID
+        {
+            get { return userID; }
+            set { userID = value; }
         }
 
         private void docker_MouseDown(object sender, MouseEventArgs e)
@@ -42,16 +58,21 @@ namespace Project_JobApp.Forms
 
         private void FormSeeker_Load(object sender, EventArgs e)
         {
+            lblInfo.Text = "Chào mừng " + acc.Userid;
             ucHome.BringToFront();
             rdbHome.Checked = true;
         }
         
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Hide();
-            FormLogin formLogin = new FormLogin();
-            formLogin.ShowDialog();
-            this.Close();
+            DialogResult dr = MessageBox.Show("Bạn muốn thoát khỏi phiên đăng nhập này?", "Thông báo" , MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (dr == DialogResult.OK)
+            {
+                Hide();
+                FormLogin formLogin = new FormLogin();
+                formLogin.ShowDialog();
+                this.Close();
+            }
         }
 
         private void rdbHome_CheckedChanged(object sender, EventArgs e)
@@ -90,6 +111,8 @@ namespace Project_JobApp.Forms
         {
             if (rdbAccount.Checked)
             {
+                ucAccount.GetAccount = acc;
+                //ucAccount = new UC.UCAccount(acc);
                 ucAccount.BringToFront();
             }
         }

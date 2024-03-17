@@ -49,9 +49,9 @@
     <Compile Include="Classes\Feeds.cs" />
     <Compile Include="Classes\Account.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DAO\SeekerDAO.cs" />
     <Compile Include="DAO\SignupDAO.cs" />
     <Compile Include="Database\DBAccess.cs" />
-    <Compile Include="Database\SeekerDAO.cs" />
     <Compile Include="Forms\FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,7 +88,6 @@
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\SeekerMOD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UC\UCAccount.cs">

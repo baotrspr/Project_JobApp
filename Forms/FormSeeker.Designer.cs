@@ -34,13 +34,14 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.pnTab = new System.Windows.Forms.Panel();
             this.pnNavigation = new System.Windows.Forms.Panel();
-            this.rdbHome = new System.Windows.Forms.RadioButton();
-            this.rdbFeed = new System.Windows.Forms.RadioButton();
-            this.rdbApplied = new System.Windows.Forms.RadioButton();
-            this.rdbAccount = new System.Windows.Forms.RadioButton();
             this.rdbInfo = new System.Windows.Forms.RadioButton();
-            this.ucHome = new Project_JobApp.UC.UCHome();
+            this.rdbAccount = new System.Windows.Forms.RadioButton();
+            this.rdbApplied = new System.Windows.Forms.RadioButton();
+            this.rdbFeed = new System.Windows.Forms.RadioButton();
+            this.rdbHome = new System.Windows.Forms.RadioButton();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.ucJobFeed = new Project_JobApp.UC.UCJobFeed();
+            this.ucHome = new Project_JobApp.UC.UCHome();
             this.ucAppliedJob = new Project_JobApp.UC.UCAppliedJob();
             this.ucProfile = new Project_JobApp.UC.UCProfile();
             this.ucAccount = new Project_JobApp.UC.UCAccount();
@@ -52,6 +53,7 @@
             // docker
             // 
             this.docker.BackColor = System.Drawing.Color.SeaGreen;
+            this.docker.Controls.Add(this.lblInfo);
             this.docker.Controls.Add(this.btnBack);
             this.docker.Controls.Add(this.btnMinimize);
             this.docker.Controls.Add(this.btnExit);
@@ -71,9 +73,9 @@
             this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBack.Location = new System.Drawing.Point(0, 0);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(50, 30);
+            this.btnBack.Size = new System.Drawing.Size(73, 30);
             this.btnBack.TabIndex = 2;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "Đăng xuất";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -112,11 +114,11 @@
             // pnTab
             // 
             this.pnTab.BackColor = System.Drawing.SystemColors.Control;
-            this.pnTab.Controls.Add(this.ucHome);
+            this.pnTab.Controls.Add(this.ucAccount);
             this.pnTab.Controls.Add(this.ucJobFeed);
+            this.pnTab.Controls.Add(this.ucHome);
             this.pnTab.Controls.Add(this.ucAppliedJob);
             this.pnTab.Controls.Add(this.ucProfile);
-            this.pnTab.Controls.Add(this.ucAccount);
             this.pnTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTab.Location = new System.Drawing.Point(200, 30);
             this.pnTab.Name = "pnTab";
@@ -137,65 +139,25 @@
             this.pnNavigation.Size = new System.Drawing.Size(200, 600);
             this.pnNavigation.TabIndex = 3;
             // 
-            // rdbHome
+            // rdbInfo
             // 
-            this.rdbHome.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbHome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rdbHome.FlatAppearance.BorderSize = 0;
-            this.rdbHome.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.rdbHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbHome.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbHome.Image = global::Project_JobApp.Properties.Resources.home;
-            this.rdbHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rdbHome.Location = new System.Drawing.Point(0, 0);
-            this.rdbHome.Name = "rdbHome";
-            this.rdbHome.Size = new System.Drawing.Size(200, 100);
-            this.rdbHome.TabIndex = 1;
-            this.rdbHome.Text = "    Trang chu";
-            this.rdbHome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdbHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.rdbHome.UseVisualStyleBackColor = true;
-            this.rdbHome.CheckedChanged += new System.EventHandler(this.rdbHome_CheckedChanged);
-            // 
-            // rdbFeed
-            // 
-            this.rdbFeed.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbFeed.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rdbFeed.FlatAppearance.BorderSize = 0;
-            this.rdbFeed.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.rdbFeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbFeed.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbFeed.Image = global::Project_JobApp.Properties.Resources.rectangle_list;
-            this.rdbFeed.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rdbFeed.Location = new System.Drawing.Point(0, 100);
-            this.rdbFeed.Name = "rdbFeed";
-            this.rdbFeed.Size = new System.Drawing.Size(200, 100);
-            this.rdbFeed.TabIndex = 2;
-            this.rdbFeed.Text = "    Bai dang";
-            this.rdbFeed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdbFeed.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.rdbFeed.UseVisualStyleBackColor = true;
-            this.rdbFeed.CheckedChanged += new System.EventHandler(this.rdbFeed_CheckedChanged);
-            // 
-            // rdbApplied
-            // 
-            this.rdbApplied.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbApplied.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rdbApplied.FlatAppearance.BorderSize = 0;
-            this.rdbApplied.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.rdbApplied.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbApplied.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbApplied.Image = global::Project_JobApp.Properties.Resources.table_list;
-            this.rdbApplied.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rdbApplied.Location = new System.Drawing.Point(0, 200);
-            this.rdbApplied.Name = "rdbApplied";
-            this.rdbApplied.Size = new System.Drawing.Size(200, 100);
-            this.rdbApplied.TabIndex = 3;
-            this.rdbApplied.Text = "    Da ung tuyen";
-            this.rdbApplied.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdbApplied.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.rdbApplied.UseVisualStyleBackColor = true;
-            this.rdbApplied.CheckedChanged += new System.EventHandler(this.rdbApplied_CheckedChanged);
+            this.rdbInfo.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rdbInfo.FlatAppearance.BorderSize = 0;
+            this.rdbInfo.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rdbInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbInfo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbInfo.Image = global::Project_JobApp.Properties.Resources.document;
+            this.rdbInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rdbInfo.Location = new System.Drawing.Point(0, 400);
+            this.rdbInfo.Name = "rdbInfo";
+            this.rdbInfo.Size = new System.Drawing.Size(200, 100);
+            this.rdbInfo.TabIndex = 5;
+            this.rdbInfo.Text = "    Thông tin";
+            this.rdbInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rdbInfo.UseVisualStyleBackColor = true;
+            this.rdbInfo.CheckedChanged += new System.EventHandler(this.rdbInfo_CheckedChanged);
             // 
             // rdbAccount
             // 
@@ -211,39 +173,84 @@
             this.rdbAccount.Name = "rdbAccount";
             this.rdbAccount.Size = new System.Drawing.Size(200, 100);
             this.rdbAccount.TabIndex = 4;
-            this.rdbAccount.Text = "    Tai khoan";
+            this.rdbAccount.Text = "    Tài khoản";
             this.rdbAccount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdbAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.rdbAccount.UseVisualStyleBackColor = true;
             this.rdbAccount.CheckedChanged += new System.EventHandler(this.rdbAccount_CheckedChanged);
             // 
-            // rdbInfo
+            // rdbApplied
             // 
-            this.rdbInfo.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.rdbInfo.FlatAppearance.BorderSize = 0;
-            this.rdbInfo.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.rdbInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbInfo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbInfo.Image = global::Project_JobApp.Properties.Resources.document;
-            this.rdbInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rdbInfo.Location = new System.Drawing.Point(0, 400);
-            this.rdbInfo.Name = "rdbInfo";
-            this.rdbInfo.Size = new System.Drawing.Size(200, 100);
-            this.rdbInfo.TabIndex = 5;
-            this.rdbInfo.Text = "    Thong tin";
-            this.rdbInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdbInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.rdbInfo.UseVisualStyleBackColor = true;
-            this.rdbInfo.CheckedChanged += new System.EventHandler(this.rdbInfo_CheckedChanged);
+            this.rdbApplied.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbApplied.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdbApplied.FlatAppearance.BorderSize = 0;
+            this.rdbApplied.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rdbApplied.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbApplied.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbApplied.Image = global::Project_JobApp.Properties.Resources.table_list;
+            this.rdbApplied.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rdbApplied.Location = new System.Drawing.Point(0, 200);
+            this.rdbApplied.Name = "rdbApplied";
+            this.rdbApplied.Size = new System.Drawing.Size(200, 100);
+            this.rdbApplied.TabIndex = 3;
+            this.rdbApplied.Text = "    Đã ứng tuyển";
+            this.rdbApplied.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbApplied.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rdbApplied.UseVisualStyleBackColor = true;
+            this.rdbApplied.CheckedChanged += new System.EventHandler(this.rdbApplied_CheckedChanged);
             // 
-            // ucHome
+            // rdbFeed
             // 
-            this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucHome.Location = new System.Drawing.Point(0, 0);
-            this.ucHome.Name = "ucHome";
-            this.ucHome.Size = new System.Drawing.Size(800, 600);
-            this.ucHome.TabIndex = 4;
+            this.rdbFeed.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbFeed.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdbFeed.FlatAppearance.BorderSize = 0;
+            this.rdbFeed.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rdbFeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbFeed.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbFeed.Image = global::Project_JobApp.Properties.Resources.rectangle_list;
+            this.rdbFeed.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rdbFeed.Location = new System.Drawing.Point(0, 100);
+            this.rdbFeed.Name = "rdbFeed";
+            this.rdbFeed.Size = new System.Drawing.Size(200, 100);
+            this.rdbFeed.TabIndex = 2;
+            this.rdbFeed.Text = "    Bài đăng";
+            this.rdbFeed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbFeed.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rdbFeed.UseVisualStyleBackColor = true;
+            this.rdbFeed.CheckedChanged += new System.EventHandler(this.rdbFeed_CheckedChanged);
+            // 
+            // rdbHome
+            // 
+            this.rdbHome.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdbHome.FlatAppearance.BorderSize = 0;
+            this.rdbHome.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rdbHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbHome.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbHome.Image = global::Project_JobApp.Properties.Resources.home;
+            this.rdbHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rdbHome.Location = new System.Drawing.Point(0, 0);
+            this.rdbHome.Name = "rdbHome";
+            this.rdbHome.Size = new System.Drawing.Size(200, 100);
+            this.rdbHome.TabIndex = 1;
+            this.rdbHome.Text = "    Trang chủ";
+            this.rdbHome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rdbHome.UseVisualStyleBackColor = true;
+            this.rdbHome.CheckedChanged += new System.EventHandler(this.rdbHome_CheckedChanged);
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblInfo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblInfo.Location = new System.Drawing.Point(73, 0);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(150, 30);
+            this.lblInfo.TabIndex = 3;
+            this.lblInfo.Text = "UserInfo";
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ucJobFeed
             // 
@@ -252,6 +259,14 @@
             this.ucJobFeed.Name = "ucJobFeed";
             this.ucJobFeed.Size = new System.Drawing.Size(800, 600);
             this.ucJobFeed.TabIndex = 3;
+            // 
+            // ucHome
+            // 
+            this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucHome.Location = new System.Drawing.Point(0, 0);
+            this.ucHome.Name = "ucHome";
+            this.ucHome.Size = new System.Drawing.Size(800, 600);
+            this.ucHome.TabIndex = 4;
             // 
             // ucAppliedJob
             // 
@@ -316,5 +331,6 @@
         private System.Windows.Forms.RadioButton rdbAccount;
         private System.Windows.Forms.RadioButton rdbApplied;
         private System.Windows.Forms.RadioButton rdbFeed;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

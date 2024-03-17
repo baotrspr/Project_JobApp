@@ -47,8 +47,8 @@ create table UNGTUYEN(
 	constraint PK_UNGTUYEN primary key (userid, idcongviec)
 )
 
-insert into TAIKHOAN(userid, matkhau, vaitro) values ('xuanbao2302', 'xuanbao2302','seeker')
-delete from TAIKHOAN
+insert into TAIKHOAN(userid, matkhau, vaitro) values ('xuanbao2302', 'xuanbao2302','Hirer')
+delete from TAIKHOAN where userid = 'xuanbao'
 
 select * from TAIKHOAN
-select userid, matkhau, vaitro from TAIKHOAN where userid = 'xuanbao2302'
+select * from TAIKHOAN where userid = 'xuanbao2302' and matkhau = 'xuanbao2302' and vaitro = 'Hirer'

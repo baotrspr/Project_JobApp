@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Project_JobApp.Classes
 {
-    internal class Account
+    public class Account
     {
         private string _userid;
         private string _matkhau;
@@ -24,6 +24,8 @@ namespace Project_JobApp.Classes
         private string _email;
         private Image _hinhanh;
         private string _thongtin;
+
+        //string[] invalid = "!_@_#_$_%_^_&_*_(_)_<_>_?_+_*_/_-_`_~_ _,_"'_";
 
         public Account() { }
         public Account(string userid, string matkhau, string vaitro, string ho, string ten, DateTime ngsinh, string cmnd, string gioitinh, string diachi, string sdt, string email, Image hinhanh, string thongtin)
