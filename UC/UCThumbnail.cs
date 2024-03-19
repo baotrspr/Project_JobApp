@@ -19,40 +19,55 @@ namespace Project_JobApp.UC
         {
             InitializeComponent();
         }
-        string tid;
+
         Feeds tfeed;
+
         public Feeds Tfeed
         {
             get { return tfeed; }
             set { tfeed = value; }
         }
-        private void UCThumbnail_Click(object sender, EventArgs e)
-        {
-            UCDetail detail = new UCDetail();
-            Form detailForm = new Form();
-            detailForm.Controls.Add(detail);
-            detailForm.ShowDialog();
-        }
-        public string GetTitle
+        public string Tieude
         {
             get { return lblTitle.Text; }
             set { lblTitle.Text = value; }
         }
 
-        public string GetDate
+        public string NgDang
         {
             get { return lblDate_1.Text; }
             set { lblDate_1.Text = value; }
         }
-        public string GetField
+        public string Nguoidang
         {
-            get { return lblField_1.Text; }
-            set { lblField_1.Text = value; }
+            get { return lblOwner_1.Text; }
+            set { lblOwner_1.Text = value; }
         }
-        public string GetID
+        public string Feedid
         {
             get { return lblID.Text; }
             set { lblID.Text = value; }
         }
+
+        public void Load(Feeds feed)
+        {
+            Tfeed = feed;
+            Tieude = feed.Tieude;
+            NgDang = feed.NgDang;
+            Feedid = feed.Feedid;
+            Nguoidang = feed.Userid;
+        }
+
+        private void UCThumbnail_Click(object sender, EventArgs e)
+        {
+            UCDetail detail = new UCDetail();
+            detail.Load(Tfeed);
+            Form detailForm = new Form();
+            detailForm.Size = new Size(810, 550);
+            detailForm.StartPosition = FormStartPosition.CenterScreen;
+            detailForm.Controls.Add(detail);
+            detailForm.ShowDialog();
+        }
+        
     }
 }

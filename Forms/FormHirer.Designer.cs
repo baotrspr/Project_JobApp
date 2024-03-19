@@ -34,21 +34,26 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.pnTab = new System.Windows.Forms.Panel();
             this.pnNavigation = new System.Windows.Forms.Panel();
-            this.btnList = new System.Windows.Forms.Button();
-            this.btnMyProfile = new System.Windows.Forms.Button();
-            this.btnAccount = new System.Windows.Forms.Button();
-            this.btnPostedJobs = new System.Windows.Forms.Button();
-            this.btnJobFeeds = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.rdbInfo = new System.Windows.Forms.RadioButton();
+            this.rdbAccount = new System.Windows.Forms.RadioButton();
+            this.rdbApplied = new System.Windows.Forms.RadioButton();
+            this.rdbFeed = new System.Windows.Forms.RadioButton();
+            this.rdbHome = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.ucAccount = new Project_JobApp.UC.UCAccount();
+            this.ucProfile = new Project_JobApp.UC.UCProfile();
+            this.ucHome = new Project_JobApp.UC.UCHome();
+            this.ucJobFeed = new Project_JobApp.UC.UCJobFeed();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.docker.SuspendLayout();
+            this.pnTab.SuspendLayout();
             this.pnNavigation.SuspendLayout();
             this.SuspendLayout();
             // 
             // docker
             // 
             this.docker.BackColor = System.Drawing.Color.SeaGreen;
+            this.docker.Controls.Add(this.lblInfo);
             this.docker.Controls.Add(this.btnBack);
             this.docker.Controls.Add(this.btnMinimize);
             this.docker.Controls.Add(this.btnExit);
@@ -68,9 +73,9 @@
             this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBack.Location = new System.Drawing.Point(0, 0);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(50, 30);
+            this.btnBack.Size = new System.Drawing.Size(71, 30);
             this.btnBack.TabIndex = 4;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "Đăng xuất";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -108,163 +113,214 @@
             // 
             // pnTab
             // 
-            this.pnTab.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnTab.Controls.Add(this.ucJobFeed);
+            this.pnTab.Controls.Add(this.ucHome);
+            this.pnTab.Controls.Add(this.ucProfile);
+            this.pnTab.Controls.Add(this.ucAccount);
+            this.pnTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTab.Location = new System.Drawing.Point(200, 30);
             this.pnTab.Name = "pnTab";
-            this.pnTab.Size = new System.Drawing.Size(800, 560);
+            this.pnTab.Size = new System.Drawing.Size(800, 600);
             this.pnTab.TabIndex = 6;
             // 
             // pnNavigation
             // 
             this.pnNavigation.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pnNavigation.Controls.Add(this.btnList);
-            this.pnNavigation.Controls.Add(this.btnMyProfile);
-            this.pnNavigation.Controls.Add(this.btnAccount);
-            this.pnNavigation.Controls.Add(this.btnPostedJobs);
-            this.pnNavigation.Controls.Add(this.btnJobFeeds);
-            this.pnNavigation.Controls.Add(this.btnHome);
+            this.pnNavigation.Controls.Add(this.radioButton1);
+            this.pnNavigation.Controls.Add(this.rdbInfo);
+            this.pnNavigation.Controls.Add(this.rdbAccount);
+            this.pnNavigation.Controls.Add(this.rdbApplied);
+            this.pnNavigation.Controls.Add(this.rdbFeed);
+            this.pnNavigation.Controls.Add(this.rdbHome);
             this.pnNavigation.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnNavigation.Location = new System.Drawing.Point(0, 30);
             this.pnNavigation.Name = "pnNavigation";
             this.pnNavigation.Size = new System.Drawing.Size(200, 600);
             this.pnNavigation.TabIndex = 5;
             // 
-            // btnList
+            // rdbInfo
             // 
-            this.btnList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnList.FlatAppearance.BorderSize = 0;
-            this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnList.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnList.Image = global::Project_JobApp.Properties.Resources.bookmark;
-            this.btnList.Location = new System.Drawing.Point(0, 300);
-            this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(200, 100);
-            this.btnList.TabIndex = 1;
-            this.btnList.Text = "    Applicants List";
-            this.btnList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnList.UseVisualStyleBackColor = false;
-            this.btnList.Click += new System.EventHandler(this.btnList_Click);
+            this.rdbInfo.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rdbInfo.FlatAppearance.BorderSize = 0;
+            this.rdbInfo.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rdbInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbInfo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbInfo.Image = global::Project_JobApp.Properties.Resources.document;
+            this.rdbInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rdbInfo.Location = new System.Drawing.Point(0, 400);
+            this.rdbInfo.Name = "rdbInfo";
+            this.rdbInfo.Size = new System.Drawing.Size(200, 100);
+            this.rdbInfo.TabIndex = 10;
+            this.rdbInfo.Text = "    Thông tin";
+            this.rdbInfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbInfo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rdbInfo.UseVisualStyleBackColor = true;
+            this.rdbInfo.CheckedChanged += new System.EventHandler(this.rdbInfo_CheckedChanged);
             // 
-            // btnMyProfile
+            // rdbAccount
             // 
-            this.btnMyProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnMyProfile.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnMyProfile.FlatAppearance.BorderSize = 0;
-            this.btnMyProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMyProfile.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMyProfile.Image = global::Project_JobApp.Properties.Resources.document;
-            this.btnMyProfile.Location = new System.Drawing.Point(0, 400);
-            this.btnMyProfile.Name = "btnMyProfile";
-            this.btnMyProfile.Size = new System.Drawing.Size(200, 100);
-            this.btnMyProfile.TabIndex = 0;
-            this.btnMyProfile.Text = "    Profile";
-            this.btnMyProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMyProfile.UseVisualStyleBackColor = false;
-            this.btnMyProfile.Click += new System.EventHandler(this.btnMyProfile_Click);
+            this.rdbAccount.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbAccount.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rdbAccount.FlatAppearance.BorderSize = 0;
+            this.rdbAccount.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rdbAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbAccount.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbAccount.Image = global::Project_JobApp.Properties.Resources.user;
+            this.rdbAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rdbAccount.Location = new System.Drawing.Point(0, 500);
+            this.rdbAccount.Name = "rdbAccount";
+            this.rdbAccount.Size = new System.Drawing.Size(200, 100);
+            this.rdbAccount.TabIndex = 9;
+            this.rdbAccount.Text = "    Tài khoản";
+            this.rdbAccount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rdbAccount.UseVisualStyleBackColor = true;
+            this.rdbAccount.CheckedChanged += new System.EventHandler(this.rdbAccount_CheckedChanged);
             // 
-            // btnAccount
+            // rdbApplied
             // 
-            this.btnAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAccount.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnAccount.FlatAppearance.BorderSize = 0;
-            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccount.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccount.Image = global::Project_JobApp.Properties.Resources.user;
-            this.btnAccount.Location = new System.Drawing.Point(0, 500);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(200, 100);
-            this.btnAccount.TabIndex = 0;
-            this.btnAccount.Text = "    My Account";
-            this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAccount.UseVisualStyleBackColor = false;
-            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
+            this.rdbApplied.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbApplied.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdbApplied.FlatAppearance.BorderSize = 0;
+            this.rdbApplied.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rdbApplied.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbApplied.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbApplied.Image = global::Project_JobApp.Properties.Resources.table_list;
+            this.rdbApplied.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rdbApplied.Location = new System.Drawing.Point(0, 200);
+            this.rdbApplied.Name = "rdbApplied";
+            this.rdbApplied.Size = new System.Drawing.Size(200, 100);
+            this.rdbApplied.TabIndex = 8;
+            this.rdbApplied.Text = "    Danh sách";
+            this.rdbApplied.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbApplied.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rdbApplied.UseVisualStyleBackColor = true;
             // 
-            // btnPostedJobs
+            // rdbFeed
             // 
-            this.btnPostedJobs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnPostedJobs.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPostedJobs.FlatAppearance.BorderSize = 0;
-            this.btnPostedJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPostedJobs.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPostedJobs.Image = global::Project_JobApp.Properties.Resources.bookmark;
-            this.btnPostedJobs.Location = new System.Drawing.Point(0, 200);
-            this.btnPostedJobs.Name = "btnPostedJobs";
-            this.btnPostedJobs.Size = new System.Drawing.Size(200, 100);
-            this.btnPostedJobs.TabIndex = 0;
-            this.btnPostedJobs.Text = "    Posted Jobs";
-            this.btnPostedJobs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPostedJobs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPostedJobs.UseVisualStyleBackColor = false;
-            this.btnPostedJobs.Click += new System.EventHandler(this.btnPostedJobs_Click);
+            this.rdbFeed.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbFeed.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdbFeed.FlatAppearance.BorderSize = 0;
+            this.rdbFeed.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rdbFeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbFeed.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbFeed.Image = global::Project_JobApp.Properties.Resources.rectangle_list;
+            this.rdbFeed.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rdbFeed.Location = new System.Drawing.Point(0, 100);
+            this.rdbFeed.Name = "rdbFeed";
+            this.rdbFeed.Size = new System.Drawing.Size(200, 100);
+            this.rdbFeed.TabIndex = 7;
+            this.rdbFeed.Text = "    Bài đăng";
+            this.rdbFeed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbFeed.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rdbFeed.UseVisualStyleBackColor = true;
+            this.rdbFeed.CheckedChanged += new System.EventHandler(this.rdbFeed_CheckedChanged);
             // 
-            // btnJobFeeds
+            // rdbHome
             // 
-            this.btnJobFeeds.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnJobFeeds.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnJobFeeds.FlatAppearance.BorderSize = 0;
-            this.btnJobFeeds.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnJobFeeds.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJobFeeds.Image = global::Project_JobApp.Properties.Resources.users_alt;
-            this.btnJobFeeds.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnJobFeeds.Location = new System.Drawing.Point(0, 100);
-            this.btnJobFeeds.Name = "btnJobFeeds";
-            this.btnJobFeeds.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnJobFeeds.Size = new System.Drawing.Size(200, 100);
-            this.btnJobFeeds.TabIndex = 0;
-            this.btnJobFeeds.Text = "    Job Feeds";
-            this.btnJobFeeds.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnJobFeeds.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnJobFeeds.UseVisualStyleBackColor = false;
-            this.btnJobFeeds.Click += new System.EventHandler(this.btnJobFeeds_Click);
+            this.rdbHome.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rdbHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdbHome.FlatAppearance.BorderSize = 0;
+            this.rdbHome.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rdbHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbHome.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbHome.Image = global::Project_JobApp.Properties.Resources.home;
+            this.rdbHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rdbHome.Location = new System.Drawing.Point(0, 0);
+            this.rdbHome.Name = "rdbHome";
+            this.rdbHome.Size = new System.Drawing.Size(200, 100);
+            this.rdbHome.TabIndex = 6;
+            this.rdbHome.Text = "    Trang chủ";
+            this.rdbHome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.rdbHome.UseVisualStyleBackColor = true;
+            this.rdbHome.CheckedChanged += new System.EventHandler(this.rdbHome_CheckedChanged);
             // 
-            // btnHome
+            // radioButton1
             // 
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.Image = global::Project_JobApp.Properties.Resources.home;
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(0, 0);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(200, 100);
-            this.btnHome.TabIndex = 0;
-            this.btnHome.Text = "    Home";
-            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radioButton1.FlatAppearance.BorderSize = 0;
+            this.radioButton1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Image = global::Project_JobApp.Properties.Resources.info;
+            this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.radioButton1.Location = new System.Drawing.Point(0, 300);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(200, 100);
+            this.radioButton1.TabIndex = 11;
+            this.radioButton1.Text = "    Danh sách Job";
+            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // btnEdit
+            // ucAccount
             // 
-            this.btnEdit.Location = new System.Drawing.Point(373, 596);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(163, 23);
-            this.btnEdit.TabIndex = 0;
-            this.btnEdit.Text = "Chỉnh sửa thông tin";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.ucAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAccount.GetAccount = null;
+            this.ucAccount.Location = new System.Drawing.Point(0, 0);
+            this.ucAccount.Matkhau = "";
+            this.ucAccount.Name = "ucAccount";
+            this.ucAccount.Size = new System.Drawing.Size(800, 600);
+            this.ucAccount.TabIndex = 0;
+            this.ucAccount.Userid = "";
             // 
-            // btnSave
+            // ucProfile
             // 
-            this.btnSave.Location = new System.Drawing.Point(622, 596);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(163, 23);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "Lưu thông tin";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.ucProfile.BackColor = System.Drawing.Color.White;
+            this.ucProfile.Cmnd = "";
+            this.ucProfile.Diachi = "";
+            this.ucProfile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucProfile.Email = "";
+            this.ucProfile.GetAccount = null;
+            this.ucProfile.Ho = "";
+            this.ucProfile.Location = new System.Drawing.Point(0, 0);
+            this.ucProfile.Name = "ucProfile";
+            this.ucProfile.Ngsinh = "17/03/2024";
+            this.ucProfile.Sdt = "";
+            this.ucProfile.Size = new System.Drawing.Size(800, 600);
+            this.ucProfile.TabIndex = 1;
+            this.ucProfile.Ten = "";
+            this.ucProfile.Thongtin = "";
+            this.ucProfile.Userid = "";
+            // 
+            // ucHome
+            // 
+            this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucHome.Location = new System.Drawing.Point(0, 0);
+            this.ucHome.Name = "ucHome";
+            this.ucHome.Size = new System.Drawing.Size(800, 600);
+            this.ucHome.TabIndex = 2;
+            // 
+            // ucJobFeed
+            // 
+            this.ucJobFeed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucJobFeed.Location = new System.Drawing.Point(0, 0);
+            this.ucJobFeed.Name = "ucJobFeed";
+            this.ucJobFeed.Size = new System.Drawing.Size(800, 600);
+            this.ucJobFeed.TabIndex = 3;
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblInfo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblInfo.Location = new System.Drawing.Point(71, 0);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(150, 30);
+            this.lblInfo.TabIndex = 5;
+            this.lblInfo.Text = "UserInfo";
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FormHirer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 630);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.pnTab);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.pnNavigation);
             this.Controls.Add(this.docker);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -273,6 +329,7 @@
             this.Text = "FormHirer";
             this.Load += new System.EventHandler(this.FormHirer_Load);
             this.docker.ResumeLayout(false);
+            this.pnTab.ResumeLayout(false);
             this.pnNavigation.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -285,14 +342,17 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel pnTab;
         private System.Windows.Forms.Panel pnNavigation;
-        private System.Windows.Forms.Button btnList;
-        private System.Windows.Forms.Button btnMyProfile;
-        private System.Windows.Forms.Button btnAccount;
-        private System.Windows.Forms.Button btnPostedJobs;
-        private System.Windows.Forms.Button btnJobFeeds;
-        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnSave;
+        private UC.UCProfile ucProfile;
+        private UC.UCAccount ucAccount;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdbInfo;
+        private System.Windows.Forms.RadioButton rdbAccount;
+        private System.Windows.Forms.RadioButton rdbApplied;
+        private System.Windows.Forms.RadioButton rdbFeed;
+        private System.Windows.Forms.RadioButton rdbHome;
+        private UC.UCJobFeed ucJobFeed;
+        private UC.UCHome ucHome;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

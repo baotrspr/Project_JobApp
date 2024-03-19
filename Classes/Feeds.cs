@@ -10,14 +10,12 @@ namespace Project_JobApp.Classes
     public class Feeds
     {
         string feedid;
+        string genre;
         string userid;
         string title;
         string date;
         string content;
-        Image photo;
-        string salary;
-        string field;
-        int like;
+        string jobdetail;
 
         public Feeds() { }
         public string Feedid
@@ -30,53 +28,48 @@ namespace Project_JobApp.Classes
             get { return userid; }
             set { userid = value; }
         }
-        public string Title
+        public string Tieude
         {
             get { return title; }
             set { title = value; }
         }
 
-        public string Date
+        public string NgDang
         {
             get { return date; }
             set { date = value; }
         }
-        public Image Photo
+        public string Loaibai
         {
-            get { return photo; }
-            set { photo = value; }
+            get { return genre; }
+            set { genre = value; }
         }
-        public string Salary
-        {
-            get { return salary; }
-            set { salary = value; }
-        }
-        public string Field
-        {
-            get { return field; }
-            set {  field = value; }
-        }
-        public int Like
-        {
-            get { return like; }
-            set { like = value; }
-        }
-        public string Content
+
+        public string Noidung
         {
             get { return content; }
             set {  content = value; }
         }
-        public Feeds(string feedid, string userid, string title, string date, Image photo, string content, string salary, string field, int like)
+        public string Jobdetail
+        {
+            get { return jobdetail; }
+            set 
+            {
+                if (value != null)
+                    jobdetail = value;
+                else
+                    jobdetail = "none";
+            }
+        }
+        public Feeds(string feedid, string userid, string title, string date, string content, string genre, string jobdetail)
         {
             Feedid = feedid;
             Userid = userid;
-            Title = title;
-            Date = date;
-            Content = content;
-            Photo = photo;
-            Salary = salary;
-            Field = field;
-            Like = like;
+            Tieude = title;
+            NgDang = date;
+            Noidung = content;
+            Loaibai = genre;
+            Jobdetail = jobdetail;
         }
     }
 }

@@ -38,6 +38,7 @@ namespace Project_JobApp.Forms
                 else if (acc.Vaitro == "Hirer")
                 {
                     FormHirer hirer = new FormHirer();
+                    hirer.GetAccount = acc;
                     Success();
                     Hide();
                     hirer.ShowDialog();

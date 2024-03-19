@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.docker = new System.Windows.Forms.Panel();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.pnTab = new System.Windows.Forms.Panel();
+            this.ucJobFeed = new Project_JobApp.UC.UCJobFeed();
+            this.ucAccount = new Project_JobApp.UC.UCAccount();
+            this.ucProfile = new Project_JobApp.UC.UCProfile();
+            this.ucHome = new Project_JobApp.UC.UCHome();
+            this.ucAppliedJob = new Project_JobApp.UC.UCAppliedJob();
             this.pnNavigation = new System.Windows.Forms.Panel();
             this.rdbInfo = new System.Windows.Forms.RadioButton();
             this.rdbAccount = new System.Windows.Forms.RadioButton();
             this.rdbApplied = new System.Windows.Forms.RadioButton();
             this.rdbFeed = new System.Windows.Forms.RadioButton();
             this.rdbHome = new System.Windows.Forms.RadioButton();
-            this.lblInfo = new System.Windows.Forms.Label();
-            this.ucJobFeed = new Project_JobApp.UC.UCJobFeed();
-            this.ucHome = new Project_JobApp.UC.UCHome();
-            this.ucAppliedJob = new Project_JobApp.UC.UCAppliedJob();
-            this.ucProfile = new Project_JobApp.UC.UCProfile();
-            this.ucAccount = new Project_JobApp.UC.UCAccount();
             this.docker.SuspendLayout();
             this.pnTab.SuspendLayout();
             this.pnNavigation.SuspendLayout();
@@ -63,6 +63,19 @@
             this.docker.Size = new System.Drawing.Size(1000, 30);
             this.docker.TabIndex = 0;
             this.docker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.docker_MouseDown);
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.BackColor = System.Drawing.Color.Transparent;
+            this.lblInfo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblInfo.Location = new System.Drawing.Point(73, 0);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(150, 30);
+            this.lblInfo.TabIndex = 3;
+            this.lblInfo.Text = "UserInfo";
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnBack
             // 
@@ -114,16 +127,70 @@
             // pnTab
             // 
             this.pnTab.BackColor = System.Drawing.SystemColors.Control;
-            this.pnTab.Controls.Add(this.ucAccount);
             this.pnTab.Controls.Add(this.ucJobFeed);
+            this.pnTab.Controls.Add(this.ucAccount);
+            this.pnTab.Controls.Add(this.ucProfile);
             this.pnTab.Controls.Add(this.ucHome);
             this.pnTab.Controls.Add(this.ucAppliedJob);
-            this.pnTab.Controls.Add(this.ucProfile);
             this.pnTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTab.Location = new System.Drawing.Point(200, 30);
             this.pnTab.Name = "pnTab";
             this.pnTab.Size = new System.Drawing.Size(800, 600);
             this.pnTab.TabIndex = 4;
+            // 
+            // ucJobFeed
+            // 
+            this.ucJobFeed.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucJobFeed.Location = new System.Drawing.Point(0, 0);
+            this.ucJobFeed.Name = "ucJobFeed";
+            this.ucJobFeed.Size = new System.Drawing.Size(800, 600);
+            this.ucJobFeed.TabIndex = 3;
+            // 
+            // ucAccount
+            // 
+            this.ucAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAccount.GetAccount = null;
+            this.ucAccount.Location = new System.Drawing.Point(0, 0);
+            this.ucAccount.Matkhau = "";
+            this.ucAccount.Name = "ucAccount";
+            this.ucAccount.Size = new System.Drawing.Size(800, 600);
+            this.ucAccount.TabIndex = 5;
+            this.ucAccount.Userid = "";
+            // 
+            // ucProfile
+            // 
+            this.ucProfile.BackColor = System.Drawing.Color.White;
+            this.ucProfile.Cmnd = "";
+            this.ucProfile.Diachi = "";
+            this.ucProfile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucProfile.Email = "";
+            this.ucProfile.GetAccount = null;
+            this.ucProfile.Ho = "";
+            this.ucProfile.Location = new System.Drawing.Point(0, 0);
+            this.ucProfile.Name = "ucProfile";
+            this.ucProfile.Ngsinh = "17/03/2024";
+            this.ucProfile.Sdt = "";
+            this.ucProfile.Size = new System.Drawing.Size(800, 600);
+            this.ucProfile.TabIndex = 1;
+            this.ucProfile.Ten = "";
+            this.ucProfile.Thongtin = "";
+            this.ucProfile.Userid = "";
+            // 
+            // ucHome
+            // 
+            this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucHome.Location = new System.Drawing.Point(0, 0);
+            this.ucHome.Name = "ucHome";
+            this.ucHome.Size = new System.Drawing.Size(800, 600);
+            this.ucHome.TabIndex = 4;
+            // 
+            // ucAppliedJob
+            // 
+            this.ucAppliedJob.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAppliedJob.Location = new System.Drawing.Point(0, 0);
+            this.ucAppliedJob.Name = "ucAppliedJob";
+            this.ucAppliedJob.Size = new System.Drawing.Size(800, 600);
+            this.ucAppliedJob.TabIndex = 2;
             // 
             // pnNavigation
             // 
@@ -239,59 +306,6 @@
             this.rdbHome.UseVisualStyleBackColor = true;
             this.rdbHome.CheckedChanged += new System.EventHandler(this.rdbHome_CheckedChanged);
             // 
-            // lblInfo
-            // 
-            this.lblInfo.BackColor = System.Drawing.Color.Transparent;
-            this.lblInfo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblInfo.Location = new System.Drawing.Point(73, 0);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(150, 30);
-            this.lblInfo.TabIndex = 3;
-            this.lblInfo.Text = "UserInfo";
-            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ucJobFeed
-            // 
-            this.ucJobFeed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucJobFeed.Location = new System.Drawing.Point(0, 0);
-            this.ucJobFeed.Name = "ucJobFeed";
-            this.ucJobFeed.Size = new System.Drawing.Size(800, 600);
-            this.ucJobFeed.TabIndex = 3;
-            // 
-            // ucHome
-            // 
-            this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucHome.Location = new System.Drawing.Point(0, 0);
-            this.ucHome.Name = "ucHome";
-            this.ucHome.Size = new System.Drawing.Size(800, 600);
-            this.ucHome.TabIndex = 4;
-            // 
-            // ucAppliedJob
-            // 
-            this.ucAppliedJob.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucAppliedJob.Location = new System.Drawing.Point(0, 0);
-            this.ucAppliedJob.Name = "ucAppliedJob";
-            this.ucAppliedJob.Size = new System.Drawing.Size(800, 600);
-            this.ucAppliedJob.TabIndex = 2;
-            // 
-            // ucProfile
-            // 
-            this.ucProfile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucProfile.Location = new System.Drawing.Point(0, 0);
-            this.ucProfile.Name = "ucProfile";
-            this.ucProfile.Size = new System.Drawing.Size(800, 600);
-            this.ucProfile.TabIndex = 1;
-            // 
-            // ucAccount
-            // 
-            this.ucAccount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucAccount.Location = new System.Drawing.Point(0, 0);
-            this.ucAccount.Name = "ucAccount";
-            this.ucAccount.Size = new System.Drawing.Size(800, 600);
-            this.ucAccount.TabIndex = 0;
-            // 
             // FormSeeker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,12 +339,12 @@
         private UC.UCJobFeed ucJobFeed;
         private UC.UCAppliedJob ucAppliedJob;
         private UC.UCProfile ucProfile;
-        private UC.UCAccount ucAccount;
         private System.Windows.Forms.RadioButton rdbHome;
         private System.Windows.Forms.RadioButton rdbInfo;
         private System.Windows.Forms.RadioButton rdbAccount;
         private System.Windows.Forms.RadioButton rdbApplied;
         private System.Windows.Forms.RadioButton rdbFeed;
         private System.Windows.Forms.Label lblInfo;
+        private UC.UCAccount ucAccount;
     }
 }

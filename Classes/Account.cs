@@ -16,19 +16,18 @@ namespace Project_JobApp.Classes
         private string _vaitro;
         private string _ho;
         private string _ten;
-        private DateTime _ngsinh;
+        private string _ngsinh;
         private string _cmnd;
         private string _gioitinh;
         private string _diachi;
         private string _sdt;
         private string _email;
-        private Image _hinhanh;
         private string _thongtin;
 
         //string[] invalid = "!_@_#_$_%_^_&_*_(_)_<_>_?_+_*_/_-_`_~_ _,_"'_";
 
         public Account() { }
-        public Account(string userid, string matkhau, string vaitro, string ho, string ten, DateTime ngsinh, string cmnd, string gioitinh, string diachi, string sdt, string email, Image hinhanh, string thongtin)
+        public Account(string userid, string matkhau, string vaitro, string ho, string ten, string ngsinh, string cmnd, string gioitinh, string diachi, string sdt, string email, string thongtin)
         {
             Userid = userid;
             Matkhau = matkhau;
@@ -41,7 +40,6 @@ namespace Project_JobApp.Classes
             Diachi = diachi;
             Sdt = sdt;
             Email = email;
-            Hinhanh = hinhanh;
             Thongtin = thongtin;
         }
         public Account(string userid, string matkhau)
@@ -54,6 +52,20 @@ namespace Project_JobApp.Classes
             Userid = userid;
             Matkhau = matkhau;
             Vaitro = vaitro;
+        }
+
+        public Account(string userid, string ho, string ten, string ngsinh, string cmnd, string gioitinh, string diachi, string sdt, string email, string thongtin)
+        {
+            Userid = userid;
+            Ho = ho;
+            Ten = ten;
+            Ngsinh = ngsinh;
+            Cmnd = cmnd;
+            Gioitinh = gioitinh;
+            Diachi = diachi;
+            Sdt = sdt;
+            Email = email;
+            Thongtin = thongtin;
         }
         public string Userid
         {
@@ -80,7 +92,7 @@ namespace Project_JobApp.Classes
             get { return _ten;}
             set { _ten = value;}
         }
-        public DateTime Ngsinh
+        public string Ngsinh
         {
             get { return _ngsinh;}
             set { _ngsinh = value;}
@@ -109,11 +121,6 @@ namespace Project_JobApp.Classes
         {
             get { return _email; }
             set { _email = value;}
-        }
-        public Image Hinhanh
-        {
-            get { return _hinhanh;}
-            set { _hinhanh = value;}
         }
         public string Thongtin
         {

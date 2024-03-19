@@ -31,8 +31,8 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblDate_1 = new System.Windows.Forms.Label();
-            this.lblField = new System.Windows.Forms.Label();
-            this.lblField_1 = new System.Windows.Forms.Label();
+            this.lblOwner = new System.Windows.Forms.Label();
+            this.lblOwner_1 = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -65,23 +65,23 @@
             this.lblDate_1.TabIndex = 1;
             this.lblDate_1.Text = "Ngày đăng";
             // 
-            // lblField
+            // lblOwner
             // 
-            this.lblField.AutoSize = true;
-            this.lblField.Location = new System.Drawing.Point(3, 124);
-            this.lblField.Name = "lblField";
-            this.lblField.Size = new System.Drawing.Size(51, 13);
-            this.lblField.TabIndex = 1;
-            this.lblField.Text = "Lĩnh vực";
+            this.lblOwner.AutoSize = true;
+            this.lblOwner.Location = new System.Drawing.Point(3, 124);
+            this.lblOwner.Name = "lblOwner";
+            this.lblOwner.Size = new System.Drawing.Size(63, 13);
+            this.lblOwner.TabIndex = 1;
+            this.lblOwner.Text = "Người đăng";
             // 
-            // lblField_1
+            // lblOwner_1
             // 
-            this.lblField_1.AutoSize = true;
-            this.lblField_1.Location = new System.Drawing.Point(87, 124);
-            this.lblField_1.Name = "lblField_1";
-            this.lblField_1.Size = new System.Drawing.Size(51, 13);
-            this.lblField_1.TabIndex = 1;
-            this.lblField_1.Text = "Lĩnh vực";
+            this.lblOwner_1.AutoSize = true;
+            this.lblOwner_1.Location = new System.Drawing.Point(87, 124);
+            this.lblOwner_1.Name = "lblOwner_1";
+            this.lblOwner_1.Size = new System.Drawing.Size(63, 13);
+            this.lblOwner_1.TabIndex = 1;
+            this.lblOwner_1.Text = "Người đăng";
             // 
             // lblID
             // 
@@ -108,8 +108,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.lblField_1);
-            this.Controls.Add(this.lblField);
+            this.Controls.Add(this.lblOwner_1);
+            this.Controls.Add(this.lblOwner);
             this.Controls.Add(this.lblDate_1);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.label1);
@@ -128,8 +128,8 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblDate_1;
-        private System.Windows.Forms.Label lblField;
-        private System.Windows.Forms.Label lblField_1;
+        private System.Windows.Forms.Label lblOwner;
+        private System.Windows.Forms.Label lblOwner_1;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label label1;
     }

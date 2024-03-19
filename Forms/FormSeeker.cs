@@ -15,7 +15,6 @@ namespace Project_JobApp.Forms
 {
     public partial class FormSeeker : Form
     {
-        SeekerDAO seekerDAO = new SeekerDAO();
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -28,16 +27,10 @@ namespace Project_JobApp.Forms
         }
 
         Account acc;
-        string userID;
         public Account GetAccount
         {
             get { return acc; }
             set { acc = value; }
-        }
-        public string GetUserID
-        {
-            get { return userID; }
-            set { userID = value; }
         }
 
         private void docker_MouseDown(object sender, MouseEventArgs e)
@@ -87,6 +80,7 @@ namespace Project_JobApp.Forms
         {
             if (rdbFeed.Checked)
             {
+                ucJobFeed.Load(acc);
                 ucJobFeed.BringToFront();
             }
         }
@@ -103,6 +97,7 @@ namespace Project_JobApp.Forms
         {
             if (rdbInfo.Checked)
             {
+                ucProfile.Load(acc);
                 ucProfile.BringToFront();
             }
         }
@@ -110,9 +105,8 @@ namespace Project_JobApp.Forms
         private void rdbAccount_CheckedChanged(object sender, EventArgs e)
         {
             if (rdbAccount.Checked)
-            {
-                ucAccount.GetAccount = acc;
-                //ucAccount = new UC.UCAccount(acc);
+            { 
+                ucAccount.Load(acc);
                 ucAccount.BringToFront();
             }
         }

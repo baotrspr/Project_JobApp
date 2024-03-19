@@ -16,11 +16,21 @@ namespace Project_JobApp.Database
 
         public bool Execute(string sqlStr)
         {
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(sqlStr, conn);
-            var query = cmd.ExecuteNonQuery();
-            conn.Close();
-            if (query > 0) return true; else return false;
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                var query = cmd.ExecuteNonQuery();
+                MessageBox.Show(query.ToString());
+                conn.Close(); 
+                if (query > 0) return true; else return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            
         }
 
         public DataTable ExecuteSelect(string sqlStr)
@@ -51,13 +61,19 @@ namespace Project_JobApp.Database
             conn.Close();
             return dt;
         }
-        public DataRow SelectRow(string sqlStr)
+        public DataTable SelectRow(string sqlStr)
         {
-            DataRow dr = null;
+            DataTable dt = new DataTable();
             conn.Open();
             SqlCommand cmd = new SqlCommand(sqlStr, conn);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            if (sdr.HasRows)
+            {
+                dt.Load(sdr);
+            }
+            sdr.Close();
             conn.Close();
-            return dr;
+            return dt;
         }
 
     }

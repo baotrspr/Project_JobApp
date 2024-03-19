@@ -48,9 +48,12 @@
   <ItemGroup>
     <Compile Include="Classes\Feeds.cs" />
     <Compile Include="Classes\Account.cs" />
+    <Compile Include="Classes\Job.cs" />
+    <Compile Include="DAO\BaiDangDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\SeekerDAO.cs" />
     <Compile Include="DAO\SignupDAO.cs" />
+    <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="Database\DBAccess.cs" />
     <Compile Include="Forms\FormAdmin.cs">
       <SubType>Form</SubType>
@@ -108,12 +111,6 @@
     <Compile Include="UC\UCAppliedJob.Designer.cs">
       <DependentUpon>UCAppliedJob.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\UCCV.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UCCV.Designer.cs">
-      <DependentUpon>UCCV.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC\UCDetail.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,24 +128,6 @@
     </Compile>
     <Compile Include="UC\UCJobFeed.Designer.cs">
       <DependentUpon>UCJobFeed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\UCList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UCList.Designer.cs">
-      <DependentUpon>UCList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\UCPostedJob.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UCPostedJob.Designer.cs">
-      <DependentUpon>UCPostedJob.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\UCPostManager.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UCPostManager.Designer.cs">
-      <DependentUpon>UCPostManager.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\UCProfile.cs">
       <SubType>UserControl</SubType>
@@ -199,9 +178,6 @@
     <EmbeddedResource Include="UC\UCAppliedJob.resx">
       <DependentUpon>UCAppliedJob.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCCV.resx">
-      <DependentUpon>UCCV.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCDetail.resx">
       <DependentUpon>UCDetail.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,15 +186,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCJobFeed.resx">
       <DependentUpon>UCJobFeed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCList.resx">
-      <DependentUpon>UCList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCPostedJob.resx">
-      <DependentUpon>UCPostedJob.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UCPostManager.resx">
-      <DependentUpon>UCPostManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCProfile.resx">
       <DependentUpon>UCProfile.cs</DependentUpon>
@@ -239,7 +206,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\more-info-icon.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add.png" />
   </ItemGroup>

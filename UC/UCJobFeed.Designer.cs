@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flpData = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnCreate);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -60,6 +62,21 @@
             this.flpData.Name = "flpData";
             this.flpData.Size = new System.Drawing.Size(800, 550);
             this.flpData.TabIndex = 3;
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCreate.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCreate.FlatAppearance.BorderSize = 0;
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.Location = new System.Drawing.Point(648, 0);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(152, 50);
+            this.btnCreate.TabIndex = 2;
+            this.btnCreate.Text = "Tạo bài đăng mới";
+            this.btnCreate.UseVisualStyleBackColor = false;
             // 
             // UCJobFeed
             // 
@@ -80,5 +97,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flpData;
+        private System.Windows.Forms.Button btnCreate;
     }
 }
