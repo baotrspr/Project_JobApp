@@ -16,7 +16,7 @@ namespace Project_JobApp.DAO
         DBAccess dba = new DBAccess();
         public bool Chinhsua(Account acc)
         {
-            string sqlStr = string.Format("update TAIKHOAN set ho = '{0}', ten = '{1}', ngsinh = '{2}', cmnd = '{3}', gioitinh = '{4}', diachi = '{5}', sdt = '{6}', email = '{7}', thongtin = '{8}' where userid = '{9}'",
+            string sqlStr = string.Format("update TAIKHOAN set ho = N'{0}', ten = N'{1}', ngsinh = '{2}', cmnd = '{3}', gioitinh = N'{4}', diachi = N'{5}', sdt = '{6}', email = '{7}', thongtin = N'{8}' where userid = '{9}'",
                                             acc.Ho, acc.Ten, acc.Ngsinh, acc.Cmnd, acc.Gioitinh, acc.Diachi, acc.Sdt, acc.Email, acc.Thongtin, acc.Userid);
             if (dba.Execute(sqlStr))
             {

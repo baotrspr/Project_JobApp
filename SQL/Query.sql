@@ -3,15 +3,15 @@
 create table TAIKHOAN(
 	userid varchar(255) constraint PK_Account primary key,
 	matkhau varchar(255) not null,
-	vaitro varchar(30),
-	ho varchar(255) ,
-	ten varchar(255),
-	ngsinh varchar(10),
-	cmnd varchar(12) check (len(cmnd)=12),
-	gioitinh varchar(10),
-	diachi varchar(255),
-	sdt varchar(10) check (len(sdt) = 10),
-	email varchar(255) check (email like '%@%'),
+	vaitro nvarchar(30),
+	ho nvarchar(255) ,
+	ten nvarchar(255),
+	ngsinh nvarchar(10),
+	cmnd nvarchar(12) check (len(cmnd)=12),
+	gioitinh nvarchar(10),
+	diachi nvarchar(255),
+	sdt nvarchar(10) check (len(sdt) = 10),
+	email nvarchar(255) check (email like '%@%'),
 	thongtin text,
 )
 
@@ -19,8 +19,8 @@ create table TAIKHOAN(
 
 create table BAIDANG(
 	idbai varchar(255) constraint PK_BAIDANG primary key,
-	loaibai varchar(255) not null,
-	tieude varchar(255) not null,
+	loaibai nvarchar(255) not null,
+	tieude nvarchar(255) not null,
 	noidung text,
 	ngaydang varchar(10),
 	userid varchar(255) constraint FK_BAIDANG_TK foreign key references TAIKHOAN(userid),
@@ -29,10 +29,10 @@ create table BAIDANG(
 create table CONGVIEC(
 	idcongviec varchar(255) constraint PK_CONGVIEC primary key,
 	tencongviec varchar(255) not null,
-	mucluong varchar(255),
-	linhvuc varchar(255),
+	mucluong nvarchar(255),
+	linhvuc nvarchar(255),
 	thongtin text,
-	trinhdo varchar(255),
+	trinhdo nvarchar(255),
 	userid varchar(255) constraint FK_CONGVIEC_TK foreign key references TAIKHOAN(userid),
 )
 
@@ -41,11 +41,15 @@ create table UNGTUYEN(
 	userid varchar(255) constraint FK_UNGTUYEN_TK foreign key references TAIKHOAN(userid),
 	idcongviec varchar(255) constraint FK_UNGTUYEN_CV foreign key references CONGVIEC(idcongviec),
 	thoigian datetime,
-	trangthaiphanhoi varchar(255),
+	trangthaiphanhoi nvarchar(255),
 	cv varbinary(max),
 	constraint PK_UNGTUYEN primary key (userid, idcongviec)
 )
 
+drop table TAIKHOAN
+drop table BAIDANG
+drop table CONGVIEC
+drop table UNGTUYEN
 
 
 SELECT *
@@ -54,8 +58,8 @@ WHERE TABLE_NAME = 'TAIKHOAN'
 AND CONSTRAINT_TYPE = 'CHECK';
 
 alter table BAIDANG alter column ngaydang varchar(10)
-select * from BAIDANG
-insert into BAIDANG values ('FD1234', 'Tuyen dung', 'Tuyen TTS IT', 'Tuyen dung tts it co kinh nghiem', '17/03/2024', 'xuanbao2302')
+delete from BAIDANG
+insert into BAIDANG values ('FD1234', N'Tuyển dụng', N'Tuyển TTS IT', N'Tuyển dụng TTS IT đã tốt nghiệp', '17/03/2024', 'xuanbao2302')
 
 alter table CONGVIEC add userid varchar(255) constraint FK_CONGVIEC_TK foreign key references TAIKHOAN(userid)
 select * from CONGVIEC
