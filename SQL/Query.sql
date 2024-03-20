@@ -24,8 +24,11 @@ create table BAIDANG(
 	noidung text,
 	ngaydang varchar(10),
 	userid varchar(255) constraint FK_BAIDANG_TK foreign key references TAIKHOAN(userid),
+	motacv nvarchar(255),
 )
-
+alter table BAIDANG add motacv nvarchar(255)
+select * from BAIDANG
+delete from BAIDANG where idbai = 'FD1234'
 create table CONGVIEC(
 	idcongviec varchar(255) constraint PK_CONGVIEC primary key,
 	tencongviec varchar(255) not null,
@@ -45,6 +48,8 @@ create table UNGTUYEN(
 	cv varbinary(max),
 	constraint PK_UNGTUYEN primary key (userid, idcongviec)
 )
+
+select * from BAIDANG
 
 drop table TAIKHOAN
 drop table BAIDANG

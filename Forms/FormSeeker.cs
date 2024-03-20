@@ -54,6 +54,7 @@ namespace Project_JobApp.Forms
             lblInfo.Text = "Chào mừng " + acc.Userid;
             ucHome.BringToFront();
             rdbHome.Checked = true;
+            ucJobFeed.Load(acc);
         }
         
         private void btnBack_Click(object sender, EventArgs e)
@@ -80,7 +81,7 @@ namespace Project_JobApp.Forms
         {
             if (rdbFeed.Checked)
             {
-                ucJobFeed.Load(acc);
+
                 ucJobFeed.BringToFront();
             }
         }

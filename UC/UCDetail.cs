@@ -17,6 +17,21 @@ namespace Project_JobApp.UC
         {
             InitializeComponent();
         }
+        public UCDetail(Feeds feed)
+        {
+            InitializeComponent();
+
+            this.feed = feed;
+
+            lblID_1.Text = feed.Feedid;
+            lblUser_1.Text = feed.Userid;
+            lblGenre_1.Text = feed.Loaibai;
+            lblUser_1.Text = feed.Userid;
+            lblDate_1.Text = feed.NgDang;
+            lblContent_1.Text = feed.Noidung;
+            lblJobDetail.Text = feed.Jobdetail;
+
+        }
         Job job;
         public Job GetJob
         {
@@ -59,28 +74,24 @@ namespace Project_JobApp.UC
             get { return lblGenre.Text; }
             set { lblGenre.Text = value;}
         }
-        public string Jobid
-        {
-            get { return lblJobid_1.Text;}
-            set { lblJobid_1.Text = value;}
-        }
 
 
-        public void GetValue(Feeds feed)
-        {
-            lblID_1.Text = feed.Feedid;
-            lblUser_1.Text = feed.Userid;
-            lblGenre_1.Text = feed.Loaibai;
-            lblUser_1.Text = feed.Userid;
-            lblDate_1.Text = feed.NgDang;
-            lblContent_1.Text = feed.Noidung;
-        }
+        //public void GetValue(Feeds feed)
+        //{
+        //    lblID_1.Text = feed.Feedid;
+        //    lblUser_1.Text = feed.Userid;
+        //    lblGenre_1.Text = feed.Loaibai;
+        //    lblUser_1.Text = feed.Userid;
+        //    lblDate_1.Text = feed.NgDang;
+        //    lblContent_1.Text = feed.Noidung;
+        //    lblJobDetail.Text = feed.Jobdetail;
+        //}
 
-        public void Load(Feeds feed)
-        {
-            GetValue(feed);
-            GetFeed = feed;
-        }
+        //public void Load(Feeds feed)
+        //{
+        //    GetValue(feed);
+        //    GetFeed = feed;
+        //}
 
     }
 }

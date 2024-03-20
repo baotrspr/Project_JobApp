@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project_JobApp.DAO
 {
@@ -20,9 +21,15 @@ namespace Project_JobApp.DAO
             return dba.Reload(sqlStr);
         }
 
-        public void Display(Feeds feeds)
+        public bool Them(Feeds f)
         {
-
+            string sqlStr = string.Format("insert into BAIDANG values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",
+                                            f.Feedid, f.Loaibai, f.Tieude, f.Noidung, f.NgDang, f.Userid, f.Jobdetail);
+            if (dba.Execute(sqlStr))
+            {
+                return true;
+            }
+            else return false;
         }
     }
 }

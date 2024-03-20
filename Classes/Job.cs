@@ -52,6 +52,16 @@ namespace Project_JobApp.Classes
             get { return userid; }
             set { userid = value; }
         }
+        public Job(string jobid, string tencv, string mucluong, string linhvuc, string thongtin, string trinhdo, string userid)
+        {
+            Jobid = jobid;
+            Tencv = tencv;
+            Mucluong = mucluong;
+            Linhvuc = linhvuc;
+            Thongtin = thongtin;
+            Trinhdo = trinhdo;
+            Userid = userid;
+        }
 
         public override string ToString()
         {

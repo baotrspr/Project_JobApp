@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.flpData = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCreate = new System.Windows.Forms.Button();
+            this.flpData = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,14 +55,6 @@
             this.panel1.Size = new System.Drawing.Size(800, 50);
             this.panel1.TabIndex = 2;
             // 
-            // flpData
-            // 
-            this.flpData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpData.Location = new System.Drawing.Point(0, 50);
-            this.flpData.Name = "flpData";
-            this.flpData.Size = new System.Drawing.Size(800, 550);
-            this.flpData.TabIndex = 3;
-            // 
             // btnCreate
             // 
             this.btnCreate.BackColor = System.Drawing.Color.DarkSlateGray;
@@ -77,6 +69,15 @@
             this.btnCreate.TabIndex = 2;
             this.btnCreate.Text = "Tạo bài đăng mới";
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // flpData
+            // 
+            this.flpData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpData.Location = new System.Drawing.Point(0, 50);
+            this.flpData.Name = "flpData";
+            this.flpData.Size = new System.Drawing.Size(800, 550);
+            this.flpData.TabIndex = 3;
             // 
             // UCJobFeed
             // 

@@ -27,7 +27,6 @@ namespace Project_JobApp.DAO
         public void GetInfo(ref Account acc)
         {
             string sqlStr = string.Format("select ho, ten, ngsinh, cmnd, gioitinh, diachi, sdt, email, thongtin from TAIKHOAN where userid = '{0}'", acc.Userid);
-            MessageBox.Show(sqlStr);
             DataTable dr = dba.SelectRow(sqlStr);
             if (dr != null)
             {

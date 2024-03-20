@@ -21,7 +21,6 @@ namespace Project_JobApp.Database
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sqlStr, conn);
                 var query = cmd.ExecuteNonQuery();
-                MessageBox.Show(query.ToString());
                 conn.Close(); 
                 if (query > 0) return true; else return false;
             }

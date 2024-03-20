@@ -60,8 +60,7 @@ namespace Project_JobApp.UC
 
         private void UCThumbnail_Click(object sender, EventArgs e)
         {
-            UCDetail detail = new UCDetail();
-            detail.Load(Tfeed);
+            UCDetail detail = new UCDetail(Tfeed);
             Form detailForm = new Form();
             detailForm.Size = new Size(810, 550);
             detailForm.StartPosition = FormStartPosition.CenterScreen;

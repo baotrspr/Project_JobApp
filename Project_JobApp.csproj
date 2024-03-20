@@ -50,6 +50,7 @@
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\Job.cs" />
     <Compile Include="DAO\BaiDangDAO.cs" />
+    <Compile Include="DAO\JobDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\SeekerDAO.cs" />
     <Compile Include="DAO\SignupDAO.cs" />
@@ -60,6 +61,18 @@
     </Compile>
     <Compile Include="Forms\FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCreateFeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCreateFeed.Designer.cs">
+      <DependentUpon>FormCreateFeed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCreateJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCreateJob.Designer.cs">
+      <DependentUpon>FormCreateJob.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormHirer.cs">
       <SubType>Form</SubType>
@@ -111,6 +124,12 @@
     <Compile Include="UC\UCAppliedJob.Designer.cs">
       <DependentUpon>UCAppliedJob.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\UCCreateFeed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCCreateFeed.Designer.cs">
+      <DependentUpon>UCCreateFeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\UCDetail.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,6 +141,12 @@
     </Compile>
     <Compile Include="UC\UCHome.Designer.cs">
       <DependentUpon>UCHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UCJobDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UCJobDetail.Designer.cs">
+      <DependentUpon>UCJobDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\UCJobFeed.cs">
       <SubType>UserControl</SubType>
@@ -143,6 +168,12 @@
     </Compile>
     <EmbeddedResource Include="Forms\FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCreateFeed.resx">
+      <DependentUpon>FormCreateFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCreateJob.resx">
+      <DependentUpon>FormCreateJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHirer.resx">
       <DependentUpon>FormHirer.cs</DependentUpon>
@@ -178,11 +209,17 @@
     <EmbeddedResource Include="UC\UCAppliedJob.resx">
       <DependentUpon>UCAppliedJob.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCCreateFeed.resx">
+      <DependentUpon>UCCreateFeed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UCDetail.resx">
       <DependentUpon>UCDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCHome.resx">
       <DependentUpon>UCHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCJobDetail.resx">
+      <DependentUpon>UCJobDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UCJobFeed.resx">
       <DependentUpon>UCJobFeed.cs</DependentUpon>
