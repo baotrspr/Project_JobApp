@@ -23,7 +23,7 @@ namespace Project_JobApp.DAO
 
         public bool Them(Feeds f)
         {
-            string sqlStr = string.Format("insert into BAIDANG values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",
+            string sqlStr = string.Format("insert into BAIDANG values ('{0}',N'{1}',N'{2}',N'{3}','{4}','{5}',N'{6}')",
                                             f.Feedid, f.Loaibai, f.Tieude, f.Noidung, f.NgDang, f.Userid, f.Jobdetail);
             if (dba.Execute(sqlStr))
             {

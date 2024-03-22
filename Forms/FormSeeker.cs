@@ -56,7 +56,7 @@ namespace Project_JobApp.Forms
             rdbHome.Checked = true;
             ucJobFeed.Load(acc);
         }
-        
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Bạn muốn thoát khỏi phiên đăng nhập này?", "Thông báo" , MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
@@ -81,7 +81,6 @@ namespace Project_JobApp.Forms
         {
             if (rdbFeed.Checked)
             {
-
                 ucJobFeed.BringToFront();
             }
         }

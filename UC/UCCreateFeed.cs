@@ -23,12 +23,13 @@ namespace Project_JobApp.UC
         public string Userid
         {
             get { return txtUserid.Text; }
-            set { txtUserid.Text = value;}
+            set { txtUserid.Text = value; }
         }
         public UCCreateFeed()
         {
             InitializeComponent();
         }
+
 
         public string Feedid
         {
@@ -91,5 +92,6 @@ namespace Project_JobApp.UC
             newjob.ShowDialog();
             TtJob = newjob.GetJobDetail();
         }
+
     }
 }

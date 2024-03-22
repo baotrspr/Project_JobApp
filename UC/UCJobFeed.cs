@@ -22,6 +22,7 @@ namespace Project_JobApp.UC
         {
             InitializeComponent();
         }
+
         Account acc;
         public Account GetAccount
         {
@@ -38,6 +39,7 @@ namespace Project_JobApp.UC
                 }
             }
             GetAccount = inacc;
+            MessageBox.Show(GetAccount.Userid);
             DataTable dt = bd.GetData();
             foreach (DataRow dr in dt.Rows)
             {
@@ -46,11 +48,10 @@ namespace Project_JobApp.UC
                 feed.Tieude = dr["tieude"].ToString();
                 feed.Noidung = dr["noidung"].ToString();
                 feed.Userid = dr["userid"].ToString();
-                feed.Loaibai = dr["userid"].ToString();
+                feed.Loaibai = dr["loaibai"].ToString();
                 feed.NgDang = dr["ngaydang"].ToString();
                 feed.Jobdetail = dr["motacv"].ToString();
-                UCThumbnail thumb = new UCThumbnail();
-                thumb.Load(feed);
+                UCThumbnail thumb = new UCThumbnail(feed);
                 flpData.Controls.Add(thumb);
             }
         }
@@ -58,12 +59,13 @@ namespace Project_JobApp.UC
         private void btnCreate_Click(object sender, EventArgs e)
         {
             Feeds newfeed = new Feeds();
-            FormCreateFeed create = new FormCreateFeed();
-            create.Load(acc);
+            FormCreateFeed create = new FormCreateFeed(acc);
+            //create.Load(acc);
             create.ShowDialog();
             newfeed = create.GetFeed;
             bd.Them(newfeed);
             Load(acc);
         }
+
     }
 }

@@ -73,6 +73,7 @@
             // 
             // flpData
             // 
+            this.flpData.AutoScroll = true;
             this.flpData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpData.Location = new System.Drawing.Point(0, 50);
             this.flpData.Name = "flpData";

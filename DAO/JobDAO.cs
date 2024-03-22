@@ -18,7 +18,7 @@ namespace Project_JobApp.DAO
 
         public bool Them(Job j)
         {
-            string sqlStr = string.Format("insert into CONGVIEC values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",
+            string sqlStr = string.Format("insert into CONGVIEC values ('{0}',N'{1}',N'{2}',N'{3}',N'{4}',N'{5}','{6}')",
                                            j.Jobid, j.Tencv, j.Mucluong, j.Linhvuc, j.Thongtin, j.Trinhdo, j.Userid);
 
             if (dba.Execute(sqlStr))

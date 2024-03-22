@@ -32,6 +32,14 @@ namespace Project_JobApp.Forms
             InitializeComponent();
         }
 
+        public FormCreateFeed(Account inacc)
+        {
+            InitializeComponent();
+
+            this.acc = inacc;
+            ucCreateFeed.Load(acc);
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -40,7 +48,7 @@ namespace Project_JobApp.Forms
         public void Load(Account acc)
         {
             GetAccount = acc;
-            ucCreateFeed.Load(acc);
+            //ucCreateFeed.Load();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)

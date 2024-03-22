@@ -74,6 +74,12 @@
     <Compile Include="Forms\FormCreateJob.Designer.cs">
       <DependentUpon>FormCreateJob.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormFeedDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormFeedDetail.Designer.cs">
+      <DependentUpon>FormFeedDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormHirer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCreateJob.resx">
       <DependentUpon>FormCreateJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormFeedDetail.resx">
+      <DependentUpon>FormFeedDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHirer.resx">
       <DependentUpon>FormHirer.cs</DependentUpon>
@@ -302,6 +311,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-small-left.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -94,6 +94,7 @@
             this.btnApply.TabIndex = 4;
             this.btnApply.Text = "Ứng tuyển";
             this.btnApply.UseVisualStyleBackColor = false;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // pnFeedInfo
             // 

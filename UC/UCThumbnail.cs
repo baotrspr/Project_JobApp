@@ -1,5 +1,6 @@
 ﻿using Project_JobApp.Classes;
 using Project_JobApp.Database;
+using Project_JobApp.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,16 @@ namespace Project_JobApp.UC
         public UCThumbnail()
         {
             InitializeComponent();
+        }
+        public UCThumbnail(Feeds feed)
+        {
+            InitializeComponent();
+
+            Tfeed = feed;
+            Tieude = feed.Tieude;
+            NgDang = feed.NgDang;
+            Feedid = feed.Feedid;
+            Nguoidang = feed.Userid;
         }
 
         Feeds tfeed;
@@ -49,23 +60,11 @@ namespace Project_JobApp.UC
             set { lblID.Text = value; }
         }
 
-        public void Load(Feeds feed)
-        {
-            Tfeed = feed;
-            Tieude = feed.Tieude;
-            NgDang = feed.NgDang;
-            Feedid = feed.Feedid;
-            Nguoidang = feed.Userid;
-        }
-
         private void UCThumbnail_Click(object sender, EventArgs e)
         {
-            UCDetail detail = new UCDetail(Tfeed);
-            Form detailForm = new Form();
-            detailForm.Size = new Size(810, 550);
-            detailForm.StartPosition = FormStartPosition.CenterScreen;
-            detailForm.Controls.Add(detail);
-            detailForm.ShowDialog();
+            MessageBox.Show(Tfeed.Feedid + Tfeed.Tieude);
+            FormFeedDetail detail = new FormFeedDetail(Tfeed);
+            detail.ShowDialog();
         }
         
     }

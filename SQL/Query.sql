@@ -12,33 +12,34 @@ create table TAIKHOAN(
 	diachi nvarchar(255),
 	sdt nvarchar(10) check (len(sdt) = 10),
 	email nvarchar(255) check (email like '%@%'),
-	thongtin text,
+	thongtin nvarchar(max),
 )
 
-
-
+alter table TAIKHOAN alter column thongtin nvarchar(max)
+select * from TAIKHOAN
 create table BAIDANG(
 	idbai varchar(255) constraint PK_BAIDANG primary key,
 	loaibai nvarchar(255) not null,
 	tieude nvarchar(255) not null,
-	noidung text,
+	noidung nvarchar(max),
 	ngaydang varchar(10),
 	userid varchar(255) constraint FK_BAIDANG_TK foreign key references TAIKHOAN(userid),
 	motacv nvarchar(255),
 )
-alter table BAIDANG add motacv nvarchar(255)
-select * from BAIDANG
+alter table BAIDANG alter column noidung nvarchar(max)
+delete from BAIDANG
 delete from BAIDANG where idbai = 'FD1234'
 create table CONGVIEC(
 	idcongviec varchar(255) constraint PK_CONGVIEC primary key,
 	tencongviec varchar(255) not null,
 	mucluong nvarchar(255),
 	linhvuc nvarchar(255),
-	thongtin text,
+	thongtin nvarchar(max),
 	trinhdo nvarchar(255),
 	userid varchar(255) constraint FK_CONGVIEC_TK foreign key references TAIKHOAN(userid),
 )
 
+alter table CONGVIEC alter column thongtin nvarchar(max)
 
 create table UNGTUYEN(
 	userid varchar(255) constraint FK_UNGTUYEN_TK foreign key references TAIKHOAN(userid),
@@ -63,7 +64,7 @@ WHERE TABLE_NAME = 'TAIKHOAN'
 AND CONSTRAINT_TYPE = 'CHECK';
 
 alter table BAIDANG alter column ngaydang varchar(10)
-delete from BAIDANG
+select * from BAIDANG
 insert into BAIDANG values ('FD1234', N'Tuyển dụng', N'Tuyển TTS IT', N'Tuyển dụng TTS IT đã tốt nghiệp', '17/03/2024', 'xuanbao2302')
 
 alter table CONGVIEC add userid varchar(255) constraint FK_CONGVIEC_TK foreign key references TAIKHOAN(userid)
