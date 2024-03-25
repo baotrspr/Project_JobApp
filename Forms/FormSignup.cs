@@ -25,20 +25,18 @@ namespace Project_JobApp.Forms
         {
             if (string.Compare(txtPassword.Text, txtRePassword.Text) == 0)
             {
-                string vaitro = "Admin";
-                if (rdbHirer.Checked)
+                string vaitro = "JobSeeker";
+                if (rdbCompany.Checked)
                 {
-                    vaitro = "Hirer";
+                    vaitro = "Company";
                 }
                 else if (rdbJobSeeker.Checked)
                 {
                     vaitro = "JobSeeker";
                 }
-
                 Account acc = new Account(txtUsername.Text, txtPassword.Text, vaitro);
-
                 signupDAO.Signup(acc);
-                
+                btnLogin_Click(sender, e);
             }
             else
             {

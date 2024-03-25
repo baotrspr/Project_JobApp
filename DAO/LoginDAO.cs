@@ -17,7 +17,7 @@ namespace Project_JobApp.DAO
 
         public bool CheckLogin(Account acc)
         {
-            string sqlStr = string.Format("select * from TAIKHOAN where userid = '{0}' and matkhau = '{1}' and vaitro = '{2}'", acc.Userid, acc.Matkhau, acc.Vaitro);
+            string sqlStr = string.Format("select * from ACCOUNT where userid = '{0}' and matkhau = '{1}' and vaitro = '{2}'", acc.Userid, acc.Matkhau, acc.Vaitro);
             DataTable dt = dba.ExecuteSelect(sqlStr);
             return dt.Rows.Count > 0;
         }

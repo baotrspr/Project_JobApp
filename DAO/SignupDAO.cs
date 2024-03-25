@@ -19,16 +19,28 @@ namespace Project_JobApp.DAO
         {
             try
             {
-                string sqlStr = string.Format($"select userid from TAIKHOAN where userid = '{acc.Userid}'");
+                string sqlStr = string.Format($"select userid from ACCOUNT where userid = '{acc.Userid}'");
                 if (dba.ExecuteSelect(sqlStr).Rows.Count > 0)
                 {
                     MessageBox.Show("Tài khoản không hợp lệ hoặc đã tồn tại!", "Thông báo");
                 }
                 else
                 {
-                    sqlStr = string.Format($"insert into TAIKHOAN(userid, matkhau, vaitro) values ('{acc.Userid}', '{acc.Matkhau}', '{acc.Vaitro}')");
-                    if(dba.Execute(sqlStr))
+                    sqlStr = string.Format($"insert into ACCOUNT(userid, matkhau, vaitro) values ('{acc.Userid}', '{acc.Matkhau}', '{acc.Vaitro}')");
+                    if (dba.Execute(sqlStr))
+                    {
+                        if (acc.Vaitro == "JobSeeker")
+                        {
+                            sqlStr = string.Format($"insert into JOBSEEKER(userid) values ('{acc.Userid}')");
+                            dba.ExecuteNonquery(sqlStr);
+                        }
+                        else if (acc.Vaitro == "Company")
+                        {
+                            sqlStr = string.Format($"insert into COMPANY(userid) values ('{acc.Userid}')");
+                            dba.ExecuteNonquery(sqlStr);
+                        }
                         MessageBox.Show("Đăng kí tài khoản thành công, vui lòng đăng nhập lại!", "Thông báo");
+                    }
                     else
                         MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo");
                 }

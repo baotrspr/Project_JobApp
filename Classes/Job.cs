@@ -10,22 +10,55 @@ namespace Project_JobApp.Classes
     public class Job
     {
         string jobid;
+        string userid;
         string tencv;
+        string ngaytao;
+        string vitri;
         string mucluong;
         string linhvuc;
-        string thongtin;
-        string trinhdo;
-        string userid;
-        
+        string phucloi;
+        string yeucau;
+        string trangthai;
+        public Job() { }
+
+        public Job(string jobid, string userid, string tencv, string ngaytao, string vitri, string mucluong, string linhvuc, string phucloi, string yeucau, string trangthai)
+        {
+            Jobid = jobid;
+            Userid = userid;
+            Tencv = tencv;
+            Ngaytao = ngaytao;
+            Vitri = vitri;
+            Mucluong = mucluong;
+            Linhvuc = linhvuc;
+            Phucloi = phucloi;
+            Yeucau = yeucau;
+            this.trangthai = trangthai;
+        }
+
         public string Jobid
         {
             get { return jobid; }
             set { jobid = value; }
         }
+        public string Userid
+        {
+            get { return userid; }
+            set { userid = value; }
+        }
         public string Tencv
         {
             get { return tencv; }
             set { tencv = value; }
+        }
+        public string Ngaytao
+        {
+            get { return ngaytao; }
+            set { ngaytao = value; }
+        }
+        public string Vitri
+        {
+            get { return vitri; }
+            set { vitri = value; }
         }
         public string Mucluong
         {
@@ -37,35 +70,20 @@ namespace Project_JobApp.Classes
             get { return linhvuc; }
             set { linhvuc = value; }
         }
-        public string Thongtin
+        public string Phucloi
         {
-            get { return thongtin; }
-            set { thongtin = value; }
+            get { return phucloi; }
+            set { phucloi = value; }
         }
-        public string Trinhdo
+        public string Yeucau
         {
-            get { return trinhdo; }
-            set { trinhdo = value; }
+            get { return yeucau; }
+            set { yeucau = value; }
         }
-        public string Userid
+        public string Trangthai
         {
-            get { return userid; }
-            set { userid = value; }
-        }
-        public Job(string jobid, string tencv, string mucluong, string linhvuc, string thongtin, string trinhdo, string userid)
-        {
-            Jobid = jobid;
-            Tencv = tencv;
-            Mucluong = mucluong;
-            Linhvuc = linhvuc;
-            Thongtin = thongtin;
-            Trinhdo = trinhdo;
-            Userid = userid;
-        }
-
-        public override string ToString()
-        {
-            return $"ID công việc: {Jobid} \n Tên công việc: {Tencv} \n Người tạo: {Userid} \n Mức lương: {Mucluong} \n Trình độ cần: {Trinhdo} \n Thông tin: {Thongtin}";
+            get { return trangthai; }
+            set { trangthai = value; }
         }
     }
 }

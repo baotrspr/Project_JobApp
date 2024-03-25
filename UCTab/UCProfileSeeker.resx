@@ -117,19 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="lblInfo.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAAHsAAAB7AUdLS5sAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
-        AAAA60lEQVQ4T4WTvQ6CMBSF+ySujg7CJS4mUH15B53EaHTQRBeNBig46r1NKxRvy0lOUtrznfQniPdi
-        OlISVuhcpTARA6KMypIdMcQKHGzQH+NHqETDlGnzayq4dCa8JQxMPotGwgwHRW/BKfHABbE6wJYs4Fkv
-        ITLw3VmToKosnmvYyrMT+n715v5hK09J137YSpdkoBi4GYRJ5sz9bZNLuhMT4+W5sNbmYk3cFQ8nTY3n
-        dua4ktBThZ54ENYBVLCkknByFjBIgGF/4krweEf6F/LOJAtbMSVbUabRGAcHJeNrCLYyJTf0vkyj8RdS
-        2oKRiLP1uQAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>

@@ -1,6 +1,6 @@
 ﻿using Project_JobApp.Classes;
-using Project_JobApp.DAO;
 using Project_JobApp.UC;
+using Project_JobApp.UCTab;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Project_JobApp.Forms
 {
-    public partial class FormSeeker : Form
+    public partial class FormCompany : Form
     {
         //Drag Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -24,11 +24,13 @@ namespace Project_JobApp.Forms
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         Account acc;
-        public FormSeeker()
+
+        public FormCompany()
         {
             InitializeComponent();
         }
-        public FormSeeker(Account acc)
+
+        public FormCompany(Account acc)
         {
             InitializeComponent();
             this.acc = acc;
@@ -50,17 +52,16 @@ namespace Project_JobApp.Forms
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void FormSeeker_Load(object sender, EventArgs e)
+        private void FormHirer_Load(object sender, EventArgs e)
         {
             lblInfo.Text = "Chào mừng " + acc.Userid;
             ucHome.BringToFront();
             rdbHome.Checked = true;
-            
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn muốn thoát khỏi phiên đăng nhập này?", "Thông báo" , MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            DialogResult dr = MessageBox.Show("Bạn muốn thoát khỏi phiên đăng nhập này?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if (dr == DialogResult.OK)
             {
                 Hide();
@@ -89,22 +90,11 @@ namespace Project_JobApp.Forms
             }
         }
 
-        private void rdbApplied_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdbApplied.Checked)
-            {
-                UCAppliedJob ucAppliedJob = new UCAppliedJob(acc);
-                pnTab.Controls.Add(ucAppliedJob);
-                ucAppliedJob.Dock = DockStyle.Fill;
-                ucAppliedJob.BringToFront();
-            }
-        }
-
         private void rdbInfo_CheckedChanged(object sender, EventArgs e)
         {
             if (rdbInfo.Checked)
             {
-                UCProfileSeeker ucProfile = new UCProfileSeeker(acc);
+                UCProfileCompany ucProfile = new UCProfileCompany(acc);
                 pnTab.Controls.Add(ucProfile);
                 ucProfile.Dock = DockStyle.Fill;
                 ucProfile.BringToFront();
@@ -119,6 +109,28 @@ namespace Project_JobApp.Forms
                 pnTab.Controls.Add(ucAccount);
                 ucAccount.Dock = DockStyle.Fill;
                 ucAccount.BringToFront();
+            }
+        }
+
+        private void rdbApplied_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbApplied.Checked)
+            {
+                UCAppliedJob ucAppliedJob = new UCAppliedJob(acc);
+                pnTab.Controls.Add(ucAppliedJob);
+                ucAppliedJob.Dock = DockStyle.Fill;
+                ucAppliedJob.BringToFront();
+            }
+        }
+
+        private void rdbJobManager_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbJobManager.Checked)
+            {
+                UCJobManager ucJobManager = new UCJobManager(acc);
+                pnTab.Controls.Add(ucJobManager);
+                ucJobManager.Dock = DockStyle.Fill;
+                ucJobManager.BringToFront();
             }
         }
     }

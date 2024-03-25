@@ -28,68 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAddJob = new System.Windows.Forms.Button();
-            this.ucJobDetail = new Project_JobApp.UC.UCJobDetail();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnMain = new System.Windows.Forms.Panel();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.BackColor = System.Drawing.Color.White;
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Location = new System.Drawing.Point(197, 612);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(200, 50);
+            this.btnCreate.TabIndex = 1;
+            this.btnCreate.Text = "Thêm Công việc";
+            this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(452, 612);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(200, 50);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Hủy";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 25);
-            this.panel1.TabIndex = 3;
+            this.panel1.Size = new System.Drawing.Size(850, 25);
+            this.panel1.TabIndex = 2;
             // 
-            // btnAddJob
+            // panel2
             // 
-            this.btnAddJob.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnAddJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddJob.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddJob.ForeColor = System.Drawing.Color.White;
-            this.btnAddJob.Location = new System.Drawing.Point(226, 457);
-            this.btnAddJob.Name = "btnAddJob";
-            this.btnAddJob.Size = new System.Drawing.Size(158, 40);
-            this.btnAddJob.TabIndex = 5;
-            this.btnAddJob.Text = "Thêm Job";
-            this.btnAddJob.UseVisualStyleBackColor = false;
-            this.btnAddJob.Click += new System.EventHandler(this.btnAddJob_Click);
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.pnMain);
+            this.panel2.Controls.Add(this.btnCreate);
+            this.panel2.Controls.Add(this.btnCancel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 25);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(850, 675);
+            this.panel2.TabIndex = 3;
             // 
-            // ucJobDetail
+            // pnMain
             // 
-            this.ucJobDetail.Jobid = "";
-            this.ucJobDetail.Linhvuc = "";
-            this.ucJobDetail.Location = new System.Drawing.Point(12, 54);
-            this.ucJobDetail.Mucluong = "";
-            this.ucJobDetail.Name = "ucJobDetail";
-            this.ucJobDetail.Size = new System.Drawing.Size(575, 397);
-            this.ucJobDetail.TabIndex = 4;
-            this.ucJobDetail.Tencv = "";
-            this.ucJobDetail.Thongtin = "";
-            this.ucJobDetail.Trinhdo = "";
-            this.ucJobDetail.Userid = "";
+            this.pnMain.Location = new System.Drawing.Point(26, 3);
+            this.pnMain.Name = "pnMain";
+            this.pnMain.Size = new System.Drawing.Size(800, 600);
+            this.pnMain.TabIndex = 2;
             // 
             // FormCreateJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 500);
-            this.Controls.Add(this.btnAddJob);
-            this.Controls.Add(this.ucJobDetail);
+            this.ClientSize = new System.Drawing.Size(850, 700);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCreateJob";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCreateJob";
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel panel1;
-        private UC.UCJobDetail ucJobDetail;
-        private System.Windows.Forms.Button btnAddJob;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnMain;
     }
 }

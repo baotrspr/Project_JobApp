@@ -1,5 +1,6 @@
 ﻿using Project_JobApp.Classes;
 using Project_JobApp.DAO;
+using Project_JobApp.UC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,44 +15,39 @@ namespace Project_JobApp.Forms
 {
     public partial class FormCreateJob : Form
     {
-        Job newjob;
-        JobDAO jd = new JobDAO();
         Account acc;
-        string jobdetailstr;
-        public Job GetJob
-        {
-            get { return newjob; }
-            set { newjob = value;}
-        }
-        public string JobDetailstr
-        {
-            get { return jobdetailstr; }
-            set { jobdetailstr = value; }
-        }
-        public Account GetAccount
-        {
-            get { return acc; }
-            set { acc = value; }
-        }
+        UCCreateJob ucCreateJob;
+        CongviecDAO jDAO = new CongviecDAO();
         public FormCreateJob()
         {
             InitializeComponent();
         }
-        public void Load(Account acc)
+
+        public FormCreateJob(Account inacc)
         {
-            GetAccount = acc;
-            ucJobDetail.Load(acc);
+            InitializeComponent();
+
+            this.acc = inacc;
+            ucCreateJob = new UCCreateJob(acc);
+            pnMain.Controls.Add(ucCreateJob);
+            ucCreateJob.Dock = DockStyle.Fill;
+            ucCreateJob.BringToFront();
         }
-        private void btnAddJob_Click(object sender, EventArgs e)
+
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            GetJob = ucJobDetail.GetJob();
-            jd.Them(GetJob);
-            JobDetailstr = ucJobDetail.GetJobDetail();
-            Close();
+            this.Close();
         }
-        public string GetJobDetail()
+
+        private void btnCreate_Click(object sender, EventArgs e)
         {
-            return jobdetailstr;
+            Job j = new Job(ucCreateJob.JobID, ucCreateJob.Userid, ucCreateJob.Tieude, ucCreateJob.Ngaytao, ucCreateJob.Vitri, ucCreateJob.Mucluong, ucCreateJob.Linhvuc, ucCreateJob.Phucloi, ucCreateJob.Yeucau, "Đang chờ");
+            if (jDAO.Them(j))
+            {
+                MessageBox.Show("Thêm công việc thành công!", "Thông báo");
+                Close();
+            } else
+                MessageBox.Show("Có lỗi xảy ra!", "Thông báo");
         }
     }
 }

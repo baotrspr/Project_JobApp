@@ -14,6 +14,22 @@ namespace Project_JobApp.Database
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.cnn);
 
+        public void ExecuteNonquery(string sqlStr)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                conn.Close() ;
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public bool Execute(string sqlStr)
         {
             try
@@ -27,6 +43,7 @@ namespace Project_JobApp.Database
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                conn.Close();
                 return false;
             }
             
@@ -51,15 +68,16 @@ namespace Project_JobApp.Database
             }
         }
 
-        public DataTable Reload(string sqlStr)
-        {
-            conn.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter(sqlStr, conn);
-            DataTable dt = new DataTable();
-            adapter.Fill(dt);
-            conn.Close();
-            return dt;
-        }
+        //public DataTable Reload(string sqlStr)
+        //{
+        //    conn.Open();
+        //    SqlDataAdapter adapter = new SqlDataAdapter(sqlStr, conn);
+        //    DataTable dt = new DataTable();
+        //    adapter.Fill(dt);
+        //    conn.Close();
+        //    return dt;
+        //}
+
         public DataTable SelectRow(string sqlStr)
         {
             DataTable dt = new DataTable();
