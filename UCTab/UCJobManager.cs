@@ -33,9 +33,10 @@ namespace Project_JobApp.UCTab
         {
             if (flpList != null)
             {
-                foreach (UserControl uc in flpList.Controls)
+                foreach (Control control in flpList.Controls.OfType<UCJobRow>())
                 {
-                    flpList.Controls.Remove(uc);
+                    control.Dispose();
+                    flpList.Controls.Remove(control);
                 }
             }
 
@@ -58,6 +59,11 @@ namespace Project_JobApp.UCTab
                 UCJobRow ucJobRow = new UCJobRow(j);
                 flpList.Controls.Add(ucJobRow);
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

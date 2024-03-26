@@ -28,8 +28,20 @@ namespace Project_JobApp.UCMore
             lblSeekerID.Text = apl.Userid;
             lblJob.Text = apl.Tencv;
             lblTime.Text = apl.Thoigian;
-            if (apl.TTphanhoi == "Đang chờ")
+            if (apl.TTphanhoi == "waiting")
                 pbxStatus.Image = Project_JobApp.Properties.Resources.writing;
+            else if (apl.TTphanhoi == "accepted")
+            {
+                pbxStatus.Image = Project_JobApp.Properties.Resources.accepted;
+                btnAccept.Enabled = false;
+                btnDecline.Enabled = false;
+            }
+            else if (apl.TTphanhoi == "rejected")
+            {
+                pbxStatus.Image = Project_JobApp.Properties.Resources.rejected;
+                btnAccept.Enabled = false;
+                btnDecline.Enabled = false;
+            }
 
         }
 

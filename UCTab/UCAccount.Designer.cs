@@ -42,17 +42,17 @@
             this.lblConfirm = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.pnAccInfo = new System.Windows.Forms.Panel();
+            this.txtRole = new System.Windows.Forms.TextBox();
+            this.lblRole = new System.Windows.Forms.Label();
             this.pnValidate = new System.Windows.Forms.Panel();
             this.txtOldPass = new System.Windows.Forms.TextBox();
             this.lblOldPass = new System.Windows.Forms.Label();
             this.pnSpace = new System.Windows.Forms.Panel();
             this.pnDelValidate = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtDelPassword = new System.Windows.Forms.TextBox();
             this.btnDelConfirm = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblRole = new System.Windows.Forms.Label();
-            this.txtRole = new System.Windows.Forms.TextBox();
             this.pnAccInfo.SuspendLayout();
             this.pnValidate.SuspendLayout();
             this.pnDelValidate.SuspendLayout();
@@ -215,6 +215,26 @@
             this.pnAccInfo.Size = new System.Drawing.Size(800, 116);
             this.pnAccInfo.TabIndex = 14;
             // 
+            // txtRole
+            // 
+            this.txtRole.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRole.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRole.Location = new System.Drawing.Point(373, 82);
+            this.txtRole.Name = "txtRole";
+            this.txtRole.ReadOnly = true;
+            this.txtRole.Size = new System.Drawing.Size(180, 26);
+            this.txtRole.TabIndex = 7;
+            // 
+            // lblRole
+            // 
+            this.lblRole.AutoSize = true;
+            this.lblRole.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.Location = new System.Drawing.Point(215, 85);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(49, 19);
+            this.lblRole.TabIndex = 9;
+            this.lblRole.Text = "Vai trò";
+            // 
             // pnValidate
             // 
             this.pnValidate.Controls.Add(this.txtOldPass);
@@ -271,16 +291,6 @@
             this.pnDelValidate.Size = new System.Drawing.Size(800, 93);
             this.pnDelValidate.TabIndex = 17;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(215, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 19);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Mật khẩu";
-            // 
             // txtDelPassword
             // 
             this.txtDelPassword.BackColor = System.Drawing.SystemColors.Window;
@@ -304,6 +314,16 @@
             this.btnDelConfirm.UseVisualStyleBackColor = false;
             this.btnDelConfirm.Click += new System.EventHandler(this.btnDelConfirm_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(215, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 19);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Mật khẩu";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -314,27 +334,6 @@
             this.label3.Size = new System.Drawing.Size(142, 19);
             this.label3.TabIndex = 9;
             this.label3.Text = "Xác nhận lại mật khẩu";
-            // 
-            // lblRole
-            // 
-            this.lblRole.AutoSize = true;
-            this.lblRole.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.Location = new System.Drawing.Point(215, 85);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(49, 19);
-            this.lblRole.TabIndex = 9;
-            this.lblRole.Text = "Vai trò";
-            // 
-            // txtRole
-            // 
-            this.txtRole.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRole.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRole.Location = new System.Drawing.Point(373, 82);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.PasswordChar = '●';
-            this.txtRole.ReadOnly = true;
-            this.txtRole.Size = new System.Drawing.Size(180, 26);
-            this.txtRole.TabIndex = 7;
             // 
             // UCAccount
             // 

@@ -61,16 +61,23 @@ namespace Project_JobApp.UC
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn muốn lưu thay đổi?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            try
             {
-                cp = new Company(txtUserid.Text, txtName.Text, dtpDay.Value.ToString("dd/MM/yyyy"), txtLicense.Text, txtLead.Text, txtAddress.Text, txtPhoneNum.Text, txtTax.Text, txtField.Text, txtEmail.Text, rtxtMoreInfo.Text);
-                if (cpDAO.Chinhsua(cp))
+                DialogResult dr = MessageBox.Show("Bạn muốn lưu thay đổi?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
                 {
-                    MessageBox.Show("Đã cập nhật chỉnh sửa!", "Thông báo");
-                    LoadData();
+                    cp = new Company(txtUserid.Text, txtName.Text, dtpDay.Value.ToString("dd/MM/yyyy"), txtLicense.Text, txtLead.Text, txtAddress.Text, txtPhoneNum.Text, txtTax.Text, txtField.Text, txtEmail.Text, rtxtMoreInfo.Text);
+                    if (cpDAO.Chinhsua(cp))
+                    {
+                        MessageBox.Show("Đã cập nhật chỉnh sửa!", "Thông báo");
+                        LoadData();
+                    }
+                    else MessageBox.Show("Có lỗi xảy ra!", "Thông báo");
                 }
-                else MessageBox.Show("Có lỗi xảy ra!", "Thông báo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

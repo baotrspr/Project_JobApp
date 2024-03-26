@@ -87,7 +87,7 @@ go
 
 CREATE TRIGGER after_update_ungtuyen
 ON UngTuyen
-AFTER UPDATE
+for UPDATE
 AS
 BEGIN
     DECLARE @maCV varchar(255)
@@ -102,14 +102,20 @@ BEGIN
         SET trangthai = 'accepted'
         WHERE jobid = @maCV
     END
+	ELSE IF @trangThaiPhanHoi = 'rejected'
+	BEGIN
+		UPDATE CongViec
+        SET trangthai = 'waiting'
+        WHERE jobid = @maCV
+    END
 END
 
 
 
-drop trigger ungtuyen_trangthai
+drop trigger after_update_ungtuyen
 
 drop table COMPANY
-select * from UNGTUYEN
+select * from UNGTUYEN, CONGVIEC where UNGTUYEN.userid = 'xuanbao' and UNGTUYEN.jobid = CONGVIEC.jobid
 select * from CONGVIEC
 
 delete from ACCOUNT
@@ -126,7 +132,7 @@ WHERE TABLE_NAME = 'TAIKHOAN'
 AND CONSTRAINT_TYPE = 'CHECK';
 
 alter table BAIDANG alter column ngaydang varchar(10)
-select * from BAIDANG
+select * from ACCOUNT
 insert into BAIDANG values ('FD1234', N'Tuyển dụng', N'Tuyển TTS IT', N'Tuyển dụng TTS IT đã tốt nghiệp', '17/03/2024', 'xuanbao2302')
 
 alter table CONGVIEC add userid varchar(255) constraint FK_CONGVIEC_TK foreign key references TAIKHOAN(userid)
@@ -135,3 +141,7 @@ select * from CONGVIEC
 insert into CONGVIEC values ('CV001', 'Dev', '50000000', 'CNTT', 'Tuyen nv', 'Dai hoc', 'xuanbao2302')
 
 alter table TAIKHOAN add constraint CK__TAIKHOAN__email__6E01572D check (email like '%@%')
+
+update ACCOUNT set matkhau = 'xuanbao04' where userid = 'xuanbao'
+delete from ACCOUNT where userid = 'hsacademy'
+update CONGVIEC set trangthai = 'rejected' where jobid = 'FPT1'

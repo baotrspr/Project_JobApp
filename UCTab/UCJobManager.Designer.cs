@@ -31,6 +31,7 @@
             this.flpList = new System.Windows.Forms.FlowLayoutPanel();
             this.pnContent = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.pnContent.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             // 
             // pnContent
             // 
+            this.pnContent.Controls.Add(this.btnRefresh);
             this.pnContent.Controls.Add(this.flpList);
             this.pnContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContent.Location = new System.Drawing.Point(0, 55);
@@ -63,6 +65,17 @@
             this.lblTitle.TabIndex = 3;
             this.lblTitle.Text = "Danh sách Job";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Location = new System.Drawing.Point(725, 0);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 30);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // UCJobManager
             // 
@@ -82,5 +95,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpList;
         private System.Windows.Forms.Panel pnContent;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

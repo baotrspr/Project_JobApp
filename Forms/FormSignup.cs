@@ -25,7 +25,7 @@ namespace Project_JobApp.Forms
         {
             if (string.Compare(txtPassword.Text, txtRePassword.Text) == 0)
             {
-                string vaitro = "JobSeeker";
+                string vaitro = "";
                 if (rdbCompany.Checked)
                 {
                     vaitro = "Company";

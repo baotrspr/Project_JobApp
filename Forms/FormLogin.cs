@@ -22,36 +22,44 @@ namespace Project_JobApp.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string role = "Jobseeker";
-            if (rdbJobSeeker.Checked)
-                role = "JobSeeker";
-            else if (rdbCompany.Checked)
-                role = "Company";
-            Account acc = new Account(txtUsername.Text, txtPassword.Text, role);
+            try
+            {
+                string role = "";
+                if (rdbJobSeeker.Checked)
+                    role = "JobSeeker";
+                else if (rdbCompany.Checked)
+                    role = "Company";
+                Account acc = new Account(txtUsername.Text, txtPassword.Text, role);
 
-            if (loginDAO.CheckLogin(acc))
-            {
-                if (acc.Vaitro == "JobSeeker")
+                if (loginDAO.CheckLogin(acc))
                 {
-                    FormSeeker seeker = new FormSeeker(acc);
-                    Success();
-                    Hide();
-                    seeker.ShowDialog();
-                    this.Close();
+                    if (acc.Vaitro == "JobSeeker")
+                    {
+                        FormSeeker seeker = new FormSeeker(acc);
+                        Success();
+                        Hide();
+                        seeker.ShowDialog();
+                        this.Close();
+                    }
+                    else if (acc.Vaitro == "Company")
+                    {
+                        FormCompany hirer = new FormCompany(acc);
+                        Success();
+                        Hide();
+                        hirer.ShowDialog();
+                        this.Close();
+                    }
                 }
-                else if (acc.Vaitro == "Company")
+                else
                 {
-                    FormCompany hirer = new FormCompany(acc);
-                    Success();
-                    Hide();
-                    hirer.ShowDialog();
-                    this.Close();
+                    Fail();
                 }
             }
-            else
+            catch (Exception ex)
             {
-                Fail();
+                MessageBox.Show(ex.Message);
             }
+            
         }
 
         public void Success()

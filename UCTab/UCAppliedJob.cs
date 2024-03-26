@@ -37,10 +37,17 @@ namespace Project_JobApp.UC
                 lblTitle.Text = "Danh sách ứng viên công việc";
                 LoadSeeker();
             }
-
         }
         private void LoadSeeker() // Load cac seeker da dang ki ung tuyen cho cong ty
         {
+            if (flpList != null)
+            {
+                foreach (UCAppliedSeeker uc in flpList.Controls)
+                {
+                    uc.Dispose();
+                    flpList.Controls.Remove(uc);
+                }
+            }
             DataTable dt = apDAO.GetSeekerData(acc.Userid);
             foreach (DataRow dr in dt.Rows)
             {
@@ -58,6 +65,14 @@ namespace Project_JobApp.UC
 
         private void LoadCompany() // Load cac company va job ma seeker da ung tuyen
         {
+            if (flpList != null)
+            {
+                foreach (UCAppliedJobs uc in flpList.Controls)
+                {
+                    uc.Dispose();
+                    flpList.Controls.Remove(uc);
+                }
+            }
             DataTable dt = apDAO.GetJobData(acc.Userid);
             foreach (DataRow dr in dt.Rows)
             {
@@ -70,6 +85,20 @@ namespace Project_JobApp.UC
                 apl.TTphanhoi = dr[5].ToString();
                 UCAppliedJobs ucApplied = new UCAppliedJobs(apl);
                 flpList.Controls.Add(ucApplied);
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            if (acc.Vaitro == "JobSeeker")
+            {
+                lblTitle.Text = "Danh sách công việc đã ứng tuyển";
+                LoadCompany();
+            }
+            else if (acc.Vaitro == "Company")
+            {
+                lblTitle.Text = "Danh sách ứng viên công việc";
+                LoadSeeker();
             }
         }
     }

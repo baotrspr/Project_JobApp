@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Project_JobApp.Classes
 {
@@ -41,12 +42,22 @@ namespace Project_JobApp.Classes
         public string Ho
         {
             get { return _ho; }
-            set { _ho = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                    throw new Exception("Không được bỏ trống trường này!");
+                _ho = value; 
+            }
         }
         public string Ten
         {
             get { return _ten; }
-            set { _ten = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                    throw new Exception("Không được bỏ trống trường này!");
+                _ten = value; 
+            }
         }
         public string Ngsinh
         {
@@ -56,7 +67,12 @@ namespace Project_JobApp.Classes
         public string Cmnd
         {
             get { return _cmnd; }
-            set { _cmnd = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                    throw new Exception("Không được bỏ trống trường này!");
+                _cmnd = value; 
+            }
         }
         public string Gioitinh
         {
@@ -66,22 +82,46 @@ namespace Project_JobApp.Classes
         public string Diachi
         {
             get { return _diachi; }
-            set { _diachi = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                    throw new Exception("Không được bỏ trống trường này!");
+                _diachi = value; 
+            }
         }
         public string Sdt
         {
             get { return _sdt; }
-            set { _sdt = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                    throw new Exception("Không được bỏ trống trường này!");
+                if (value.Length != 10)
+                    throw new Exception("Không đúng định dạng!");
+                _sdt = value;
+            }
         }
         public string Email
         {
             get { return _email; }
-            set { _email = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                    throw new Exception("Không được bỏ trống trường này!");
+                if (!value.Contains("@"))
+                    throw new Exception("Không đúng định dạng!");
+                _email = value;
+            }
         }
         public string Thongtin
         {
             get { return _thongtin; }
-            set { _thongtin = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                    throw new Exception("Không được bỏ trống trường này!");
+                _thongtin = value; 
+            }
         }
     }
 }

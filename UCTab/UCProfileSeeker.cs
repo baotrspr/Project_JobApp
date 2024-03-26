@@ -51,16 +51,23 @@ namespace Project_JobApp.UC
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn muốn lưu thay đổi?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            try
             {
-                js = new JobSeeker(txtUserid.Text, txtSurName.Text, txtName.Text, dtpBday.Value.ToString("dd/MM/yyyy"), txtCmnd.Text, cbxSex.SelectedItem.ToString(), txtAddress.Text, txtPhoneNum.Text, txtEmail.Text, rtxtMoreInfo.Text);
-                if (jsDAO.Chinhsua(js))
+                DialogResult dr = MessageBox.Show("Bạn muốn lưu thay đổi?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
                 {
-                    MessageBox.Show("Đã cập nhật chỉnh sửa!", "Thông báo");
-                    LoadData();
+                    js = new JobSeeker(txtUserid.Text, txtSurName.Text, txtName.Text, dtpBday.Value.ToString("dd/MM/yyyy"), txtCmnd.Text, cbxSex.SelectedItem.ToString(), txtAddress.Text, txtPhoneNum.Text, txtEmail.Text, rtxtMoreInfo.Text);
+                    if (jsDAO.Chinhsua(js))
+                    {
+                        MessageBox.Show("Đã cập nhật chỉnh sửa!", "Thông báo");
+                        LoadData();
+                    }
+                    else MessageBox.Show("Có lỗi xảy ra!", "Thông báo");
                 }
-                else MessageBox.Show("Có lỗi xảy ra!", "Thông báo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

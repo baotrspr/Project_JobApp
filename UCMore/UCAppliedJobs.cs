@@ -55,6 +55,7 @@ namespace Project_JobApp.UCMore
                     MessageBox.Show("Có lỗi!", "Thông báo");
                 }
             }
+            
         }
     }
 }

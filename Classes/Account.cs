@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Project_JobApp.Classes
 {
@@ -15,7 +16,7 @@ namespace Project_JobApp.Classes
         private string _matkhau;
         private string _vaitro;
 
-        //string[] invalid = "!_@_#_$_%_^_&_*_(_)_<_>_?_+_*_/_-_`_~_ _,_"'_";
+        private readonly Regex usernameRule = new Regex("^[a-zA-Z0-9]+$");
 
         public Account() { }
 
@@ -34,17 +35,32 @@ namespace Project_JobApp.Classes
         public string Userid
         {
             get { return _userid; }
-            set { _userid = value; }
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value) || !usernameRule.IsMatch(value))
+                    throw new Exception("Username không đúng định dạng! (không chứa kí tự đặt biệt, không chứa khoảng trống, không trống)");
+                _userid = value; 
+            }
         }
         public string Matkhau
         {
             get { return _matkhau;}
-            set { _matkhau = value;}
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value) || value.Length < 8)
+                    throw new Exception("Mật khẩu phải tối thiểu 8 kí tự, không chứa khoảng trắng hoặc bỏ trống!");
+                _matkhau = value;
+            }
         }
         public string Vaitro
         {
             get { return _vaitro;}
-            set { _vaitro = value;}
+            set 
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new Exception("Vui lòng chọn vai trò của bạn!");
+                _vaitro = value;
+            }
         }
     }
 }

@@ -80,7 +80,7 @@
             // btnDelJob
             // 
             this.btnDelJob.Image = global::Project_JobApp.Properties.Resources.cross_small;
-            this.btnDelJob.Location = new System.Drawing.Point(665, 9);
+            this.btnDelJob.Location = new System.Drawing.Point(647, 11);
             this.btnDelJob.Name = "btnDelJob";
             this.btnDelJob.Size = new System.Drawing.Size(32, 32);
             this.btnDelJob.TabIndex = 1;

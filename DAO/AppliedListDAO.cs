@@ -41,7 +41,7 @@ namespace Project_JobApp.DAO
         }
         public bool TuChoi(AppliedList ap)
         {
-            string sqlStr = string.Format("update UNGTUYEN set trangtthaiphanhoi = '{0}' where userid = '{1}'", "rejected", ap.Userid);
+            string sqlStr = string.Format("update UNGTUYEN set trangthaiphanhoi = '{0}' where userid = '{1}'", "rejected", ap.Userid);
             return dba.Execute(sqlStr);
         }
         public bool Xoa(AppliedList ap)
