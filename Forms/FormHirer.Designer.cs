@@ -54,8 +54,9 @@
             this.docker.Controls.Add(this.btnExit);
             this.docker.Dock = System.Windows.Forms.DockStyle.Top;
             this.docker.Location = new System.Drawing.Point(0, 0);
+            this.docker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.docker.Name = "docker";
-            this.docker.Size = new System.Drawing.Size(1000, 30);
+            this.docker.Size = new System.Drawing.Size(1333, 37);
             this.docker.TabIndex = 1;
             this.docker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.docker_MouseDown);
             // 
@@ -67,8 +68,9 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBack.Location = new System.Drawing.Point(0, 0);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(50, 30);
+            this.btnBack.Size = new System.Drawing.Size(67, 37);
             this.btnBack.TabIndex = 4;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -82,9 +84,10 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnMinimize.Location = new System.Drawing.Point(890, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1186, 0);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(50, 30);
+            this.btnMinimize.Size = new System.Drawing.Size(67, 37);
             this.btnMinimize.TabIndex = 3;
             this.btnMinimize.Text = "-";
             this.btnMinimize.UseVisualStyleBackColor = false;
@@ -98,9 +101,10 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnExit.Location = new System.Drawing.Point(940, 0);
+            this.btnExit.Location = new System.Drawing.Point(1253, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(60, 30);
+            this.btnExit.Size = new System.Drawing.Size(80, 37);
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "X";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -109,10 +113,12 @@
             // pnTab
             // 
             this.pnTab.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTab.Location = new System.Drawing.Point(200, 30);
+            this.pnTab.Location = new System.Drawing.Point(267, 37);
+            this.pnTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnTab.Name = "pnTab";
-            this.pnTab.Size = new System.Drawing.Size(800, 560);
+            this.pnTab.Size = new System.Drawing.Size(1066, 689);
             this.pnTab.TabIndex = 6;
+            this.pnTab.Paint += new System.Windows.Forms.PaintEventHandler(this.pnTab_Paint);
             // 
             // pnNavigation
             // 
@@ -124,9 +130,10 @@
             this.pnNavigation.Controls.Add(this.btnJobFeeds);
             this.pnNavigation.Controls.Add(this.btnHome);
             this.pnNavigation.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnNavigation.Location = new System.Drawing.Point(0, 30);
+            this.pnNavigation.Location = new System.Drawing.Point(0, 37);
+            this.pnNavigation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnNavigation.Name = "pnNavigation";
-            this.pnNavigation.Size = new System.Drawing.Size(200, 600);
+            this.pnNavigation.Size = new System.Drawing.Size(267, 738);
             this.pnNavigation.TabIndex = 5;
             // 
             // btnList
@@ -137,9 +144,10 @@
             this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnList.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnList.Image = global::Project_JobApp.Properties.Resources.bookmark;
-            this.btnList.Location = new System.Drawing.Point(0, 300);
+            this.btnList.Location = new System.Drawing.Point(0, 369);
+            this.btnList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(200, 100);
+            this.btnList.Size = new System.Drawing.Size(267, 123);
             this.btnList.TabIndex = 1;
             this.btnList.Text = "    Applicants List";
             this.btnList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -155,9 +163,10 @@
             this.btnMyProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMyProfile.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMyProfile.Image = global::Project_JobApp.Properties.Resources.document;
-            this.btnMyProfile.Location = new System.Drawing.Point(0, 400);
+            this.btnMyProfile.Location = new System.Drawing.Point(0, 492);
+            this.btnMyProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMyProfile.Name = "btnMyProfile";
-            this.btnMyProfile.Size = new System.Drawing.Size(200, 100);
+            this.btnMyProfile.Size = new System.Drawing.Size(267, 123);
             this.btnMyProfile.TabIndex = 0;
             this.btnMyProfile.Text = "    Profile";
             this.btnMyProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -173,9 +182,10 @@
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.Image = global::Project_JobApp.Properties.Resources.user;
-            this.btnAccount.Location = new System.Drawing.Point(0, 500);
+            this.btnAccount.Location = new System.Drawing.Point(0, 615);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(200, 100);
+            this.btnAccount.Size = new System.Drawing.Size(267, 123);
             this.btnAccount.TabIndex = 0;
             this.btnAccount.Text = "    My Account";
             this.btnAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -190,9 +200,10 @@
             this.btnPostedJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPostedJobs.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPostedJobs.Image = global::Project_JobApp.Properties.Resources.bookmark;
-            this.btnPostedJobs.Location = new System.Drawing.Point(0, 200);
+            this.btnPostedJobs.Location = new System.Drawing.Point(0, 246);
+            this.btnPostedJobs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPostedJobs.Name = "btnPostedJobs";
-            this.btnPostedJobs.Size = new System.Drawing.Size(200, 100);
+            this.btnPostedJobs.Size = new System.Drawing.Size(267, 123);
             this.btnPostedJobs.TabIndex = 0;
             this.btnPostedJobs.Text = "    Posted Jobs";
             this.btnPostedJobs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -209,10 +220,11 @@
             this.btnJobFeeds.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJobFeeds.Image = global::Project_JobApp.Properties.Resources.users_alt;
             this.btnJobFeeds.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnJobFeeds.Location = new System.Drawing.Point(0, 100);
+            this.btnJobFeeds.Location = new System.Drawing.Point(0, 123);
+            this.btnJobFeeds.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnJobFeeds.Name = "btnJobFeeds";
-            this.btnJobFeeds.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnJobFeeds.Size = new System.Drawing.Size(200, 100);
+            this.btnJobFeeds.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnJobFeeds.Size = new System.Drawing.Size(267, 123);
             this.btnJobFeeds.TabIndex = 0;
             this.btnJobFeeds.Text = "    Job Feeds";
             this.btnJobFeeds.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -230,9 +242,10 @@
             this.btnHome.Image = global::Project_JobApp.Properties.Resources.home;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(0, 0);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(200, 100);
+            this.btnHome.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnHome.Size = new System.Drawing.Size(267, 123);
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "    Home";
             this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -241,33 +254,37 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(373, 596);
+            this.btnEdit.Location = new System.Drawing.Point(497, 734);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(163, 23);
+            this.btnEdit.Size = new System.Drawing.Size(217, 28);
             this.btnEdit.TabIndex = 0;
             this.btnEdit.Text = "Chỉnh sửa thông tin";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(622, 596);
+            this.btnSave.Location = new System.Drawing.Point(829, 734);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(163, 23);
+            this.btnSave.Size = new System.Drawing.Size(217, 28);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Lưu thông tin";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FormHirer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 630);
+            this.ClientSize = new System.Drawing.Size(1333, 775);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.pnTab);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.pnNavigation);
             this.Controls.Add(this.docker);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormHirer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHirer";

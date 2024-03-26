@@ -103,6 +103,8 @@ namespace Project_JobApp.Forms
             foreach (UserControl userControl in pnTab.Controls)
                 if (userControl != ucPostedJob)
                     pnTab.Controls.Remove(userControl);
+            btnEdit.Hide();
+            btnSave.Hide();
         }
 
         private void btnMyProfile_Click(object sender, EventArgs e)
@@ -168,6 +170,16 @@ namespace Project_JobApp.Forms
             FormLogin formLogin = new FormLogin();
             formLogin.ShowDialog();
             this.Close();
+        }
+
+        private void pnTab_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Luu Thanh Cong!");
         }
     }
 }
