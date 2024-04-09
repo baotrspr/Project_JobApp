@@ -36,7 +36,7 @@ create table COMPANY(
 
 create table CONGVIEC(
 	jobid varchar(255) constraint PK_CONGVIEC primary key,
-	userid varchar(255) constraint FK_CONGVIEC_TK foreign key references ACCOUNT(userid),
+	userid varchar(255) constraint FK_CONGVIEC_TK foreign key references ACCOUNT(userid) on delete cascade,
 	tencv nvarchar(255) not null,
 	ngaytao varchar(10),
 	vitri nvarchar(255),
@@ -48,8 +48,8 @@ create table CONGVIEC(
 )
 
 create table UNGTUYEN(
-	userid varchar(255) constraint FK_UNGTUYEN_TK foreign key references ACCOUNT(userid),
-	jobid varchar(255) constraint FK_UNGTUYEN_CV foreign key references CONGVIEC(jobid),
+	userid varchar(255) constraint FK_UNGTUYEN_TK foreign key references ACCOUNT(userid) on delete cascade,
+	jobid varchar(255) constraint FK_UNGTUYEN_CV foreign key references CONGVIEC(jobid) on delete cascade,
 	tencv nvarchar(255),
 	thoigian varchar(10),
 	congty varchar(255) constraint FK_UNGTUYEN_CP foreign key references COMPANY(userid),
@@ -58,67 +58,98 @@ create table UNGTUYEN(
 )
 go
 
-create trigger job_delete
-on CONGVIEC
-for delete
-as
-	delete from UNGTUYEN where jobid in (select jobid from deleted)
-go
 
-create trigger acc_delete
+create trigger del_acc_seeker
 on ACCOUNT
-for delete
+after delete
 as
 begin
-	delete from JOBSEEKER where userid in (select userid from deleted);
-	delete from COMPANY where userid in (select userid from deleted);
+	declare @ouserid varchar(255), @ovaitro varchar(10)
+	select @ouserid = ol.userid, @ovaitro = ol.vaitro
+	from deleted ol
+	if @ovaitro = 'JobSeeker'
+	begin
+		delete from JOBSEEKER where userid = @ouserid;
+	end
+	else if @ovaitro = 'Company'
+	begin
+		delete from COMPANY where userid = @ouserid;
+	end
 end
 go
 
-create trigger company_delete
-on COMPANY
-for delete
+create trigger del_acc_ungtuyen
+on ACCOUNT
+after delete
 as
 begin
-	delete from CONGVIEC where userid in (select userid from deleted)
-	delete from UNGTUYEN where userid in (select userid from deleted)
+	declare @ouserid varchar(255), @ovaitro varchar(10)
+	select @ouserid = ol.userid, @ovaitro = ol.vaitro
+	from deleted ol
+	if @ovaitro = 'JobSeeker'
+	begin
+		delete from UNGTUYEN where userid = @ouserid;
+	end
+	else if @ovaitro = 'Company'
+	begin
+		delete from UNGTUYEN where congty = @ouserid;
+	end
 end
 go
 
-CREATE TRIGGER after_update_ungtuyen
-ON UngTuyen
-for UPDATE
-AS
-BEGIN
-    DECLARE @maCV varchar(255)
-    DECLARE @trangThaiPhanHoi VARCHAR(255)
+create trigger del_acc_congviec
+on ACCOUNT
+after delete
+as
+begin
+	declare @ouserid varchar(255), @ovaitro varchar(10)
+	select @ouserid = ol.userid, @ovaitro = ol.vaitro
+	from deleted ol
+	if @ovaitro = 'Company'
+	begin
+		delete from CONGVIEC where userid = @ouserid;
+	end
+end
+go
 
-    SELECT @maCV = jobid, @trangThaiPhanHoi = trangthaiphanhoi
-    FROM inserted
+create trigger del_congviec_ungtuyen
+on CONGVIEC
+after delete
+as
+begin
+	declare @ojobid varchar(255)
+	select @ojobid = ol.jobid
+	from deleted ol
+		delete from UNGTUYEN where jobid = @ojobid;
+end
+go
 
-    IF @trangThaiPhanHoi = 'accepted'
-    BEGIN
-        UPDATE CongViec
-        SET trangthai = 'accepted'
-        WHERE jobid = @maCV
-    END
-	ELSE IF @trangThaiPhanHoi = 'rejected'
-	BEGIN
-		UPDATE CongViec
-        SET trangthai = 'waiting'
-        WHERE jobid = @maCV
-    END
-END
+create trigger upd_ungtuyen_congviec
+on UNGTUYEN
+after update
+as
+begin
+	declare @ntrangthaiphanhoi varchar(255), @njobid varchar(255)
+	select @ntrangthaiphanhoi = ne.trangthaiphanhoi, @njobid = ne.jobid
+	from inserted ne
+		update CONGVIEC set trangthai = 'notavail' where jobid = @njobid
+end
+go
+	
 
+select * from CONGVIEC where linhvuc like 'abc'
 
+ALTER TABLE UNGTUYEN
+ADD CONSTRAINT FK_UNGTUYEN_TK FOREIGN KEY (userid) REFERENCES ACCOUNT(userid) ON DELETE CASCADE
 
-drop trigger after_update_ungtuyen
-
+select * from JOBSEEKER
 drop table COMPANY
 select * from UNGTUYEN, CONGVIEC where UNGTUYEN.userid = 'xuanbao' and UNGTUYEN.jobid = CONGVIEC.jobid
 select * from CONGVIEC
 
-delete from ACCOUNT
+select * from UNGTUYEN
+select * from ACCOUNT  ac join JOBSEEKER js on ac.userid=js.userid
+delete from ACCOUNT where userid = 'baobao04'
 
 drop table UNGTUYEN
 drop table CONGVIEC
@@ -145,3 +176,11 @@ alter table TAIKHOAN add constraint CK__TAIKHOAN__email__6E01572D check (email l
 update ACCOUNT set matkhau = 'xuanbao04' where userid = 'xuanbao'
 delete from ACCOUNT where userid = 'hsacademy'
 update CONGVIEC set trangthai = 'rejected' where jobid = 'FPT1'
+
+select * from ACCOUNT
+select * from JOBSEEKER
+select * from COMPANY
+select * from CONGVIEC
+select * from UNGTUYEN
+
+delete from COMPANY

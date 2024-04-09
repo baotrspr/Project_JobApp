@@ -21,6 +21,17 @@ namespace Project_JobApp.DAO
             return dba.ExecuteSelect(sqlStr);
         }
 
+        public DataTable GetData(string field)
+        {
+            string sqlStr = string.Format("select * from CONGVIEC where linhvuc like '%{0}%'", field);
+            return dba.ExecuteSelect(sqlStr);
+        }
+        public DataTable GetData(int salary)
+        {
+            string sqlStr = string.Format("select * from CONGVIEC where mucluong >= {0}", salary);
+            return dba.ExecuteSelect(sqlStr);
+        }
+
         public bool Them(Job j)
         {
             string sqlStr = string.Format("insert into CONGVIEC values ('{0}',N'{1}',N'{2}',N'{3}','{4}','{5}',N'{6}', N'{7}',N'{8}', N'{9}')",

@@ -44,8 +44,8 @@ namespace Project_JobApp.Classes
             get { return _ho; }
             set 
             {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                    throw new Exception("Không được bỏ trống trường này!");
+                //if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                //    throw new Exception("Không được bỏ trống trường này!");
                 _ho = value; 
             }
         }
@@ -54,8 +54,8 @@ namespace Project_JobApp.Classes
             get { return _ten; }
             set 
             {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                    throw new Exception("Không được bỏ trống trường này!");
+                //if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                //    throw new Exception("Không được bỏ trống trường này!");
                 _ten = value; 
             }
         }
@@ -69,8 +69,8 @@ namespace Project_JobApp.Classes
             get { return _cmnd; }
             set 
             {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                    throw new Exception("Không được bỏ trống trường này!");
+                //if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                //    throw new Exception("Không được bỏ trống trường này!");
                 _cmnd = value; 
             }
         }
@@ -84,8 +84,8 @@ namespace Project_JobApp.Classes
             get { return _diachi; }
             set 
             {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                    throw new Exception("Không được bỏ trống trường này!");
+                //if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                //    throw new Exception("Không được bỏ trống trường này!");
                 _diachi = value; 
             }
         }
@@ -94,10 +94,10 @@ namespace Project_JobApp.Classes
             get { return _sdt; }
             set
             {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                    throw new Exception("Không được bỏ trống trường này!");
-                if (value.Length != 10)
-                    throw new Exception("Không đúng định dạng!");
+                //if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                //    throw new Exception("Không được bỏ trống trường này!");
+                //if (value.Length != 10)
+                //    throw new Exception("Không đúng định dạng!");
                 _sdt = value;
             }
         }
@@ -106,10 +106,10 @@ namespace Project_JobApp.Classes
             get { return _email; }
             set
             {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                    throw new Exception("Không được bỏ trống trường này!");
-                if (!value.Contains("@"))
-                    throw new Exception("Không đúng định dạng!");
+                //if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                //    throw new Exception("Không được bỏ trống trường này!");
+                //if (!value.Contains("@"))
+                //    throw new Exception("Không đúng định dạng!");
                 _email = value;
             }
         }
@@ -118,8 +118,8 @@ namespace Project_JobApp.Classes
             get { return _thongtin; }
             set 
             {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                    throw new Exception("Không được bỏ trống trường này!");
+                //if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                //    throw new Exception("Không được bỏ trống trường này!");
                 _thongtin = value; 
             }
         }

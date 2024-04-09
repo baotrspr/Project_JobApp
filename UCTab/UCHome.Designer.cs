@@ -124,7 +124,7 @@
             this.pnTime.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTime.Location = new System.Drawing.Point(299, 0);
             this.pnTime.Name = "pnTime";
-            this.pnTime.Size = new System.Drawing.Size(501, 356);
+            this.pnTime.Size = new System.Drawing.Size(701, 356);
             this.pnTime.TabIndex = 1;
             // 
             // panel2
@@ -132,7 +132,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(299, 600);
+            this.panel2.Size = new System.Drawing.Size(299, 700);
             this.panel2.TabIndex = 2;
             // 
             // panel1
@@ -140,7 +140,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(299, 356);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(501, 244);
+            this.panel1.Size = new System.Drawing.Size(701, 344);
             this.panel1.TabIndex = 3;
             // 
             // UCHome
@@ -151,7 +151,7 @@
             this.Controls.Add(this.pnTime);
             this.Controls.Add(this.panel2);
             this.Name = "UCHome";
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Size = new System.Drawing.Size(1000, 700);
             this.Load += new System.EventHandler(this.UCHome_Load);
             this.pnTime.ResumeLayout(false);
             this.pnTime.PerformLayout();

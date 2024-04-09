@@ -32,7 +32,7 @@ namespace Project_JobApp.UC
             Tieude = job.Tencv;
             Ngaytao = job.Ngaytao;
             Nguoidang = job.Userid;
-            if (job.Trangthai == "accepted")
+            if (job.Trangthai == "notavail")
                 pbxStatus.Image = Project_JobApp.Properties.Resources.accepted;
             else
                 pbxStatus.Image = Project_JobApp.Properties.Resources.hourglass;

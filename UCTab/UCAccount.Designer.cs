@@ -64,9 +64,9 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Red;
-            this.btnDelete.Location = new System.Drawing.Point(0, 550);
+            this.btnDelete.Location = new System.Drawing.Point(0, 650);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(800, 50);
+            this.btnDelete.Size = new System.Drawing.Size(1000, 50);
             this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "Xóa tài khoản";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -78,9 +78,9 @@
             this.btnChangePass.FlatAppearance.BorderSize = 0;
             this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePass.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePass.Location = new System.Drawing.Point(0, 500);
+            this.btnChangePass.Location = new System.Drawing.Point(0, 600);
             this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(800, 50);
+            this.btnChangePass.Size = new System.Drawing.Size(1000, 50);
             this.btnChangePass.TabIndex = 12;
             this.btnChangePass.Text = "Đổi mật khẩu";
             this.btnChangePass.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(800, 55);
+            this.label1.Size = new System.Drawing.Size(1000, 55);
             this.label1.TabIndex = 6;
             this.label1.Text = "TRUNG TÂM TÀI KHOẢN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -212,7 +212,7 @@
             this.pnAccInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnAccInfo.Location = new System.Drawing.Point(0, 112);
             this.pnAccInfo.Name = "pnAccInfo";
-            this.pnAccInfo.Size = new System.Drawing.Size(800, 116);
+            this.pnAccInfo.Size = new System.Drawing.Size(1000, 116);
             this.pnAccInfo.TabIndex = 14;
             // 
             // txtRole
@@ -246,9 +246,9 @@
             this.pnValidate.Controls.Add(this.lblNewPass);
             this.pnValidate.Controls.Add(this.lblReNewPass);
             this.pnValidate.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnValidate.Location = new System.Drawing.Point(0, 321);
+            this.pnValidate.Location = new System.Drawing.Point(0, 322);
             this.pnValidate.Name = "pnValidate";
-            this.pnValidate.Size = new System.Drawing.Size(800, 179);
+            this.pnValidate.Size = new System.Drawing.Size(1000, 278);
             this.pnValidate.TabIndex = 15;
             // 
             // txtOldPass
@@ -276,7 +276,7 @@
             this.pnSpace.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnSpace.Location = new System.Drawing.Point(0, 55);
             this.pnSpace.Name = "pnSpace";
-            this.pnSpace.Size = new System.Drawing.Size(800, 57);
+            this.pnSpace.Size = new System.Drawing.Size(1000, 57);
             this.pnSpace.TabIndex = 16;
             // 
             // pnDelValidate
@@ -288,7 +288,7 @@
             this.pnDelValidate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnDelValidate.Location = new System.Drawing.Point(0, 228);
             this.pnDelValidate.Name = "pnDelValidate";
-            this.pnDelValidate.Size = new System.Drawing.Size(800, 93);
+            this.pnDelValidate.Size = new System.Drawing.Size(1000, 94);
             this.pnDelValidate.TabIndex = 17;
             // 
             // txtDelPassword
@@ -347,7 +347,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label1);
             this.Name = "UCAccount";
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Size = new System.Drawing.Size(1000, 700);
             this.pnAccInfo.ResumeLayout(false);
             this.pnAccInfo.PerformLayout();
             this.pnValidate.ResumeLayout(false);

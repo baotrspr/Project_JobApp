@@ -21,6 +21,7 @@ namespace Project_JobApp.UC
         CongviecDAO jd = new CongviecDAO();
 
         Account acc;
+        DataTable dt;
         public UCJobFeed()
         {
             InitializeComponent();
@@ -32,6 +33,10 @@ namespace Project_JobApp.UC
             if (acc.Vaitro == "JobSeeker")
                 btnCreate.Enabled = false;
 
+            rdbAll.Checked = true;
+            txtInput.Enabled = false;
+            cbxField.Enabled = false;
+
             if (flpData != null)
             {
                 foreach (UserControl uc in flpData.Controls)
@@ -39,26 +44,28 @@ namespace Project_JobApp.UC
                     flpData.Controls.Remove(uc);
                 }
             }
-            LoadList();
+            dt = jd.GetData();
+            LoadList(dt);
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
             FormCreateJob create = new FormCreateJob(acc);
             create.ShowDialog();  
-            LoadList();
+            LoadList(dt);
         }
 
-        private void LoadList()
+        private void LoadList(DataTable dt)
         {
             if (flpData != null)
             {
-                foreach (UserControl uc in flpData.Controls)
+                foreach (UCThumbnail uc in flpData.Controls)
                 {
+                    uc.Dispose();
                     flpData.Controls.Remove(uc);
                 }
             }
-            DataTable dt = jd.GetData();
+            //DataTable dt = jd.GetData();
             foreach (DataRow dr in dt.Rows)
             {
                 Job j = new Job();
@@ -75,6 +82,60 @@ namespace Project_JobApp.UC
                 UCThumbnail thumb = new UCThumbnail(j, acc);
                 flpData.Controls.Add(thumb);
             }
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            if (rdbAll.Checked)
+            {
+                dt = jd.GetData();
+                LoadList(dt);
+            }
+            else if (rdbField.Checked)
+            {
+                string choose = cbxField.SelectedItem.ToString();
+                dt = jd.GetData(choose);
+                LoadList(dt);
+            }
+            else if (rdbSalary.Checked)
+            {
+                int input = int.Parse(txtInput.Text);
+                dt = jd.GetData(input);
+                LoadList(dt);
+            }
+        }
+
+        private void rdbField_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbField.Checked == true)
+                cbxField.Enabled = true;
+            else cbxField.Enabled = false;
+        }
+
+        private void rdbSalary_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbSalary.Checked == true)
+            {
+                txtInput.Enabled = true;
+            }
+            else txtInput.Enabled = false;
+        }
+
+        private void rdbAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbAll.Checked == true)
+            {
+                txtInput.Enabled = false;
+                cbxField.Enabled = false;
+            }
+        }
+
+        private void btnCancelFilter_Click(object sender, EventArgs e)
+        {
+            rdbAll.Checked = true;
+            rdbAll_CheckedChanged(sender, e);
+            dt = jd.GetData();
+            LoadList(dt);
         }
     }
 }

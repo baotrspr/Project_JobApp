@@ -41,7 +41,7 @@
             // lblJobID
             // 
             this.lblJobID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJobID.Location = new System.Drawing.Point(3, 17);
+            this.lblJobID.Location = new System.Drawing.Point(3, 12);
             this.lblJobID.Name = "lblJobID";
             this.lblJobID.Size = new System.Drawing.Size(93, 18);
             this.lblJobID.TabIndex = 0;
@@ -51,7 +51,7 @@
             // pbxStatus
             // 
             this.pbxStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pbxStatus.Location = new System.Drawing.Point(655, 11);
+            this.pbxStatus.Location = new System.Drawing.Point(747, 5);
             this.pbxStatus.Name = "pbxStatus";
             this.pbxStatus.Size = new System.Drawing.Size(32, 32);
             this.pbxStatus.TabIndex = 1;
@@ -61,15 +61,15 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Aqua;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 48);
+            this.panel1.Location = new System.Drawing.Point(0, 38);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(700, 2);
+            this.panel1.Size = new System.Drawing.Size(800, 2);
             this.panel1.TabIndex = 2;
             // 
             // lblTencv
             // 
             this.lblTencv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTencv.Location = new System.Drawing.Point(111, 17);
+            this.lblTencv.Location = new System.Drawing.Point(111, 12);
             this.lblTencv.Name = "lblTencv";
             this.lblTencv.Size = new System.Drawing.Size(128, 18);
             this.lblTencv.TabIndex = 0;
@@ -79,7 +79,7 @@
             // lblTime
             // 
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(254, 17);
+            this.lblTime.Location = new System.Drawing.Point(254, 12);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(122, 18);
             this.lblTime.TabIndex = 0;
@@ -89,7 +89,7 @@
             // lblCompany
             // 
             this.lblCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompany.Location = new System.Drawing.Point(391, 17);
+            this.lblCompany.Location = new System.Drawing.Point(391, 12);
             this.lblCompany.Name = "lblCompany";
             this.lblCompany.Size = new System.Drawing.Size(158, 18);
             this.lblCompany.TabIndex = 0;
@@ -99,7 +99,7 @@
             // btnCancel
             // 
             this.btnCancel.Image = global::Project_JobApp.Properties.Resources.cross_small;
-            this.btnCancel.Location = new System.Drawing.Point(577, 9);
+            this.btnCancel.Location = new System.Drawing.Point(684, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(32, 32);
             this.btnCancel.TabIndex = 4;
@@ -119,7 +119,7 @@
             this.Controls.Add(this.lblJobID);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "UCAppliedJobs";
-            this.Size = new System.Drawing.Size(700, 50);
+            this.Size = new System.Drawing.Size(800, 40);
             ((System.ComponentModel.ISupportInitialize)(this.pbxStatus)).EndInit();
             this.ResumeLayout(false);
 

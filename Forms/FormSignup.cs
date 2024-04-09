@@ -23,24 +23,31 @@ namespace Project_JobApp.Forms
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            if (string.Compare(txtPassword.Text, txtRePassword.Text) == 0)
+            try
             {
-                string vaitro = "";
-                if (rdbCompany.Checked)
+                if (string.Compare(txtPassword.Text, txtRePassword.Text) == 0)
                 {
-                    vaitro = "Company";
+                    string vaitro = "";
+                    if (rdbCompany.Checked)
+                    {
+                        vaitro = "Company";
+                    }
+                    else if (rdbJobSeeker.Checked)
+                    {
+                        vaitro = "JobSeeker";
+                    }
+                    Account acc = new Account(txtUsername.Text, txtPassword.Text, vaitro);
+                    signupDAO.Signup(acc);
+                    btnLogin_Click(sender, e);
                 }
-                else if (rdbJobSeeker.Checked)
+                else
                 {
-                    vaitro = "JobSeeker";
+                    MessageBox.Show("Mật khẩu không trùng khớp!", "Thông báo");
                 }
-                Account acc = new Account(txtUsername.Text, txtPassword.Text, vaitro);
-                signupDAO.Signup(acc);
-                btnLogin_Click(sender, e);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Mật khẩu không trùng khớp!", "Thông báo");
+                MessageBox.Show(ex.Message);
             }
         }
         

@@ -32,6 +32,7 @@ namespace Project_JobApp.Forms
         {
             InitializeComponent();
             this.acc = acc;
+            lblInfo.Text = "Chào mừng " + acc.Userid;
         }
 
         private void docker_MouseDown(object sender, MouseEventArgs e)
@@ -52,7 +53,6 @@ namespace Project_JobApp.Forms
 
         private void FormSeeker_Load(object sender, EventArgs e)
         {
-            lblInfo.Text = "Chào mừng " + acc.Userid;
             ucHome.BringToFront();
             rdbHome.Checked = true;
             

@@ -29,7 +29,7 @@ namespace Project_JobApp.DAO
 
         public bool Them(AppliedList ap)
         {
-            string sqlStr = string.Format("insert into UNGTUYEN values ('{0}','{1}','{2}','{3}','{4}','{5}')",
+            string sqlStr = string.Format("insert into UNGTUYEN values ('{0}','{1}',N'{2}','{3}','{4}','{5}')",
                                             ap.Userid, ap.Jobid, ap.Tencv, ap.Thoigian, ap.Macty, ap.TTphanhoi);
             return dba.Execute(sqlStr);
         }

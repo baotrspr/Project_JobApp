@@ -57,7 +57,7 @@
             this.docker.Dock = System.Windows.Forms.DockStyle.Top;
             this.docker.Location = new System.Drawing.Point(0, 0);
             this.docker.Name = "docker";
-            this.docker.Size = new System.Drawing.Size(1000, 30);
+            this.docker.Size = new System.Drawing.Size(1200, 30);
             this.docker.TabIndex = 1;
             this.docker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.docker_MouseDown);
             // 
@@ -97,7 +97,7 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnMinimize.Location = new System.Drawing.Point(890, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1090, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(50, 30);
             this.btnMinimize.TabIndex = 3;
@@ -113,7 +113,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnExit.Location = new System.Drawing.Point(940, 0);
+            this.btnExit.Location = new System.Drawing.Point(1140, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(60, 30);
             this.btnExit.TabIndex = 2;
@@ -127,7 +127,7 @@
             this.pnTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTab.Location = new System.Drawing.Point(200, 30);
             this.pnTab.Name = "pnTab";
-            this.pnTab.Size = new System.Drawing.Size(800, 600);
+            this.pnTab.Size = new System.Drawing.Size(1000, 700);
             this.pnTab.TabIndex = 6;
             // 
             // ucHome
@@ -135,7 +135,7 @@
             this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucHome.Location = new System.Drawing.Point(0, 0);
             this.ucHome.Name = "ucHome";
-            this.ucHome.Size = new System.Drawing.Size(800, 600);
+            this.ucHome.Size = new System.Drawing.Size(1000, 700);
             this.ucHome.TabIndex = 2;
             // 
             // pnNavigation
@@ -150,7 +150,7 @@
             this.pnNavigation.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnNavigation.Location = new System.Drawing.Point(0, 30);
             this.pnNavigation.Name = "pnNavigation";
-            this.pnNavigation.Size = new System.Drawing.Size(200, 600);
+            this.pnNavigation.Size = new System.Drawing.Size(200, 700);
             this.pnNavigation.TabIndex = 5;
             // 
             // rdbJobManager
@@ -183,7 +183,7 @@
             this.rdbInfo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbInfo.Image = global::Project_JobApp.Properties.Resources.document;
             this.rdbInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rdbInfo.Location = new System.Drawing.Point(0, 400);
+            this.rdbInfo.Location = new System.Drawing.Point(0, 500);
             this.rdbInfo.Name = "rdbInfo";
             this.rdbInfo.Size = new System.Drawing.Size(200, 100);
             this.rdbInfo.TabIndex = 10;
@@ -203,7 +203,7 @@
             this.rdbAccount.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbAccount.Image = global::Project_JobApp.Properties.Resources.user;
             this.rdbAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rdbAccount.Location = new System.Drawing.Point(0, 500);
+            this.rdbAccount.Location = new System.Drawing.Point(0, 600);
             this.rdbAccount.Name = "rdbAccount";
             this.rdbAccount.Size = new System.Drawing.Size(200, 100);
             this.rdbAccount.TabIndex = 9;
@@ -277,7 +277,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 630);
+            this.ClientSize = new System.Drawing.Size(1200, 730);
             this.Controls.Add(this.pnTab);
             this.Controls.Add(this.pnNavigation);
             this.Controls.Add(this.docker);

@@ -51,10 +51,10 @@ namespace Project_JobApp.UC
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+           DialogResult dr = MessageBox.Show("Bạn muốn lưu thay đổi?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
             {
-                DialogResult dr = MessageBox.Show("Bạn muốn lưu thay đổi?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dr == DialogResult.Yes)
+                try
                 {
                     js = new JobSeeker(txtUserid.Text, txtSurName.Text, txtName.Text, dtpBday.Value.ToString("dd/MM/yyyy"), txtCmnd.Text, cbxSex.SelectedItem.ToString(), txtAddress.Text, txtPhoneNum.Text, txtEmail.Text, rtxtMoreInfo.Text);
                     if (jsDAO.Chinhsua(js))
@@ -64,11 +64,11 @@ namespace Project_JobApp.UC
                     }
                     else MessageBox.Show("Có lỗi xảy ra!", "Thông báo");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }  
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

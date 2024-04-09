@@ -30,8 +30,8 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnContent = new System.Windows.Forms.Panel();
-            this.flpList = new System.Windows.Forms.FlowLayoutPanel();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.flpList = new System.Windows.Forms.FlowLayoutPanel();
             this.pnContent.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +41,7 @@
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(800, 55);
+            this.lblTitle.Size = new System.Drawing.Size(1000, 55);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Title";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -53,29 +53,29 @@
             this.pnContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContent.Location = new System.Drawing.Point(0, 55);
             this.pnContent.Name = "pnContent";
-            this.pnContent.Size = new System.Drawing.Size(800, 545);
+            this.pnContent.Size = new System.Drawing.Size(1000, 645);
             this.pnContent.TabIndex = 2;
-            // 
-            // flpList
-            // 
-            this.flpList.AutoScroll = true;
-            this.flpList.BackColor = System.Drawing.Color.White;
-            this.flpList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flpList.Location = new System.Drawing.Point(50, 50);
-            this.flpList.Name = "flpList";
-            this.flpList.Size = new System.Drawing.Size(700, 450);
-            this.flpList.TabIndex = 0;
             // 
             // btnRefresh
             // 
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(722, 0);
+            this.btnRefresh.Location = new System.Drawing.Point(925, 3);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 30);
             this.btnRefresh.TabIndex = 1;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // flpList
+            // 
+            this.flpList.AutoScroll = true;
+            this.flpList.BackColor = System.Drawing.Color.White;
+            this.flpList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flpList.Location = new System.Drawing.Point(49, 39);
+            this.flpList.Name = "flpList";
+            this.flpList.Size = new System.Drawing.Size(900, 600);
+            this.flpList.TabIndex = 0;
             // 
             // UCAppliedJob
             // 
@@ -84,7 +84,7 @@
             this.Controls.Add(this.pnContent);
             this.Controls.Add(this.lblTitle);
             this.Name = "UCAppliedJob";
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Size = new System.Drawing.Size(1000, 700);
             this.pnContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
