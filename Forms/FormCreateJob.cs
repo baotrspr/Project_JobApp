@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,10 +42,13 @@ namespace Project_JobApp.Forms
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            Job j = new Job(ucCreateJob.JobID, ucCreateJob.Userid, ucCreateJob.Tieude, ucCreateJob.Ngaytao, ucCreateJob.Vitri, ucCreateJob.Mucluong, ucCreateJob.Linhvuc, ucCreateJob.Phucloi, ucCreateJob.Yeucau, "Đang chờ");
-            if (jDAO.Them(j))
+            
+            CongViec j = new CongViec(ucCreateJob.JobID, ucCreateJob.Userid, ucCreateJob.Tieude, ucCreateJob.Ngaytao, ucCreateJob.Vitri, ucCreateJob.Mucluong, ucCreateJob.Linhvuc, ucCreateJob.Mota, ucCreateJob.Phucloi,ucCreateJob.Yeucau, ucCreateJob.Soluong, ucCreateJob.Noilamviec, ucCreateJob.Diadiem, ucCreateJob.Handk);
+            
+                if (jDAO.Them(j))
             {
                 MessageBox.Show("Thêm công việc thành công!", "Thông báo");
+                DialogResult = DialogResult.OK;
                 Close();
             } else
                 MessageBox.Show("Có lỗi xảy ra!", "Thông báo");

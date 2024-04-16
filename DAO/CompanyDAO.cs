@@ -32,7 +32,7 @@ namespace Project_JobApp.DAO
                 cp.Thongtin = dr.Rows[0]["thongtin"].ToString();
                 cp.Linhvuc = dr.Rows[0]["linhvuc"].ToString();
                 cp.Masothue = dr.Rows[0]["masothue"].ToString();
-                cp.Giayphep = dr.Rows[0]["giayphep"].ToString();
+                cp.Website = dr.Rows[0]["website"].ToString();
                 cp.Sdt = dr.Rows[0]["sdt"].ToString();
             }
             return cp;
@@ -44,8 +44,8 @@ namespace Project_JobApp.DAO
         }
         public bool Chinhsua(Company cp)
         {
-            string sqlStr = string.Format("update COMPANY set ten = N'{0}', ngaythanhlap = N'{1}', giayphep = '{2}', ngdungdau = '{3}', diachi = N'{4}', sdt = '{5}', masothue = N'{6}', linhvuc = N'{7}', email = '{8}', thongtin = N'{9}' where userid = '{10}'",
-                                           cp.Ten, cp.Ngaythanhlap, cp.Giayphep, cp.Ngdungdau, cp.Diachi, cp.Sdt, cp.Masothue, cp.Linhvuc, cp.Email, cp.Thongtin, cp.Userid);
+            string sqlStr = string.Format("update COMPANY set ten = N'{0}', ngaythanhlap = N'{1}', website = '{2}', ngdungdau = N'{3}', diachi = N'{4}', sdt = '{5}', masothue = N'{6}', linhvuc = N'{7}', email = '{8}', thongtin = N'{9}' where userid = '{10}'",
+                                           cp.Ten, cp.Ngaythanhlap, cp.Website, cp.Ngdungdau, cp.Diachi, cp.Sdt, cp.Masothue, cp.Linhvuc, cp.Email, cp.Thongtin, cp.Userid);
             if (dba.Execute(sqlStr))
             {
                 return true;

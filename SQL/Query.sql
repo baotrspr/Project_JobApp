@@ -20,11 +20,11 @@ create table JOBSEEKER(
 	thongtin nvarchar(max),
 )
 
+
 create table COMPANY(
 	userid varchar(255) constraint PK_Company primary key,
-	ten nvarchar(max),
+	ten nvarchar(255),
 	ngaythanhlap varchar(10),
-    giayphep nvarchar(255),
     ngdungdau nvarchar(255),
     diachi nvarchar(255),
     sdt nvarchar(10) check (len(sdt) = 10),
@@ -32,6 +32,7 @@ create table COMPANY(
     linhvuc nvarchar(255),
     email nvarchar(255) check (email like '%@%'),
 	thongtin nvarchar(max),
+	website varchar(255)
 )
 
 create table CONGVIEC(
@@ -42,10 +43,19 @@ create table CONGVIEC(
 	vitri nvarchar(255),
 	mucluong nvarchar(255),
 	linhvuc nvarchar(255),
-	phucloi nvarchar(255),
+	thongtin nvarchar(max),
+	phucloi nvarchar(max),
 	yeucau nvarchar(max),
+	soluong int,
+	noilamviec nvarchar(255),
+	diadiem nvarchar(255),
+	handangki varchar(10),
 	trangthai nvarchar(255),
+	dadangki int
 )
+alter table CONGVIEC alter column ngaytao varchar(20)
+select c.*, co.ten from CONGVIEC c join COMPANY co on c.userid = co.userid
+update CONGVIEC set ngaytao = '12/04/2024 23:59:59' where jobid = 'HS001'
 
 create table UNGTUYEN(
 	userid varchar(255) constraint FK_UNGTUYEN_TK foreign key references ACCOUNT(userid) on delete cascade,
@@ -58,6 +68,48 @@ create table UNGTUYEN(
 )
 go
 
+create trigger ins_congviec_ddk
+on CONGVIEC
+after insert
+as
+begin
+	declare @nmacv varchar(255)
+	select @nmacv = ne.jobid from inserted ne
+	update CONGVIEC set dadangki = 0, trangthai = 'avail' where jobid = @nmacv
+end
+go
+
+--create trigger ins_congviec_tencty
+--on CONGVIEC
+--after insert
+--as
+--begin
+--	declare @nuserid varchar(255)
+--	select @nuserid = ne.userid from inserted ne
+--	begin
+--		update CONGVIEC set 
+
+create trigger ins_ungtuyen_cv
+on UNGTUYEN
+after insert
+as
+begin
+	declare @nmacv varchar(255), @odadangki int, @osl int
+	select @nmacv = ne.jobid from inserted ne
+	update CONGVIEC set dadangki = dadangki + 1 where jobid = @nmacv
+end
+go
+
+create trigger del_ungtuyen_cv
+on UNGTUYEN
+after delete
+as
+begin
+	declare @nmacv varchar(255) 
+	select @nmacv = ne.jobid from inserted ne
+	update CONGVIEC set dadangki = dadangki - 1 where jobid = @nmacv
+end
+go
 
 create trigger del_acc_seeker
 on ACCOUNT
@@ -132,19 +184,21 @@ begin
 	declare @ntrangthaiphanhoi varchar(255), @njobid varchar(255)
 	select @ntrangthaiphanhoi = ne.trangthaiphanhoi, @njobid = ne.jobid
 	from inserted ne
+	if @ntrangthaiphanhoi = 'accepted'
+	begin
 		update CONGVIEC set trangthai = 'notavail' where jobid = @njobid
+	end
 end
 go
 	
-
-select * from CONGVIEC where linhvuc like 'abc'
+select * from CONGVIEC
 
 ALTER TABLE UNGTUYEN
 ADD CONSTRAINT FK_UNGTUYEN_TK FOREIGN KEY (userid) REFERENCES ACCOUNT(userid) ON DELETE CASCADE
 
 select * from JOBSEEKER
 drop table COMPANY
-select * from UNGTUYEN, CONGVIEC where UNGTUYEN.userid = 'xuanbao' and UNGTUYEN.jobid = CONGVIEC.jobid
+select * from UNGTUYEN join CONGVIEC on UNGTUYEN.jobid = CONGVIEC.jobid
 select * from CONGVIEC
 
 select * from UNGTUYEN
@@ -177,10 +231,20 @@ update ACCOUNT set matkhau = 'xuanbao04' where userid = 'xuanbao'
 delete from ACCOUNT where userid = 'hsacademy'
 update CONGVIEC set trangthai = 'rejected' where jobid = 'FPT1'
 
+delete from UNGTUYEN
+
 select * from ACCOUNT
 select * from JOBSEEKER
 select * from COMPANY
 select * from CONGVIEC
 select * from UNGTUYEN
 
+
+delete from UNGTUYEN
+delete from CONGVIEC
 delete from COMPANY
+delete from JOBSEEKER
+delete from ACCOUNT
+
+delete from COMPANY
+update CONGVIEC set mucluong = 30000000 where jobid = 264895

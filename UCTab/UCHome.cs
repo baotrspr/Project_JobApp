@@ -22,7 +22,7 @@ namespace Project_JobApp.UC
         {
             lblFullDay.Text = DateTime.Now.ToString("dddd");
             lblDay.Text = DateTime.Now.ToString("dd");
-            lblMonth.Text = "Tháng " + DateTime.Now.ToString("MM");
+            lblMonth.Text = "Month " + DateTime.Now.ToString("MM");
             lblYear.Text = DateTime.Now.ToString("yyyy");
         }
 

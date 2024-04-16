@@ -44,17 +44,24 @@ namespace Project_JobApp.UCTab
 
             foreach (DataRow dr in dt.Rows)
             {
-                Job j = new Job();
+                CongViec j = new CongViec();
 
-                j.Jobid = dr[0].ToString();
-                j.Userid = dr[1].ToString();
-                j.Tencv = dr[2].ToString();
-                j.Ngaytao = dr[3].ToString();
-                j.Vitri = dr[4].ToString();
-                j.Mucluong = dr[5].ToString();
-                j.Linhvuc = dr[6].ToString();
-                j.Phucloi = dr[7].ToString();
-                j.Yeucau = dr[8].ToString();
+                j.Jobid = dr["jobid"].ToString();
+                j.Userid = dr["userid"].ToString();
+                j.Tencv = dr["tencv"].ToString();
+                j.Ngaytao = dr["ngaytao"].ToString();
+                j.Vitri = dr["vitri"].ToString();
+                j.Mucluong = dr["mucluong"].ToString();
+                j.Linhvuc = dr["linhvuc"].ToString();
+                j.Phucloi = dr["phucloi"].ToString();
+                j.Yeucau = dr["yeucau"].ToString();
+                j.Thongtin = dr["thongtin"].ToString() ;
+                j.Handangki = dr["handangki"].ToString();
+                j.Soluong = int.Parse(dr["soluong"].ToString());
+                j.Dadangki = int.Parse(dr["dadangki"].ToString());
+                j.Trangthai = dr["trangthai"].ToString();
+                j.Noilamviec = dr["noilamviec"].ToString();
+                j.Diadiem= dr["diadiem"].ToString();
 
                 UCJobRow ucJobRow = new UCJobRow(j);
                 flpList.Controls.Add(ucJobRow);

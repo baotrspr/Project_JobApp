@@ -13,7 +13,6 @@ namespace Project_JobApp.Classes
         string userid;
         string ten;
         string ngaythanhlap;
-        string giayphep;
         string ngdungdau;
         string diachi;
         string sdt;
@@ -21,16 +20,16 @@ namespace Project_JobApp.Classes
         string linhvuc;
         string email;
         string thongtin;
+        string website;
 
         private readonly Regex passRule = new Regex(@"^\d{10}$");
 
         public Company() { }
-        public Company(string userid, string ten, string ngaythanhlap, string giayphep, string ngdungdau, string diachi, string sdt, string masothue, string linhvuc, string email, string thongtin)
+        public Company(string userid, string ten, string ngaythanhlap, string ngdungdau, string diachi, string sdt, string masothue, string linhvuc, string email, string thongtin, string website)
         {
             Userid = userid;
             Ten = ten;
             Ngaythanhlap = ngaythanhlap;
-            Giayphep = giayphep;
             Ngdungdau = ngdungdau;
             Diachi = diachi;
             Sdt = sdt;
@@ -38,6 +37,7 @@ namespace Project_JobApp.Classes
             Linhvuc = linhvuc;
             Email = email;
             Thongtin = thongtin;
+            Website = website;
         }
         public string Userid
         {
@@ -59,14 +59,14 @@ namespace Project_JobApp.Classes
             get { return ngaythanhlap; }
             set { ngaythanhlap = value;}
         }
-        public string Giayphep
+        public string Website
         {
-            get { return giayphep; }
+            get { return website; }
             set 
             {
                 //if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
                 //    throw new Exception("Không được bỏ trống trường này!");
-                giayphep = value;
+                website = value;
             }
         }
         public string Ngdungdau

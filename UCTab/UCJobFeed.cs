@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,13 +38,6 @@ namespace Project_JobApp.UC
             txtInput.Enabled = false;
             cbxField.Enabled = false;
 
-            if (flpData != null)
-            {
-                foreach (UserControl uc in flpData.Controls)
-                {
-                    flpData.Controls.Remove(uc);
-                }
-            }
             dt = jd.GetData();
             LoadList(dt);
         }
@@ -51,34 +45,37 @@ namespace Project_JobApp.UC
         private void btnCreate_Click(object sender, EventArgs e)
         {
             FormCreateJob create = new FormCreateJob(acc);
-            create.ShowDialog();  
-            LoadList(dt);
+            create.ShowDialog();
+            if (create.DialogResult == DialogResult.OK)
+            {
+                dt = jd.GetData();
+                LoadList(dt);
+            }
         }
 
         private void LoadList(DataTable dt)
         {
-            if (flpData != null)
-            {
-                foreach (UCThumbnail uc in flpData.Controls)
-                {
-                    uc.Dispose();
-                    flpData.Controls.Remove(uc);
-                }
-            }
-            //DataTable dt = jd.GetData();
+            flpData?.Controls.Clear();
             foreach (DataRow dr in dt.Rows)
             {
-                Job j = new Job();
+                CongViec j = new CongViec();
                 j.Jobid = dr["jobid"].ToString();
-                j.Tencv = dr["tencv"].ToString();
-                j.Vitri = dr["vitri"].ToString();
-                j.Linhvuc = dr["linhvuc"].ToString();
-                j.Mucluong = dr["mucluong"].ToString();
-                j.Yeucau = dr["yeucau"].ToString();
-                j.Phucloi = dr["phucloi"].ToString();
                 j.Userid = dr["userid"].ToString();
+                j.Tencty = dr["ten"].ToString();
+                j.Tencv = dr["tencv"].ToString();
                 j.Ngaytao = dr["ngaytao"].ToString();
+                j.Vitri = dr["vitri"].ToString();
+                j.Mucluong = dr["mucluong"].ToString();
+                j.Linhvuc = dr["linhvuc"].ToString();
+                j.Thongtin = dr["thongtin"].ToString();
+                j.Phucloi = dr["phucloi"].ToString();
+                j.Yeucau = dr["yeucau"].ToString();
+                j.Soluong = int.Parse(dr["soluong"].ToString());
+                j.Noilamviec = dr["noilamviec"].ToString();
+                j.Diadiem = dr["diadiem"].ToString();
+                j.Handangki = dr["handangki"].ToString();
                 j.Trangthai = dr["trangthai"].ToString();
+                j.Dadangki = int.Parse(dr["dadangki"].ToString());
                 UCThumbnail thumb = new UCThumbnail(j, acc);
                 flpData.Controls.Add(thumb);
             }

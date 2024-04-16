@@ -1,5 +1,6 @@
 ﻿using Project_JobApp.Classes;
 using Project_JobApp.DAO;
+using Project_JobApp.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,26 +15,38 @@ namespace Project_JobApp.UCMore
 {
     public partial class UCJobRow : UserControl
     {
-        Job j;
+        CongViec j;
         CongviecDAO congviecDAO = new CongviecDAO();
 
         public UCJobRow()
         {
             InitializeComponent();
         }
-        public UCJobRow(Job j)
+        public UCJobRow(CongViec j)
         {
             InitializeComponent();
             this.j = j;
 
-            lblJobID.Text = j.Jobid;
-            lblDay.Text = j.Ngaytao;
-            lblName.Text = j.Tencv;
-            lblPosition.Text = j.Vitri;
-            lblStatus.Text = j.Trangthai;
+            lblMacv.Text = j.Jobid;
+            lblNgaytao.Text = j.Ngaytao;
+            lblTencv.Text = j.Tencv;
+            lblVitri.Text = j.Vitri;
+            lblSoluong.Text = j.Dadangki.ToString();
         }
 
-        private void btnDelJob_Click(object sender, EventArgs e)
+        private void btnChinhsua_Click(object sender, EventArgs e)
+        {
+            FormChinhsuaJob edit = new FormChinhsuaJob(j.Jobid);
+            edit.ShowDialog();
+        }
+
+        private void btnXem_Click(object sender, EventArgs e)
+        {
+            FormJobDetail jobDetail = new FormJobDetail(j);
+            jobDetail.ShowDialog();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             if (congviecDAO.Xoa(j))
             {

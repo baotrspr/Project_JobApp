@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,13 +17,13 @@ namespace Project_JobApp.UC
 {
     public partial class UCThumbnail : UserControl
     {
-        Job job;
+        CongViec job;
         Account acc;
         public UCThumbnail()
         {
             InitializeComponent();
         }
-        public UCThumbnail(Job job, Account acc)
+        public UCThumbnail(CongViec job, Account acc)
         {
             InitializeComponent();
 
@@ -30,21 +31,37 @@ namespace Project_JobApp.UC
             this.acc = acc;
 
             Tieude = job.Tencv;
-            Ngaytao = job.Ngaytao;
-            Nguoidang = job.Userid;
-            if (job.Trangthai == "notavail")
-                pbxStatus.Image = Project_JobApp.Properties.Resources.accepted;
+            Nguoidang = job.Tencty;
+            Diadiem = job.Diadiem;
+            Mucluong = job.Mucluong;
+            Noilamviec = job.Noilamviec;
+
+            DateTime han = DateTime.ParseExact(job.Ngaytao, "dd/MM/yyyy HH:mm:ss", CultureInfo.CurrentCulture);
+            DateTime day = DateTime.Now;
+            int songay = (int)(day - han).TotalDays;
+            int sogio = (day - han).Hours;
+
+            if (songay > 0 && sogio > 0)
+                Ngaytao = songay.ToString() + " ngày " + sogio.ToString() + " giờ trước";
+
+            han = DateTime.ParseExact(job.Handangki, "dd/MM/yyyy HH:mm:ss", CultureInfo.CurrentCulture);
+            songay = (int)(han - day).TotalDays;
+            sogio = (han - day).Hours;
+            if (songay > 0 && sogio > 0)
+                Thoihan = job.Handangki + " ( Còn " + songay.ToString() + " ngày " + sogio.ToString() + " giờ)";
             else
-                pbxStatus.Image = Project_JobApp.Properties.Resources.hourglass;
+            {
+                Thoihan = "Đã hết hạn đăng kí!";
+            }
+            //Thoihan = job.Handangki;
         }
 
-        
+
         public string Tieude
         {
             get { return lblTitle.Text; }
             set { lblTitle.Text = value; }
         }
-
         public string Ngaytao
         {
             get { return lblDate_1.Text; }
@@ -55,12 +72,40 @@ namespace Project_JobApp.UC
             get { return lblOwner_1.Text; }
             set { lblOwner_1.Text = value; }
         }
-
+        public string Diadiem 
+        { 
+            get { return lblDiadiem.Text; }
+            set { lblDiadiem.Text = value; }
+        }
+        public string Mucluong
+        {
+            get { return lblMucluong.Text; }
+            set { lblMucluong.Text = value; }
+        }
+        public string Noilamviec
+        {
+            get { return lblNoilamviec.Text; }
+            set { lblNoilamviec.Text = value; }
+        }
+        public string Thoihan
+        {
+            get { return lblThoihan.Text; }
+            set { lblThoihan.Text = value; }
+        }
         private void UCThumbnail_Click(object sender, EventArgs e)
         {
             FormJobDetail detail = new FormJobDetail(job, acc);
             detail.ShowDialog();
         }
 
+        private void UCThumbnail_MouseEnter(object sender, EventArgs e)
+        {
+            BackColor = Color.GhostWhite;
+        }
+
+        private void UCThumbnail_MouseLeave(object sender, EventArgs e)
+        {
+            BackColor = Color.White;
+        }
     }
 }

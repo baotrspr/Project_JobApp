@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,25 +18,26 @@ namespace Project_JobApp.DAO
 
         public DataTable GetData()
         {
-            string sqlStr = string.Format("select * from CONGVIEC");
+            string sqlStr = string.Format("select c.*, co.ten from CONGVIEC c join COMPANY co on c.userid = co.userid");
             return dba.ExecuteSelect(sqlStr);
         }
 
         public DataTable GetData(string field)
         {
-            string sqlStr = string.Format("select * from CONGVIEC where linhvuc like '%{0}%'", field);
+            string sqlStr = string.Format("select c.*, co.ten from CONGVIEC c join COMPANY co on c.userid = co.userid where linhvuc = N'{0}'", field);
             return dba.ExecuteSelect(sqlStr);
         }
         public DataTable GetData(int salary)
         {
-            string sqlStr = string.Format("select * from CONGVIEC where mucluong >= {0}", salary);
+            string sqlStr = string.Format("select c.*, co.ten from CONGVIEC c join COMPANY co on c.userid = co.userid where mucluong >= {0}", salary);
             return dba.ExecuteSelect(sqlStr);
         }
 
-        public bool Them(Job j)
+        public bool Them(CongViec j)
         {
-            string sqlStr = string.Format("insert into CONGVIEC values ('{0}',N'{1}',N'{2}',N'{3}','{4}','{5}',N'{6}', N'{7}',N'{8}', N'{9}')",
-                                            j.Jobid, j.Userid, j.Tencv, j.Ngaytao, j.Vitri, j.Mucluong, j.Linhvuc, j.Phucloi, j.Yeucau, "waiting");
+            string sqlStr = string.Format("insert into CONGVIEC(jobid, userid, tencv, ngaytao, vitri, mucluong, linhvuc, thongtin, phucloi, yeucau, soluong, noilamviec, diadiem, handangki) " +
+                                            "values ('{0}','{1}',N'{2}',N'{3}','{4}','{5}',N'{6}', N'{7}',N'{8}', N'{9}', '{10}', N'{11}', N'{12}', N'{13}')",
+                                            j.Jobid, j.Userid, j.Tencv, j.Ngaytao, j.Vitri, j.Mucluong, j.Linhvuc, j.Thongtin, j.Phucloi, j.Yeucau, j.Soluong, j.Noilamviec, j.Diadiem, j.Handangki);
             if (dba.Execute(sqlStr))
             {
                 return true;
@@ -43,7 +45,7 @@ namespace Project_JobApp.DAO
             else return false;
         }
 
-        public bool Xoa(Job j)
+        public bool Xoa(CongViec j)
         {
             string sqlStr = string.Format("delete from CONGVIEC where jobid = '{0}'", j.Jobid);
             if (dba.Execute(sqlStr))
@@ -51,6 +53,44 @@ namespace Project_JobApp.DAO
                 return true;
             }
             else return false;
+        }
+
+        public bool Sua(CongViec j)
+        {
+            string sqlStr = string.Format("update CONGVIEC set jobid = '{0}', userid = '{1}', tencv = N'{2}', ngaytao = '{3}', vitri = N'{4}', mucluong = N'{5}', linhvuc = N'{6}', thongtin = N'{7}', phucloi = N'{8}', yeucau = N'{9}', soluong = N'{10}', noilamviec = N'{11}', diadiem = N'{12}', handangki = N'{13}'",
+                                            j.Jobid, j.Userid, j.Tencv, j.Ngaytao, j.Vitri, j.Mucluong, j.Linhvuc, j.Thongtin, j.Phucloi, j.Yeucau, j.Soluong, j.Noilamviec, j.Diadiem, j.Handangki);
+            if (dba.Execute(sqlStr))
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        public CongViec GetThongtin(string jobid)
+        {
+            CongViec cv = new CongViec();
+            string sqlStr = string.Format("select c.*, co.ten from CONGVIEC c join COMPANY co on c.userid = co.userid where jobid = '{0}'", jobid);
+            DataTable dr = dba.SelectRow(sqlStr);
+            if (dr != null)
+            {
+                cv.Tencv = dr.Rows[0]["tencv"].ToString();
+                cv.Mucluong = dr.Rows[0]["tencv"].ToString();
+                cv.Thongtin = dr.Rows[0]["tencv"].ToString();
+                cv.Trangthai = dr.Rows[0]["tencv"].ToString();
+                cv.Handangki = dr.Rows[0]["tencv"].ToString();
+                cv.Jobid = jobid;
+                cv.Linhvuc = dr.Rows[0]["tencv"].ToString();
+                cv.Diadiem = dr.Rows[0]["tencv"].ToString();
+                cv.Vitri = dr.Rows[0]["tencv"].ToString();
+                cv.Yeucau = dr.Rows[0]["tencv"].ToString();
+                cv.Ngaytao = dr.Rows[0]["tencv"].ToString();
+                cv.Noilamviec = dr.Rows[0]["tencv"].ToString();
+                cv.Phucloi = dr.Rows[0]["tencv"].ToString();
+                cv.Dadangki = int.Parse(dr.Rows[0]["tencv"].ToString());
+                cv.Soluong = int.Parse(dr.Rows[0]["tencv"].ToString());
+                cv.Userid = dr.Rows[0]["userid"].ToString();
+            }
+            return cv;
         }
     }
 }

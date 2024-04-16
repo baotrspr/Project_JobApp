@@ -21,6 +21,7 @@ namespace Project_JobApp.UC
         public UCProfileCompany()
         {
             InitializeComponent();
+
         }
         public UCProfileCompany(Account acc)
         {
@@ -39,7 +40,7 @@ namespace Project_JobApp.UC
             txtAddress.Text = cp.Diachi;
             txtEmail.Text = cp.Email;
             txtLead.Text = cp.Ngdungdau;
-            txtLicense.Text = cp.Giayphep;
+            txtWebsite.Text = cp.Website;
             txtName.Text = cp.Ten;
             txtPhoneNum.Text = cp.Sdt;
             txtUserid.Text = cp.Userid;
@@ -66,11 +67,11 @@ namespace Project_JobApp.UC
                 DialogResult dr = MessageBox.Show("Bạn muốn lưu thay đổi?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dr == DialogResult.Yes)
                 {
-                    cp = new Company(txtUserid.Text, txtName.Text, dtpDay.Value.ToString("dd/MM/yyyy"), txtLicense.Text, txtLead.Text, txtAddress.Text, txtPhoneNum.Text, txtTax.Text, txtField.Text, txtEmail.Text, rtxtMoreInfo.Text);
+                    cp = new Company(txtUserid.Text, txtName.Text, dtpDay.Value.ToString("dd/MM/yyyy"), txtLead.Text, txtAddress.Text, txtPhoneNum.Text, txtTax.Text, txtField.Text, txtEmail.Text, rtxtMoreInfo.Text, txtWebsite.Text);
                     if (cpDAO.Chinhsua(cp))
                     {
                         MessageBox.Show("Đã cập nhật chỉnh sửa!", "Thông báo");
-                        LoadData();
+                        UCProfileCompany_Load(sender, e);
                     }
                     else MessageBox.Show("Có lỗi xảy ra!", "Thông báo");
                 }
@@ -79,6 +80,14 @@ namespace Project_JobApp.UC
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void UCProfileCompany_Load(object sender, EventArgs e)
+        {
+            LoadData();
+
+            btnSave.Enabled = false;
+            pnForm.Enabled = false;
         }
     }
 }

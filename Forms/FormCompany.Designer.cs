@@ -49,7 +49,7 @@
             // 
             // docker
             // 
-            this.docker.BackColor = System.Drawing.Color.SeaGreen;
+            this.docker.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.docker.Controls.Add(this.lblInfo);
             this.docker.Controls.Add(this.btnBack);
             this.docker.Controls.Add(this.btnMinimize);
@@ -57,7 +57,7 @@
             this.docker.Dock = System.Windows.Forms.DockStyle.Top;
             this.docker.Location = new System.Drawing.Point(0, 0);
             this.docker.Name = "docker";
-            this.docker.Size = new System.Drawing.Size(1200, 30);
+            this.docker.Size = new System.Drawing.Size(1300, 30);
             this.docker.TabIndex = 1;
             this.docker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.docker_MouseDown);
             // 
@@ -97,7 +97,7 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnMinimize.Location = new System.Drawing.Point(1090, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1190, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(50, 30);
             this.btnMinimize.TabIndex = 3;
@@ -113,7 +113,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnExit.Location = new System.Drawing.Point(1140, 0);
+            this.btnExit.Location = new System.Drawing.Point(1240, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(60, 30);
             this.btnExit.TabIndex = 2;
@@ -127,7 +127,7 @@
             this.pnTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTab.Location = new System.Drawing.Point(200, 30);
             this.pnTab.Name = "pnTab";
-            this.pnTab.Size = new System.Drawing.Size(1000, 700);
+            this.pnTab.Size = new System.Drawing.Size(1100, 800);
             this.pnTab.TabIndex = 6;
             // 
             // ucHome
@@ -135,12 +135,12 @@
             this.ucHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucHome.Location = new System.Drawing.Point(0, 0);
             this.ucHome.Name = "ucHome";
-            this.ucHome.Size = new System.Drawing.Size(1000, 700);
+            this.ucHome.Size = new System.Drawing.Size(1100, 800);
             this.ucHome.TabIndex = 2;
             // 
             // pnNavigation
             // 
-            this.pnNavigation.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnNavigation.BackColor = System.Drawing.Color.Gainsboro;
             this.pnNavigation.Controls.Add(this.rdbJobManager);
             this.pnNavigation.Controls.Add(this.rdbInfo);
             this.pnNavigation.Controls.Add(this.rdbAccount);
@@ -150,7 +150,7 @@
             this.pnNavigation.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnNavigation.Location = new System.Drawing.Point(0, 30);
             this.pnNavigation.Name = "pnNavigation";
-            this.pnNavigation.Size = new System.Drawing.Size(200, 700);
+            this.pnNavigation.Size = new System.Drawing.Size(200, 800);
             this.pnNavigation.TabIndex = 5;
             // 
             // rdbJobManager
@@ -160,7 +160,8 @@
             this.rdbJobManager.FlatAppearance.BorderSize = 0;
             this.rdbJobManager.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.rdbJobManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbJobManager.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbJobManager.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbJobManager.ForeColor = System.Drawing.Color.Black;
             this.rdbJobManager.Image = global::Project_JobApp.Properties.Resources.info;
             this.rdbJobManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rdbJobManager.Location = new System.Drawing.Point(0, 300);
@@ -180,10 +181,11 @@
             this.rdbInfo.FlatAppearance.BorderSize = 0;
             this.rdbInfo.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.rdbInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbInfo.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbInfo.ForeColor = System.Drawing.Color.Black;
             this.rdbInfo.Image = global::Project_JobApp.Properties.Resources.document;
             this.rdbInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rdbInfo.Location = new System.Drawing.Point(0, 500);
+            this.rdbInfo.Location = new System.Drawing.Point(0, 600);
             this.rdbInfo.Name = "rdbInfo";
             this.rdbInfo.Size = new System.Drawing.Size(200, 100);
             this.rdbInfo.TabIndex = 10;
@@ -200,10 +202,11 @@
             this.rdbAccount.FlatAppearance.BorderSize = 0;
             this.rdbAccount.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.rdbAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbAccount.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbAccount.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbAccount.ForeColor = System.Drawing.Color.Black;
             this.rdbAccount.Image = global::Project_JobApp.Properties.Resources.user;
             this.rdbAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rdbAccount.Location = new System.Drawing.Point(0, 600);
+            this.rdbAccount.Location = new System.Drawing.Point(0, 700);
             this.rdbAccount.Name = "rdbAccount";
             this.rdbAccount.Size = new System.Drawing.Size(200, 100);
             this.rdbAccount.TabIndex = 9;
@@ -220,7 +223,8 @@
             this.rdbApplied.FlatAppearance.BorderSize = 0;
             this.rdbApplied.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.rdbApplied.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbApplied.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbApplied.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbApplied.ForeColor = System.Drawing.Color.Black;
             this.rdbApplied.Image = global::Project_JobApp.Properties.Resources.table_list;
             this.rdbApplied.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rdbApplied.Location = new System.Drawing.Point(0, 200);
@@ -240,7 +244,8 @@
             this.rdbFeed.FlatAppearance.BorderSize = 0;
             this.rdbFeed.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.rdbFeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbFeed.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbFeed.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbFeed.ForeColor = System.Drawing.Color.Black;
             this.rdbFeed.Image = global::Project_JobApp.Properties.Resources.rectangle_list;
             this.rdbFeed.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rdbFeed.Location = new System.Drawing.Point(0, 100);
@@ -260,7 +265,8 @@
             this.rdbHome.FlatAppearance.BorderSize = 0;
             this.rdbHome.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.rdbHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbHome.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbHome.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbHome.ForeColor = System.Drawing.Color.Black;
             this.rdbHome.Image = global::Project_JobApp.Properties.Resources.home;
             this.rdbHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rdbHome.Location = new System.Drawing.Point(0, 0);
@@ -277,7 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 730);
+            this.ClientSize = new System.Drawing.Size(1300, 830);
             this.Controls.Add(this.pnTab);
             this.Controls.Add(this.pnNavigation);
             this.Controls.Add(this.docker);

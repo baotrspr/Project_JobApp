@@ -41,7 +41,7 @@
             this.btnCreate.BackColor = System.Drawing.Color.White;
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.Location = new System.Drawing.Point(197, 612);
+            this.btnCreate.Location = new System.Drawing.Point(351, 820);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(200, 50);
             this.btnCreate.TabIndex = 1;
@@ -54,7 +54,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(452, 612);
+            this.btnCancel.Location = new System.Drawing.Point(606, 820);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(200, 50);
             this.btnCancel.TabIndex = 1;
@@ -64,11 +64,11 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.BackColor = System.Drawing.Color.Indigo;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(850, 25);
+            this.panel1.Size = new System.Drawing.Size(1100, 25);
             this.panel1.TabIndex = 2;
             // 
             // panel2
@@ -80,21 +80,22 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 25);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(850, 675);
+            this.panel2.Size = new System.Drawing.Size(1100, 875);
             this.panel2.TabIndex = 3;
             // 
             // pnMain
             // 
-            this.pnMain.Location = new System.Drawing.Point(26, 3);
+            this.pnMain.AutoScroll = true;
+            this.pnMain.Location = new System.Drawing.Point(7, 3);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(800, 600);
+            this.pnMain.Size = new System.Drawing.Size(1080, 800);
             this.pnMain.TabIndex = 2;
             // 
             // FormCreateJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 700);
+            this.ClientSize = new System.Drawing.Size(1100, 900);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

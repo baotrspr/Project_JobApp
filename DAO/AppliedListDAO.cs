@@ -14,6 +14,13 @@ namespace Project_JobApp.DAO
     {
         DBAccess dba = new DBAccess();
         public AppliedListDAO() { }
+        
+        public bool KiemtraUT(string userid)
+        {
+            string sqlStr = string.Format("select * from UNGTUYEN where userid = '{0}'", userid);
+            DataTable dt = dba.ExecuteSelect(sqlStr);
+            return dt.Rows.Count > 0;
+        }
 
         public DataTable GetSeekerData(string companyid)
         {

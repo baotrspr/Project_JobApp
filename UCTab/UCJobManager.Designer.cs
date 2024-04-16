@@ -38,27 +38,28 @@
             // flpList
             // 
             this.flpList.AutoScroll = true;
-            this.flpList.BackColor = System.Drawing.Color.White;
+            this.flpList.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flpList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flpList.Location = new System.Drawing.Point(91, 36);
+            this.flpList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpList.Location = new System.Drawing.Point(0, 0);
             this.flpList.Name = "flpList";
-            this.flpList.Size = new System.Drawing.Size(800, 600);
+            this.flpList.Padding = new System.Windows.Forms.Padding(50, 10, 0, 10);
+            this.flpList.Size = new System.Drawing.Size(1100, 745);
             this.flpList.TabIndex = 0;
             // 
             // pnContent
             // 
-            this.pnContent.Controls.Add(this.btnRefresh);
             this.pnContent.Controls.Add(this.flpList);
             this.pnContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContent.Location = new System.Drawing.Point(0, 55);
             this.pnContent.Name = "pnContent";
-            this.pnContent.Size = new System.Drawing.Size(1000, 645);
+            this.pnContent.Size = new System.Drawing.Size(1100, 745);
             this.pnContent.TabIndex = 4;
             // 
             // btnRefresh
             // 
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(922, 0);
+            this.btnRefresh.Location = new System.Drawing.Point(1025, 25);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 30);
             this.btnRefresh.TabIndex = 2;
@@ -68,11 +69,12 @@
             // 
             // lblTitle
             // 
+            this.lblTitle.BackColor = System.Drawing.Color.White;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(1000, 55);
+            this.lblTitle.Size = new System.Drawing.Size(1100, 55);
             this.lblTitle.TabIndex = 3;
             this.lblTitle.Text = "Danh sách Job";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -81,10 +83,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.pnContent);
             this.Controls.Add(this.lblTitle);
             this.Name = "UCJobManager";
-            this.Size = new System.Drawing.Size(1000, 700);
+            this.Size = new System.Drawing.Size(1100, 800);
             this.pnContent.ResumeLayout(false);
             this.ResumeLayout(false);
 

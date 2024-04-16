@@ -60,7 +60,7 @@ namespace Project_JobApp.UC
                     if (jsDAO.Chinhsua(js))
                     {
                         MessageBox.Show("Đã cập nhật chỉnh sửa!", "Thông báo");
-                        LoadData();
+                        UCProfileSeeker_Load(sender, e);
                     }
                     else MessageBox.Show("Có lỗi xảy ra!", "Thông báo");
                 }
@@ -79,6 +79,14 @@ namespace Project_JobApp.UC
                 pnForm.Enabled = true;
                 btnSave.Enabled = true;
             }
+        }
+
+        private void UCProfileSeeker_Load(object sender, EventArgs e)
+        {
+            LoadData();
+
+            btnSave.Enabled = false;
+            pnForm.Enabled = false;
         }
     }
 }
