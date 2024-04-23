@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LoginDFModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="JobAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ACCOUNT">
           <Key>
             <PropertyRef Name="userid" />
@@ -127,7 +127,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="LoginDFModelStoreContainer">
+        <EntityContainer Name="JobAppModelStoreContainer">
           <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="COMPANY" EntityType="Self.COMPANY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CONGVIEC" EntityType="Self.CONGVIEC" Schema="dbo" store:Type="Tables" />
@@ -154,7 +154,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="LoginDFModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="JobAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ACCOUNT">
           <Key>
             <PropertyRef Name="userid" />
@@ -285,7 +285,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="LoginDFContext" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="JobAppDFContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ACCOUNTs" EntityType="Self.ACCOUNT" />
           <EntitySet Name="COMPANies" EntityType="Self.COMPANY" />
           <EntitySet Name="CONGVIECs" EntityType="Self.CONGVIEC" />
@@ -313,9 +313,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LoginDFModelStoreContainer" CdmEntityContainer="LoginDFContext">
+        <EntityContainerMapping StorageEntityContainer="JobAppModelStoreContainer" CdmEntityContainer="JobAppDFContext">
           <EntitySetMapping Name="ACCOUNTs">
-            <EntityTypeMapping TypeName="LoginDFModel.ACCOUNT">
+            <EntityTypeMapping TypeName="JobAppModel.ACCOUNT">
               <MappingFragment StoreEntitySet="ACCOUNT">
                 <ScalarProperty Name="userid" ColumnName="userid" />
                 <ScalarProperty Name="matkhau" ColumnName="matkhau" />
@@ -324,7 +324,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="COMPANies">
-            <EntityTypeMapping TypeName="LoginDFModel.COMPANY">
+            <EntityTypeMapping TypeName="JobAppModel.COMPANY">
               <MappingFragment StoreEntitySet="COMPANY">
                 <ScalarProperty Name="userid" ColumnName="userid" />
                 <ScalarProperty Name="ten" ColumnName="ten" />
@@ -341,7 +341,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CONGVIECs">
-            <EntityTypeMapping TypeName="LoginDFModel.CONGVIEC">
+            <EntityTypeMapping TypeName="JobAppModel.CONGVIEC">
               <MappingFragment StoreEntitySet="CONGVIEC">
                 <ScalarProperty Name="jobid" ColumnName="jobid" />
                 <ScalarProperty Name="userid" ColumnName="userid" />
@@ -363,7 +363,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="JOBSEEKERs">
-            <EntityTypeMapping TypeName="LoginDFModel.JOBSEEKER">
+            <EntityTypeMapping TypeName="JobAppModel.JOBSEEKER">
               <MappingFragment StoreEntitySet="JOBSEEKER">
                 <ScalarProperty Name="userid" ColumnName="userid" />
                 <ScalarProperty Name="ho" ColumnName="ho" />
@@ -379,7 +379,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UNGTUYENs">
-            <EntityTypeMapping TypeName="LoginDFModel.UNGTUYEN">
+            <EntityTypeMapping TypeName="JobAppModel.UNGTUYEN">
               <MappingFragment StoreEntitySet="UNGTUYEN">
                 <ScalarProperty Name="userid" ColumnName="userid" />
                 <ScalarProperty Name="jobid" ColumnName="jobid" />

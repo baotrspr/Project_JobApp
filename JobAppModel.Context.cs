@@ -13,10 +13,10 @@ namespace Project_JobApp
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class LoginDFContext : DbContext
+    public partial class JobAppDFContext : DbContext
     {
-        public LoginDFContext()
-            : base("name=LoginDFContext")
+        public JobAppDFContext()
+            : base("name=JobAppDFContext")
         {
         }
     
