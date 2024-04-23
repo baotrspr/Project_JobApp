@@ -19,7 +19,7 @@ namespace Project_JobApp.DAO
 
         public bool CheckLogin(Account acc)
         {
-            using (var db = new LoginDFContext())
+            using (var db = new JobAppDFContext())
             {
                 var account = new ACCOUNT
                 {
