@@ -28,43 +28,11 @@ namespace Project_JobApp.UC
             InitializeComponent();
             this.acc = acc;
 
-            if (acc.Vaitro == "JobSeeker")
-            {
-                lblTitle.Text = "Danh sách công việc đã ứng tuyển";
-                LoadCompany();
-            } 
-            else if (acc.Vaitro == "Company")
-            {
-                lblTitle.Text = "Danh sách ứng viên công việc";
-                LoadSeeker();
-            }
-        }
-        private void LoadSeeker() // Load cac seeker da dang ki ung tuyen cho cong ty
-        {
-            if (flpList != null)
-            {
-                foreach (UCAppliedSeeker uc in flpList.Controls)
-                {
-                    uc.Dispose();
-                    flpList.Controls.Remove(uc);
-                }
-            }
-            DataTable dt = apDAO.GetSeekerData(acc.Userid);
-            foreach (DataRow dr in dt.Rows)
-            {
-                AppliedList apl = new AppliedList();
-                apl.Userid = dr[0].ToString();
-                apl.Jobid = dr[1].ToString();
-                apl.Tencv = dr[2].ToString();
-                apl.Thoigian = dr[3].ToString();
-                apl.Macty = dr[4].ToString();
-                apl.TTphanhoi = dr[5].ToString();
-                UCAppliedSeeker ucApplied = new UCAppliedSeeker(apl);
-                flpList.Controls.Add(ucApplied);
-            }
+            lblTitle.Text = "Danh sách công việc đã ứng tuyển";
+            Load(); 
         }
 
-        private void LoadCompany() // Load cac company va job ma seeker da ung tuyen
+        private void Load()
         {
             if (flpList != null)
             {
@@ -84,6 +52,7 @@ namespace Project_JobApp.UC
                 apl.Thoigian = dr[3].ToString();
                 apl.Macty = dr[4].ToString();
                 apl.TTphanhoi = dr[5].ToString();
+                apl.Loinhan = dr[6].ToString();
                 UCAppliedJobs ucApplied = new UCAppliedJobs(apl);
                 flpList.Controls.Add(ucApplied);
             }
@@ -91,16 +60,7 @@ namespace Project_JobApp.UC
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            if (acc.Vaitro == "JobSeeker")
-            {
-                lblTitle.Text = "Danh sách công việc đã ứng tuyển";
-                LoadCompany();
-            }
-            else if (acc.Vaitro == "Company")
-            {
-                lblTitle.Text = "Danh sách ứng viên công việc";
-                LoadSeeker();
-            }
+            Load();
         }
     }
 }

@@ -39,7 +39,6 @@
             this.rdbJobManager = new System.Windows.Forms.RadioButton();
             this.rdbInfo = new System.Windows.Forms.RadioButton();
             this.rdbAccount = new System.Windows.Forms.RadioButton();
-            this.rdbApplied = new System.Windows.Forms.RadioButton();
             this.rdbFeed = new System.Windows.Forms.RadioButton();
             this.rdbHome = new System.Windows.Forms.RadioButton();
             this.docker.SuspendLayout();
@@ -144,7 +143,6 @@
             this.pnNavigation.Controls.Add(this.rdbJobManager);
             this.pnNavigation.Controls.Add(this.rdbInfo);
             this.pnNavigation.Controls.Add(this.rdbAccount);
-            this.pnNavigation.Controls.Add(this.rdbApplied);
             this.pnNavigation.Controls.Add(this.rdbFeed);
             this.pnNavigation.Controls.Add(this.rdbHome);
             this.pnNavigation.Dock = System.Windows.Forms.DockStyle.Left;
@@ -164,7 +162,7 @@
             this.rdbJobManager.ForeColor = System.Drawing.Color.Black;
             this.rdbJobManager.Image = global::Project_JobApp.Properties.Resources.info;
             this.rdbJobManager.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rdbJobManager.Location = new System.Drawing.Point(0, 300);
+            this.rdbJobManager.Location = new System.Drawing.Point(0, 200);
             this.rdbJobManager.Name = "rdbJobManager";
             this.rdbJobManager.Size = new System.Drawing.Size(200, 100);
             this.rdbJobManager.TabIndex = 11;
@@ -215,27 +213,6 @@
             this.rdbAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.rdbAccount.UseVisualStyleBackColor = true;
             this.rdbAccount.CheckedChanged += new System.EventHandler(this.rdbAccount_CheckedChanged);
-            // 
-            // rdbApplied
-            // 
-            this.rdbApplied.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rdbApplied.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rdbApplied.FlatAppearance.BorderSize = 0;
-            this.rdbApplied.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.rdbApplied.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbApplied.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbApplied.ForeColor = System.Drawing.Color.Black;
-            this.rdbApplied.Image = global::Project_JobApp.Properties.Resources.table_list;
-            this.rdbApplied.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rdbApplied.Location = new System.Drawing.Point(0, 200);
-            this.rdbApplied.Name = "rdbApplied";
-            this.rdbApplied.Size = new System.Drawing.Size(200, 100);
-            this.rdbApplied.TabIndex = 8;
-            this.rdbApplied.Text = "    Danh sách";
-            this.rdbApplied.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdbApplied.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.rdbApplied.UseVisualStyleBackColor = true;
-            this.rdbApplied.CheckedChanged += new System.EventHandler(this.rdbApplied_CheckedChanged);
             // 
             // rdbFeed
             // 
@@ -310,7 +287,6 @@
         private System.Windows.Forms.RadioButton rdbJobManager;
         private System.Windows.Forms.RadioButton rdbInfo;
         private System.Windows.Forms.RadioButton rdbAccount;
-        private System.Windows.Forms.RadioButton rdbApplied;
         private System.Windows.Forms.RadioButton rdbFeed;
         private System.Windows.Forms.RadioButton rdbHome;
         private UC.UCHome ucHome;

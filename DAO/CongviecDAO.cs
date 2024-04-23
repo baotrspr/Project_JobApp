@@ -74,20 +74,20 @@ namespace Project_JobApp.DAO
             if (dr != null)
             {
                 cv.Tencv = dr.Rows[0]["tencv"].ToString();
-                cv.Mucluong = dr.Rows[0]["tencv"].ToString();
-                cv.Thongtin = dr.Rows[0]["tencv"].ToString();
-                cv.Trangthai = dr.Rows[0]["tencv"].ToString();
-                cv.Handangki = dr.Rows[0]["tencv"].ToString();
+                cv.Mucluong = dr.Rows[0]["mucluong"].ToString();
+                cv.Thongtin = dr.Rows[0]["thongtin"].ToString();
+                cv.Trangthai = dr.Rows[0]["trangthai"].ToString();
+                cv.Handangki = dr.Rows[0]["handangki"].ToString();
                 cv.Jobid = jobid;
-                cv.Linhvuc = dr.Rows[0]["tencv"].ToString();
-                cv.Diadiem = dr.Rows[0]["tencv"].ToString();
-                cv.Vitri = dr.Rows[0]["tencv"].ToString();
-                cv.Yeucau = dr.Rows[0]["tencv"].ToString();
-                cv.Ngaytao = dr.Rows[0]["tencv"].ToString();
-                cv.Noilamviec = dr.Rows[0]["tencv"].ToString();
-                cv.Phucloi = dr.Rows[0]["tencv"].ToString();
-                cv.Dadangki = int.Parse(dr.Rows[0]["tencv"].ToString());
-                cv.Soluong = int.Parse(dr.Rows[0]["tencv"].ToString());
+                cv.Linhvuc = dr.Rows[0]["linhvuc"].ToString();
+                cv.Diadiem = dr.Rows[0]["diadiem"].ToString();
+                cv.Vitri = dr.Rows[0]["vitri"].ToString();
+                cv.Yeucau = dr.Rows[0]["yeucau"].ToString();
+                cv.Ngaytao = dr.Rows[0]["ngaytao"].ToString();
+                cv.Noilamviec = dr.Rows[0]["noilamviec"].ToString();
+                cv.Phucloi = dr.Rows[0]["phucloi"].ToString();
+                cv.Dadangki = int.Parse(dr.Rows[0]["dadangki"].ToString());
+                cv.Soluong = int.Parse(dr.Rows[0]["soluong"].ToString());
                 cv.Userid = dr.Rows[0]["userid"].ToString();
             }
             return cv;

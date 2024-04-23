@@ -36,19 +36,17 @@ namespace Project_JobApp.UC
             Mucluong = job.Mucluong;
             Noilamviec = job.Noilamviec;
 
-            DateTime han = DateTime.ParseExact(job.Ngaytao, "dd/MM/yyyy HH:mm:ss", CultureInfo.CurrentCulture);
+            DateTime han = DateTime.ParseExact(job.Ngaytao, "dd/MM/yyyy", CultureInfo.CurrentCulture);
             DateTime day = DateTime.Now;
             int songay = (int)(day - han).TotalDays;
-            int sogio = (day - han).Hours;
 
-            if (songay > 0 && sogio > 0)
-                Ngaytao = songay.ToString() + " ngày " + sogio.ToString() + " giờ trước";
+            if (songay > 0)
+                Ngaytao = songay.ToString() + " ngày trước";
 
-            han = DateTime.ParseExact(job.Handangki, "dd/MM/yyyy HH:mm:ss", CultureInfo.CurrentCulture);
+            han = DateTime.ParseExact(job.Handangki, "dd/MM/yyyy", CultureInfo.CurrentCulture);
             songay = (int)(han - day).TotalDays;
-            sogio = (han - day).Hours;
-            if (songay > 0 && sogio > 0)
-                Thoihan = job.Handangki + " ( Còn " + songay.ToString() + " ngày " + sogio.ToString() + " giờ)";
+            if (songay > 0)
+                Thoihan = job.Handangki + " ( Còn " + songay.ToString() + " ngày)";
             else
             {
                 Thoihan = "Đã hết hạn đăng kí!";

@@ -53,9 +53,6 @@ create table CONGVIEC(
 	trangthai nvarchar(255),
 	dadangki int
 )
-alter table CONGVIEC alter column ngaytao varchar(20)
-select c.*, co.ten from CONGVIEC c join COMPANY co on c.userid = co.userid
-update CONGVIEC set ngaytao = '12/04/2024 23:59:59' where jobid = 'HS001'
 
 create table UNGTUYEN(
 	userid varchar(255) constraint FK_UNGTUYEN_TK foreign key references ACCOUNT(userid) on delete cascade,
@@ -64,8 +61,10 @@ create table UNGTUYEN(
 	thoigian varchar(10),
 	congty varchar(255) constraint FK_UNGTUYEN_CP foreign key references COMPANY(userid),
 	trangthaiphanhoi nvarchar(255),
+	loinhan nvarchar(max),
 	constraint PK_UNGTUYEN primary key (userid, jobid)
 )
+select * from CONGVIEC
 go
 
 create trigger ins_congviec_ddk

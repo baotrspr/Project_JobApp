@@ -19,7 +19,9 @@ namespace Project_JobApp.DAO
         {
             string sqlStr = string.Format("select * from UNGTUYEN where userid = '{0}'", userid);
             DataTable dt = dba.ExecuteSelect(sqlStr);
-            return dt.Rows.Count > 0;
+            if (dt.Rows.Count > 0)
+                return true;
+            return false;
         }
 
         public DataTable GetSeekerData(string companyid)
@@ -36,8 +38,8 @@ namespace Project_JobApp.DAO
 
         public bool Them(AppliedList ap)
         {
-            string sqlStr = string.Format("insert into UNGTUYEN values ('{0}','{1}',N'{2}','{3}','{4}','{5}')",
-                                            ap.Userid, ap.Jobid, ap.Tencv, ap.Thoigian, ap.Macty, ap.TTphanhoi);
+            string sqlStr = string.Format("insert into UNGTUYEN values ('{0}','{1}',N'{2}','{3}','{4}','{5}', '{6}')",
+                                            ap.Userid, ap.Jobid, ap.Tencv, ap.Thoigian, ap.Macty, ap.TTphanhoi, "none");
             return dba.Execute(sqlStr);
         }
 

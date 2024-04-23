@@ -14,10 +14,11 @@ namespace Project_JobApp.Classes
         string thoigian;
         string macty;
         string ttphanhoi;
+        string loinhan;
 
         public AppliedList() { }
 
-        public AppliedList(string userid, string jobid, string tencv, string thoigian, string macty, string ttphanhoi)
+        public AppliedList(string userid, string jobid, string tencv, string thoigian, string macty, string ttphanhoi, string loinhan)
         {
             this.userid = userid;
             this.jobid = jobid;
@@ -25,6 +26,7 @@ namespace Project_JobApp.Classes
             this.thoigian = thoigian;
             this.macty = macty;
             this.ttphanhoi = ttphanhoi;
+            this.loinhan = loinhan;
         }
         public string Userid
         {
@@ -55,6 +57,11 @@ namespace Project_JobApp.Classes
         {
             get { return ttphanhoi; }
             set { ttphanhoi = value; }
+        }
+        public string Loinhan
+        {
+            get { return loinhan; }
+            set { loinhan = value; }
         }
     }
 }

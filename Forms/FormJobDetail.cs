@@ -47,8 +47,8 @@ namespace Project_JobApp.Forms
 
             if (acc.Vaitro == "Company" || job.Trangthai == "notavail")
                 btnUngtuyen.Enabled = false;
-            else if (acc.Vaitro == "JobSeeker" && listDAO.KiemtraUT(acc.Userid))
-                btnUngtuyen.Enabled = false;
+            if (acc.Vaitro == "JobSeeker" && listDAO.KiemtraUT(acc.Userid) == false)
+                btnUngtuyen.Enabled = true;
 
             lblMacv.Text = job.Jobid;
             lblJobName.Text = job.Tencv;
@@ -63,6 +63,7 @@ namespace Project_JobApp.Forms
             lblDadangki.Text = job.Dadangki.ToString();
             lblHandangki.Text = job.Handangki.ToString();
             llblXemCty.Text = job.Userid.ToString();
+            lblMota.Text = job.Thongtin;
 
             Size size1 = TextRenderer.MeasureText(job.Thongtin, lblMota.Font);
             lblMota.Width = size1.Width;
@@ -92,6 +93,7 @@ namespace Project_JobApp.Forms
             lblDadangki.Text = job.Dadangki.ToString();
             lblHandangki.Text = job.Handangki.ToString();
             llblXemCty.Text = job.Userid.ToString();
+            lblMota.Text = job.Thongtin;
 
             Size size1 = TextRenderer.MeasureText(job.Thongtin, lblMota.Font);
             lblMota.Width = size1.Width;
@@ -107,7 +109,7 @@ namespace Project_JobApp.Forms
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            AppliedList ap = new AppliedList(acc.Userid, job.Jobid, job.Tencv, DateTime.Now.ToString("dd/MM/yyyy"), job.Userid, "waiting");
+            AppliedList ap = new AppliedList(acc.Userid, job.Jobid, job.Tencv, DateTime.Now.ToString("dd/MM/yyyy"), job.Userid, "waiting", "none");
             if (listDAO.Them(ap))
             {
                 MessageBox.Show("Ứng tuyển thành công, đợi công ty xét duyệt nhé!", "Thông báo");

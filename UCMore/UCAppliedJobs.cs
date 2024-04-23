@@ -1,5 +1,6 @@
 ﻿using Project_JobApp.Classes;
 using Project_JobApp.DAO;
+using Project_JobApp.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,10 @@ namespace Project_JobApp.UCMore
     {
         AppliedList apl;
         AppliedListDAO apDAO = new AppliedListDAO();
+        CongViec j;
+        CongviecDAO cvDAO = new CongviecDAO();
+        Company cp;
+        CompanyDAO compDAO = new CompanyDAO();
         public UCAppliedJobs()
         {
             InitializeComponent();
@@ -25,23 +30,21 @@ namespace Project_JobApp.UCMore
             InitializeComponent();
             this.apl = apl;
 
-            lblJobID.Text = apl.Jobid;
+            lblTrangthai.Text = apl.TTphanhoi;
             lblTencv.Text = apl.Tencv;
-            lblCompany.Text = apl.Macty;
-            lblTime.Text = apl.Thoigian;
-            if (apl.TTphanhoi == "waiting")
+            lblCongty.Text = apl.Macty;
+            lblThoigian.Text = apl.Thoigian;
+            if (apl.Loinhan == "none")
             {
-                pbxStatus.Image = Project_JobApp.Properties.Resources.hourglass;
-            } else if(apl.TTphanhoi == "accepted")
+                llblLoinhan.Visible = false;
+            }
+            else
             {
-                pbxStatus.Image = Project_JobApp.Properties.Resources.accepted;
-            } else if (apl.TTphanhoi == "rejected")
-            {
-                pbxStatus.Image = Project_JobApp.Properties.Resources.rejected;
+                llblLoinhan.Visible = true;
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Bạn muốn hủy đăng kí?", "Thông báo", MessageBoxButtons.OKCancel);
             if (dr == DialogResult.OK)
@@ -55,7 +58,28 @@ namespace Project_JobApp.UCMore
                     MessageBox.Show("Có lỗi!", "Thông báo");
                 }
             }
-            
+        }
+
+        private void llblLoinhan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (apl.Loinhan != "none")
+            {
+                MessageBox.Show("Lời nhắn của công ty: \n" + apl.Loinhan, "Lời nhắn", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnXemcv_Click(object sender, EventArgs e)
+        {
+            j = cvDAO.GetThongtin(apl.Jobid);
+            FormJobDetail jobDetail = new FormJobDetail(j);
+            jobDetail.ShowDialog();
+        }
+
+        private void btnXemCty_Click(object sender, EventArgs e)
+        {
+            cp = compDAO.GetInfo(apl.Macty);
+            FormViewCompany viewcp = new FormViewCompany(apl.Macty);
+            viewcp.ShowDialog();
         }
     }
-}
+} 

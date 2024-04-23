@@ -30,7 +30,7 @@
         {
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.docker = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnMain = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
@@ -40,8 +40,8 @@
             // 
             this.btnCreate.BackColor = System.Drawing.Color.White;
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreate.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.Location = new System.Drawing.Point(351, 820);
+            this.btnCreate.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.Location = new System.Drawing.Point(334, 712);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(200, 50);
             this.btnCreate.TabIndex = 1;
@@ -53,8 +53,8 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(606, 820);
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(613, 712);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(200, 50);
             this.btnCancel.TabIndex = 1;
@@ -62,14 +62,15 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // panel1
+            // docker
             // 
-            this.panel1.BackColor = System.Drawing.Color.Indigo;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 25);
-            this.panel1.TabIndex = 2;
+            this.docker.BackColor = System.Drawing.Color.Indigo;
+            this.docker.Dock = System.Windows.Forms.DockStyle.Top;
+            this.docker.Location = new System.Drawing.Point(0, 0);
+            this.docker.Name = "docker";
+            this.docker.Size = new System.Drawing.Size(1100, 25);
+            this.docker.TabIndex = 2;
+            this.docker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.docker_MouseDown);
             // 
             // panel2
             // 
@@ -80,7 +81,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 25);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1100, 875);
+            this.panel2.Size = new System.Drawing.Size(1100, 775);
             this.panel2.TabIndex = 3;
             // 
             // pnMain
@@ -88,16 +89,16 @@
             this.pnMain.AutoScroll = true;
             this.pnMain.Location = new System.Drawing.Point(7, 3);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1080, 800);
+            this.pnMain.Size = new System.Drawing.Size(1080, 700);
             this.pnMain.TabIndex = 2;
             // 
             // FormCreateJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 900);
+            this.ClientSize = new System.Drawing.Size(1100, 800);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.docker);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCreateJob";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -110,7 +111,7 @@
         #endregion
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel docker;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnMain;
     }

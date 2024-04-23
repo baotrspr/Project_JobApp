@@ -112,17 +112,6 @@ namespace Project_JobApp.Forms
             }
         }
 
-        private void rdbApplied_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdbApplied.Checked)
-            {
-                UCAppliedJob ucAppliedJob = new UCAppliedJob(acc);
-                pnTab.Controls.Add(ucAppliedJob);
-                ucAppliedJob.Dock = DockStyle.Fill;
-                ucAppliedJob.BringToFront();
-            }
-        }
-
         private void rdbJobManager_CheckedChanged(object sender, EventArgs e)
         {
             if (rdbJobManager.Checked)

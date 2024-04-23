@@ -70,7 +70,7 @@
             this.rtxtYeucau.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtYeucau.Location = new System.Drawing.Point(3, 293);
             this.rtxtYeucau.Name = "rtxtYeucau";
-            this.rtxtYeucau.Size = new System.Drawing.Size(1040, 200);
+            this.rtxtYeucau.Size = new System.Drawing.Size(1006, 200);
             this.rtxtYeucau.TabIndex = 37;
             this.rtxtYeucau.Text = "";
             // 
@@ -88,7 +88,7 @@
             // 
             this.dtpNgaytao.CalendarFont = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaytao.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke;
-            this.dtpNgaytao.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtpNgaytao.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaytao.Enabled = false;
             this.dtpNgaytao.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaytao.Location = new System.Drawing.Point(191, 233);
@@ -123,7 +123,7 @@
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 493);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1040, 35);
+            this.label5.Size = new System.Drawing.Size(1006, 35);
             this.label5.TabIndex = 32;
             this.label5.Text = "Phúc lợi";
             // 
@@ -133,7 +133,7 @@
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(3, 258);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(1040, 35);
+            this.label12.Size = new System.Drawing.Size(1006, 35);
             this.label12.TabIndex = 33;
             this.label12.Text = "Yêu cầu";
             // 
@@ -265,7 +265,7 @@
             this.rtxtMota.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtMota.Location = new System.Drawing.Point(3, 58);
             this.rtxtMota.Name = "rtxtMota";
-            this.rtxtMota.Size = new System.Drawing.Size(1040, 200);
+            this.rtxtMota.Size = new System.Drawing.Size(1006, 200);
             this.rtxtMota.TabIndex = 37;
             this.rtxtMota.Text = "";
             // 
@@ -275,7 +275,7 @@
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 23);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1040, 35);
+            this.label7.Size = new System.Drawing.Size(1006, 35);
             this.label7.TabIndex = 32;
             this.label7.Text = "Mô tả";
             // 
@@ -287,7 +287,7 @@
             this.rtxtPhucloi.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtPhucloi.Location = new System.Drawing.Point(3, 528);
             this.rtxtPhucloi.Name = "rtxtPhucloi";
-            this.rtxtPhucloi.Size = new System.Drawing.Size(1040, 200);
+            this.rtxtPhucloi.Size = new System.Drawing.Size(1006, 200);
             this.rtxtPhucloi.TabIndex = 37;
             this.rtxtPhucloi.Text = "";
             // 
@@ -325,7 +325,7 @@
             // 
             this.dtpHandk.CalendarFont = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHandk.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke;
-            this.dtpHandk.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dtpHandk.CustomFormat = "dd/MM/yyyy";
             this.dtpHandk.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHandk.Location = new System.Drawing.Point(191, 297);
             this.dtpHandk.Name = "dtpHandk";
@@ -391,7 +391,7 @@
             this.gbThongtinchung.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbThongtinchung.Location = new System.Drawing.Point(0, 0);
             this.gbThongtinchung.Name = "gbThongtinchung";
-            this.gbThongtinchung.Size = new System.Drawing.Size(1046, 415);
+            this.gbThongtinchung.Size = new System.Drawing.Size(1012, 415);
             this.gbThongtinchung.TabIndex = 48;
             this.gbThongtinchung.TabStop = false;
             this.gbThongtinchung.Text = "Thông tin chung";
@@ -426,7 +426,7 @@
             this.gbChitiet.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbChitiet.Location = new System.Drawing.Point(0, 415);
             this.gbChitiet.Name = "gbChitiet";
-            this.gbChitiet.Size = new System.Drawing.Size(1046, 729);
+            this.gbChitiet.Size = new System.Drawing.Size(1012, 729);
             this.gbChitiet.TabIndex = 49;
             this.gbChitiet.TabStop = false;
             this.gbChitiet.Text = "Thông tin chi tiết";
@@ -440,7 +440,7 @@
             this.Controls.Add(this.gbChitiet);
             this.Controls.Add(this.gbThongtinchung);
             this.Name = "UCCreateJob";
-            this.Size = new System.Drawing.Size(1046, 800);
+            this.Size = new System.Drawing.Size(1012, 700);
             this.gbThongtinchung.ResumeLayout(false);
             this.gbThongtinchung.PerformLayout();
             this.gbChitiet.ResumeLayout(false);
