@@ -19,30 +19,43 @@ namespace Project_JobApp.DAO
         {
             try
             {
-                string sqlStr = string.Format($"select userid from ACCOUNT where userid = '{acc.Userid}'");
-                if (dba.ExecuteSelect(sqlStr).Rows.Count > 0)
+                using (var db = new JobAppDFContext())
                 {
-                    MessageBox.Show("Tài khoản không hợp lệ hoặc đã tồn tại!", "Thông báo");
-                }
-                else
-                {
-                    sqlStr = string.Format($"insert into ACCOUNT(userid, matkhau, vaitro) values ('{acc.Userid}', '{acc.Matkhau}', '{acc.Vaitro}')");
-                    if (dba.Execute(sqlStr))
+                    var account = new ACCOUNT
                     {
-                        if (acc.Vaitro == "JobSeeker")
+                        userid = acc.Userid,
+                        matkhau = acc.Matkhau,
+                        vaitro = acc.Vaitro,
+                    };
+                    var query = (from q in db.ACCOUNT where q.userid == account.userid select q).ToList();
+                    if (query.Count > 0)
+                    {
+                        MessageBox.Show("Tài khoản không hợp lệ hoặc đã tồn tại!", "Thông báo");
+                    }
+                    else
+                    {
+                        db.ACCOUNT.Add(account);
+                        db.SaveChanges();
+                        if (account.vaitro == "JobSeeker")
                         {
-                            sqlStr = string.Format($"insert into JOBSEEKER(userid) values ('{acc.Userid}')");
-                            dba.ExecuteNonquery(sqlStr);
+                            var jobseeker = new JOBSEEKER
+                            {
+                                userid = account.userid,
+                            };
+                            db.JOBSEEKER.Add(jobseeker);
+                            db.SaveChanges();
                         }
-                        else if (acc.Vaitro == "Company")
+                        else if (account.vaitro == "Company")
                         {
-                            sqlStr = string.Format($"insert into COMPANY(userid) values ('{acc.Userid}')");
-                            dba.ExecuteNonquery(sqlStr);
+                            var company = new COMPANY
+                            {
+                                userid = account.userid,
+                            };
+                            db.COMPANY.Add(company);
+                            db.SaveChanges();
                         }
                         MessageBox.Show("Đăng kí tài khoản thành công, vui lòng đăng nhập lại!", "Thông báo");
                     }
-                    else
-                        MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Thông báo");
                 }
             }
             catch (Exception ex)

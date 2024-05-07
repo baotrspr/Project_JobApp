@@ -86,7 +86,7 @@
             this.rtxtMoreInfo.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtMoreInfo.Location = new System.Drawing.Point(228, 488);
             this.rtxtMoreInfo.Name = "rtxtMoreInfo";
-            this.rtxtMoreInfo.Size = new System.Drawing.Size(300, 150);
+            this.rtxtMoreInfo.Size = new System.Drawing.Size(300, 250);
             this.rtxtMoreInfo.TabIndex = 11;
             this.rtxtMoreInfo.Text = "";
             // 
@@ -227,7 +227,7 @@
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(641, 510);
+            this.btnEdit.Location = new System.Drawing.Point(710, 520);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(143, 37);
             this.btnEdit.TabIndex = 13;
@@ -238,7 +238,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(806, 510);
+            this.btnSave.Location = new System.Drawing.Point(875, 520);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(143, 37);
             this.btnSave.TabIndex = 11;
@@ -273,7 +273,7 @@
             this.pnForm.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnForm.Location = new System.Drawing.Point(0, 50);
             this.pnForm.Name = "pnForm";
-            this.pnForm.Size = new System.Drawing.Size(577, 650);
+            this.pnForm.Size = new System.Drawing.Size(577, 750);
             this.pnForm.TabIndex = 15;
             // 
             // txtField
@@ -344,7 +344,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.DarkMagenta;
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(1000, 50);
+            this.lblTitle.Size = new System.Drawing.Size(1100, 50);
             this.lblTitle.TabIndex = 12;
             this.lblTitle.Text = "THÔNG TIN TÀI KHOẢN";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -356,7 +356,7 @@
             this.pnButtons.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnButtons.Location = new System.Drawing.Point(577, 50);
             this.pnButtons.Name = "pnButtons";
-            this.pnButtons.Size = new System.Drawing.Size(423, 395);
+            this.pnButtons.Size = new System.Drawing.Size(523, 395);
             this.pnButtons.TabIndex = 16;
             // 
             // UCProfileCompany
@@ -370,7 +370,7 @@
             this.Controls.Add(this.pnForm);
             this.Controls.Add(this.lblTitle);
             this.Name = "UCProfileCompany";
-            this.Size = new System.Drawing.Size(1000, 700);
+            this.Size = new System.Drawing.Size(1100, 800);
             this.Load += new System.EventHandler(this.UCProfileCompany_Load);
             this.pnForm.ResumeLayout(false);
             this.pnForm.PerformLayout();

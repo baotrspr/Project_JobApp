@@ -37,7 +37,7 @@ namespace Project_JobApp.Forms
         }
         CongViec job;
         Account acc;
-        AppliedList apl;
+        UngTuyen apl;
         public FormJobDetail(CongViec job, Account acc)
         {
             InitializeComponent();
@@ -45,7 +45,7 @@ namespace Project_JobApp.Forms
             this.job = job;
             this.acc = acc;
 
-            if (acc.Vaitro == "Company" || job.Trangthai == "notavail")
+            if (acc.Vaitro == "Company" || job.Trangthai == "notavail" || DateTime.Parse(job.Handangki) < DateTime.Now)
                 btnUngtuyen.Enabled = false;
             if (acc.Vaitro == "JobSeeker" && listDAO.KiemtraUT(acc.Userid) == false)
                 btnUngtuyen.Enabled = true;
@@ -59,10 +59,9 @@ namespace Project_JobApp.Forms
             lblYeucau.Text = job.Yeucau;
             lblSoluong.Text = job.Soluong.ToString();
             lblLuong.Text = job.Mucluong;
-            lblUserID.Text = job.Tencty;
             lblDadangki.Text = job.Dadangki.ToString();
             lblHandangki.Text = job.Handangki.ToString();
-            llblXemCty.Text = job.Userid.ToString();
+            llblXemCty.Text = job.Tencty.ToString();
             lblMota.Text = job.Thongtin;
 
             Size size1 = TextRenderer.MeasureText(job.Thongtin, lblMota.Font);
@@ -89,7 +88,6 @@ namespace Project_JobApp.Forms
             lblYeucau.Text = job.Yeucau;
             lblSoluong.Text = job.Soluong.ToString();
             lblLuong.Text = job.Mucluong;
-            lblUserID.Text = job.Tencty;
             lblDadangki.Text = job.Dadangki.ToString();
             lblHandangki.Text = job.Handangki.ToString();
             llblXemCty.Text = job.Userid.ToString();
@@ -109,7 +107,7 @@ namespace Project_JobApp.Forms
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            AppliedList ap = new AppliedList(acc.Userid, job.Jobid, job.Tencv, DateTime.Now.ToString("dd/MM/yyyy"), job.Userid, "waiting", "none");
+            UngTuyen ap = new UngTuyen(acc.Userid, job.Jobid, job.Tencv, DateTime.Now.ToString("dd/MM/yyyy"), job.Userid, "waiting", "none");
             if (listDAO.Them(ap))
             {
                 MessageBox.Show("Ứng tuyển thành công, đợi công ty xét duyệt nhé!", "Thông báo");

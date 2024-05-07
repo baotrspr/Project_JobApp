@@ -74,6 +74,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Indigo;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.pnMain);
             this.panel2.Controls.Add(this.btnCreate);
@@ -87,7 +88,8 @@
             // pnMain
             // 
             this.pnMain.AutoScroll = true;
-            this.pnMain.Location = new System.Drawing.Point(7, 3);
+            this.pnMain.BackColor = System.Drawing.Color.White;
+            this.pnMain.Location = new System.Drawing.Point(10, 3);
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(1080, 700);
             this.pnMain.TabIndex = 2;

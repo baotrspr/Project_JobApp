@@ -36,25 +36,26 @@
             // 
             // pnDocker
             // 
-            this.pnDocker.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.pnDocker.BackColor = System.Drawing.Color.Indigo;
             this.pnDocker.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnDocker.Location = new System.Drawing.Point(0, 0);
             this.pnDocker.Name = "pnDocker";
-            this.pnDocker.Size = new System.Drawing.Size(1100, 30);
+            this.pnDocker.Size = new System.Drawing.Size(1110, 30);
             this.pnDocker.TabIndex = 0;
             // 
             // pnTab
             // 
-            this.pnTab.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnTab.Location = new System.Drawing.Point(0, 30);
+            this.pnTab.AutoScroll = true;
+            this.pnTab.BackColor = System.Drawing.Color.White;
+            this.pnTab.Location = new System.Drawing.Point(5, 30);
             this.pnTab.Name = "pnTab";
-            this.pnTab.Size = new System.Drawing.Size(1100, 800);
+            this.pnTab.Size = new System.Drawing.Size(1100, 775);
             this.pnTab.TabIndex = 1;
             // 
             // btnLuu
             // 
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(343, 846);
+            this.btnLuu.Location = new System.Drawing.Point(299, 811);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(201, 42);
             this.btnLuu.TabIndex = 2;
@@ -65,7 +66,7 @@
             // btnHuy
             // 
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Location = new System.Drawing.Point(597, 846);
+            this.btnHuy.Location = new System.Drawing.Point(598, 811);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(201, 42);
             this.btnHuy.TabIndex = 2;
@@ -77,7 +78,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 800);
+            this.BackColor = System.Drawing.Color.Indigo;
+            this.ClientSize = new System.Drawing.Size(1110, 860);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.pnTab);

@@ -79,7 +79,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.DarkMagenta;
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(1000, 50);
+            this.lblTitle.Size = new System.Drawing.Size(1100, 50);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "THÔNG TIN TÀI KHOẢN";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -216,7 +216,7 @@
             this.rtxtMoreInfo.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtMoreInfo.Location = new System.Drawing.Point(231, 404);
             this.rtxtMoreInfo.Name = "rtxtMoreInfo";
-            this.rtxtMoreInfo.Size = new System.Drawing.Size(300, 200);
+            this.rtxtMoreInfo.Size = new System.Drawing.Size(300, 300);
             this.rtxtMoreInfo.TabIndex = 8;
             this.rtxtMoreInfo.Text = "";
             // 
@@ -327,7 +327,7 @@
             this.pnForm.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnForm.Location = new System.Drawing.Point(0, 50);
             this.pnForm.Name = "pnForm";
-            this.pnForm.Size = new System.Drawing.Size(599, 650);
+            this.pnForm.Size = new System.Drawing.Size(599, 750);
             this.pnForm.TabIndex = 10;
             // 
             // pnButtons
@@ -337,7 +337,7 @@
             this.pnButtons.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnButtons.Location = new System.Drawing.Point(599, 50);
             this.pnButtons.Name = "pnButtons";
-            this.pnButtons.Size = new System.Drawing.Size(401, 395);
+            this.pnButtons.Size = new System.Drawing.Size(501, 395);
             this.pnButtons.TabIndex = 11;
             // 
             // UCProfileSeeker
@@ -351,7 +351,7 @@
             this.Controls.Add(this.pnForm);
             this.Controls.Add(this.lblTitle);
             this.Name = "UCProfileSeeker";
-            this.Size = new System.Drawing.Size(1000, 700);
+            this.Size = new System.Drawing.Size(1100, 800);
             this.Load += new System.EventHandler(this.UCProfileSeeker_Load);
             this.pnForm.ResumeLayout(false);
             this.pnForm.PerformLayout();

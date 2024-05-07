@@ -150,6 +150,7 @@
             this.btnXemDS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnXemDS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnXemDS.UseVisualStyleBackColor = true;
+            this.btnXemDS.Click += new System.EventHandler(this.btnXemDS_Click);
             // 
             // btnXoa
             // 

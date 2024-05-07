@@ -93,12 +93,11 @@
             this.btnMinimize.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinimize.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnMinimize.Location = new System.Drawing.Point(1190, 0);
+            this.btnMinimize.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnMinimize.Location = new System.Drawing.Point(1220, 0);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(50, 30);
+            this.btnMinimize.Size = new System.Drawing.Size(30, 30);
             this.btnMinimize.TabIndex = 3;
             this.btnMinimize.Text = "-";
             this.btnMinimize.UseVisualStyleBackColor = false;
@@ -106,15 +105,14 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnExit.BackColor = System.Drawing.Color.White;
             this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnExit.Location = new System.Drawing.Point(1240, 0);
+            this.btnExit.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Red;
+            this.btnExit.Location = new System.Drawing.Point(1250, 0);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(60, 30);
+            this.btnExit.Size = new System.Drawing.Size(50, 30);
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "X";
             this.btnExit.UseVisualStyleBackColor = false;

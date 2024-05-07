@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +48,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +70,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\AppliedList.cs" />
+    <Compile Include="ACCOUNT.cs">
+      <DependentUpon>JobAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\UngTuyen.cs" />
     <Compile Include="Classes\Company.cs" />
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\CongViec.cs" />
     <Compile Include="Classes\JobSeeker.cs" />
+    <Compile Include="COMPANY.cs">
+      <DependentUpon>JobAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CONGVIEC.cs">
+      <DependentUpon>JobAppModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAO\AppliedListDAO.cs" />
     <Compile Include="DAO\CongviecDAO.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
@@ -59,12 +92,6 @@
     <Compile Include="DAO\JobSeekerDAO.cs" />
     <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="Database\DBAccess.cs" />
-    <Compile Include="Forms\FormAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormAdmin.Designer.cs">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormChinhsuaJob.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +103,12 @@
     </Compile>
     <Compile Include="Forms\FormCreateJob.Designer.cs">
       <DependentUpon>FormCreateJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCV.Designer.cs">
+      <DependentUpon>FormCV.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormJobDetail.cs">
       <SubType>Form</SubType>
@@ -95,6 +128,12 @@
     <Compile Include="Forms\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormLoinhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLoinhan.Designer.cs">
+      <DependentUpon>FormLoinhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormSeeker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,17 +146,35 @@
     <Compile Include="Forms\FormSignup.Designer.cs">
       <DependentUpon>FormSignup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormViewApplicants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormViewApplicants.Designer.cs">
+      <DependentUpon>FormViewApplicants.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormViewCompany.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormViewCompany.Designer.cs">
       <DependentUpon>FormViewCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Main.cs">
-      <SubType>Form</SubType>
+    <Compile Include="JobAppModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobAppModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="JobAppModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobAppModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="JobAppModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobAppModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="JOBSEEKER.cs">
+      <DependentUpon>JobAppModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -144,12 +201,6 @@
     </Compile>
     <Compile Include="UCTab\UCAccount.Designer.cs">
       <DependentUpon>UCAccount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCTab\UCAccountManager.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCTab\UCAccountManager.Designer.cs">
-      <DependentUpon>UCAccountManager.cs</DependentUpon>
     </Compile>
     <Compile Include="UCTab\UCAppliedJob.cs">
       <SubType>UserControl</SubType>
@@ -199,14 +250,17 @@
     <Compile Include="UCMore\UCThumbnail.Designer.cs">
       <DependentUpon>UCThumbnail.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\FormAdmin.resx">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="UNGTUYEN.cs">
+      <DependentUpon>JobAppModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\FormChinhsuaJob.resx">
       <DependentUpon>FormChinhsuaJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCreateJob.resx">
       <DependentUpon>FormCreateJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCV.resx">
+      <DependentUpon>FormCV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormJobDetail.resx">
       <DependentUpon>FormJobDetail.cs</DependentUpon>
@@ -217,17 +271,20 @@
     <EmbeddedResource Include="Forms\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLoinhan.resx">
+      <DependentUpon>FormLoinhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSeeker.resx">
       <DependentUpon>FormSeeker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSignup.resx">
       <DependentUpon>FormSignup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormViewApplicants.resx">
+      <DependentUpon>FormViewApplicants.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormViewCompany.resx">
       <DependentUpon>FormViewCompany.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -250,9 +307,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCTab\UCAccount.resx">
       <DependentUpon>UCAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCTab\UCAccountManager.resx">
-      <DependentUpon>UCAccountManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCTab\UCAppliedJob.resx">
       <DependentUpon>UCAppliedJob.cs</DependentUpon>
@@ -278,6 +332,14 @@
     <EmbeddedResource Include="UCMore\UCThumbnail.resx">
       <DependentUpon>UCThumbnail.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="JobAppModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>JobAppModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="JobAppModel.edmx.diagram">
+      <DependentUpon>JobAppModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -377,6 +439,34 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\to-do-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="JobAppModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JobAppModel.edmx</DependentUpon>
+      <LastGenOutput>JobAppModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="JobAppModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>JobAppModel.edmx</DependentUpon>
+      <LastGenOutput>JobAppModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\posterlarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

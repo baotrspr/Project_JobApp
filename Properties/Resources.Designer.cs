@@ -263,6 +263,16 @@ namespace Project_JobApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap posterlarge {
+            get {
+                object obj = ResourceManager.GetObject("posterlarge", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rectangle_list {
             get {
                 object obj = ResourceManager.GetObject("rectangle-list", resourceCulture);

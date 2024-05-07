@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="JobAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="matkhau" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="vaitro" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="COMPANY">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="255" />
+          <Property Name="ngaythanhlap" Type="varchar" MaxLength="10" />
+          <Property Name="ngdungdau" Type="nvarchar" MaxLength="255" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="255" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="10" />
+          <Property Name="masothue" Type="nvarchar" MaxLength="255" />
+          <Property Name="linhvuc" Type="nvarchar" MaxLength="255" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="thongtin" Type="nvarchar(max)" />
+          <Property Name="website" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CONGVIEC">
+          <Key>
+            <PropertyRef Name="jobid" />
+          </Key>
+          <Property Name="jobid" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="userid" Type="varchar" MaxLength="255" />
+          <Property Name="tencv" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ngaytao" Type="varchar" MaxLength="20" />
+          <Property Name="vitri" Type="nvarchar" MaxLength="255" />
+          <Property Name="mucluong" Type="nvarchar" MaxLength="255" />
+          <Property Name="linhvuc" Type="nvarchar" MaxLength="255" />
+          <Property Name="thongtin" Type="nvarchar(max)" />
+          <Property Name="phucloi" Type="nvarchar(max)" />
+          <Property Name="yeucau" Type="nvarchar(max)" />
+          <Property Name="soluong" Type="int" />
+          <Property Name="noilamviec" Type="nvarchar" MaxLength="255" />
+          <Property Name="diadiem" Type="nvarchar" MaxLength="255" />
+          <Property Name="handangki" Type="varchar" MaxLength="20" />
+          <Property Name="trangthai" Type="nvarchar" MaxLength="255" />
+          <Property Name="dadangki" Type="int" />
+        </EntityType>
+        <EntityType Name="JOBSEEKER">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ho" Type="nvarchar" MaxLength="255" />
+          <Property Name="ten" Type="nvarchar" MaxLength="255" />
+          <Property Name="ngsinh" Type="nvarchar" MaxLength="10" />
+          <Property Name="cmnd" Type="nvarchar" MaxLength="12" />
+          <Property Name="gioitinh" Type="nvarchar" MaxLength="10" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="255" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="10" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="thongtin" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UNGTUYEN">
+          <Key>
+            <PropertyRef Name="userid" />
+            <PropertyRef Name="jobid" />
+          </Key>
+          <Property Name="userid" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="jobid" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="tencv" Type="nvarchar" MaxLength="255" />
+          <Property Name="thoigian" Type="varchar" MaxLength="10" />
+          <Property Name="congty" Type="varchar" MaxLength="255" />
+          <Property Name="trangthaiphanhoi" Type="nvarchar" MaxLength="255" />
+          <Property Name="loinhan" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_CONGVIEC_TK">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="0..1" />
+          <End Role="CONGVIEC" Type="Self.CONGVIEC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="userid" />
+            </Principal>
+            <Dependent Role="CONGVIEC">
+              <PropertyRef Name="userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UNGTUYEN_CP">
+          <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="0..1" />
+          <End Role="UNGTUYEN" Type="Self.UNGTUYEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANY">
+              <PropertyRef Name="userid" />
+            </Principal>
+            <Dependent Role="UNGTUYEN">
+              <PropertyRef Name="congty" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UNGTUYEN_CV">
+          <End Role="CONGVIEC" Type="Self.CONGVIEC" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UNGTUYEN" Type="Self.UNGTUYEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONGVIEC">
+              <PropertyRef Name="jobid" />
+            </Principal>
+            <Dependent Role="UNGTUYEN">
+              <PropertyRef Name="jobid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UNGTUYEN_TK">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UNGTUYEN" Type="Self.UNGTUYEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="userid" />
+            </Principal>
+            <Dependent Role="UNGTUYEN">
+              <PropertyRef Name="userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="JobAppModelStoreContainer">
+          <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COMPANY" EntityType="Self.COMPANY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CONGVIEC" EntityType="Self.CONGVIEC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JOBSEEKER" EntityType="Self.JOBSEEKER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UNGTUYEN" EntityType="Self.UNGTUYEN" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CONGVIEC_TK" Association="Self.FK_CONGVIEC_TK">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="CONGVIEC" EntitySet="CONGVIEC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UNGTUYEN_CP" Association="Self.FK_UNGTUYEN_CP">
+            <End Role="COMPANY" EntitySet="COMPANY" />
+            <End Role="UNGTUYEN" EntitySet="UNGTUYEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UNGTUYEN_CV" Association="Self.FK_UNGTUYEN_CV">
+            <End Role="CONGVIEC" EntitySet="CONGVIEC" />
+            <End Role="UNGTUYEN" EntitySet="UNGTUYEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UNGTUYEN_TK" Association="Self.FK_UNGTUYEN_TK">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="UNGTUYEN" EntitySet="UNGTUYEN" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JobAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="matkhau" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vaitro" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CONGVIEC" Relationship="Self.FK_CONGVIEC_TK" FromRole="ACCOUNT" ToRole="CONGVIEC" />
+          <NavigationProperty Name="UNGTUYEN" Relationship="Self.FK_UNGTUYEN_TK" FromRole="ACCOUNT" ToRole="UNGTUYEN" />
+        </EntityType>
+        <EntityType Name="COMPANY">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ten" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ngaythanhlap" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ngdungdau" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="masothue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="linhvuc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="thongtin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="website" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UNGTUYEN" Relationship="Self.FK_UNGTUYEN_CP" FromRole="COMPANY" ToRole="UNGTUYEN" />
+        </EntityType>
+        <EntityType Name="CONGVIEC">
+          <Key>
+            <PropertyRef Name="jobid" />
+          </Key>
+          <Property Name="jobid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="userid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tencv" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ngaytao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="vitri" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="mucluong" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="linhvuc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="thongtin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="phucloi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="yeucau" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="soluong" Type="Int32" />
+          <Property Name="noilamviec" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="diadiem" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="handangki" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="trangthai" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="dadangki" Type="Int32" />
+          <NavigationProperty Name="ACCOUNT" Relationship="Self.FK_CONGVIEC_TK" FromRole="CONGVIEC" ToRole="ACCOUNT" />
+          <NavigationProperty Name="UNGTUYEN" Relationship="Self.FK_UNGTUYEN_CV" FromRole="CONGVIEC" ToRole="UNGTUYEN" />
+        </EntityType>
+        <EntityType Name="JOBSEEKER">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ho" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ten" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ngsinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="cmnd" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="gioitinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="thongtin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UNGTUYEN">
+          <Key>
+            <PropertyRef Name="userid" />
+            <PropertyRef Name="jobid" />
+          </Key>
+          <Property Name="userid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="jobid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tencv" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="thoigian" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="congty" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="trangthaiphanhoi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="loinhan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ACCOUNT" Relationship="Self.FK_UNGTUYEN_TK" FromRole="UNGTUYEN" ToRole="ACCOUNT" />
+          <NavigationProperty Name="COMPANY" Relationship="Self.FK_UNGTUYEN_CP" FromRole="UNGTUYEN" ToRole="COMPANY" />
+          <NavigationProperty Name="CONGVIEC" Relationship="Self.FK_UNGTUYEN_CV" FromRole="UNGTUYEN" ToRole="CONGVIEC" />
+        </EntityType>
+        <Association Name="FK_CONGVIEC_TK">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="0..1" />
+          <End Role="CONGVIEC" Type="Self.CONGVIEC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="userid" />
+            </Principal>
+            <Dependent Role="CONGVIEC">
+              <PropertyRef Name="userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UNGTUYEN_TK">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UNGTUYEN" Type="Self.UNGTUYEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="userid" />
+            </Principal>
+            <Dependent Role="UNGTUYEN">
+              <PropertyRef Name="userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UNGTUYEN_CP">
+          <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="0..1" />
+          <End Role="UNGTUYEN" Type="Self.UNGTUYEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANY">
+              <PropertyRef Name="userid" />
+            </Principal>
+            <Dependent Role="UNGTUYEN">
+              <PropertyRef Name="congty" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UNGTUYEN_CV">
+          <End Role="CONGVIEC" Type="Self.CONGVIEC" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UNGTUYEN" Type="Self.UNGTUYEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONGVIEC">
+              <PropertyRef Name="jobid" />
+            </Principal>
+            <Dependent Role="UNGTUYEN">
+              <PropertyRef Name="jobid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="JobAppDFContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" />
+          <EntitySet Name="COMPANY" EntityType="Self.COMPANY" />
+          <EntitySet Name="CONGVIEC" EntityType="Self.CONGVIEC" />
+          <EntitySet Name="JOBSEEKER" EntityType="Self.JOBSEEKER" />
+          <EntitySet Name="UNGTUYEN" EntityType="Self.UNGTUYEN" />
+          <AssociationSet Name="FK_CONGVIEC_TK" Association="Self.FK_CONGVIEC_TK">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="CONGVIEC" EntitySet="CONGVIEC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UNGTUYEN_TK" Association="Self.FK_UNGTUYEN_TK">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="UNGTUYEN" EntitySet="UNGTUYEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UNGTUYEN_CP" Association="Self.FK_UNGTUYEN_CP">
+            <End Role="COMPANY" EntitySet="COMPANY" />
+            <End Role="UNGTUYEN" EntitySet="UNGTUYEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UNGTUYEN_CV" Association="Self.FK_UNGTUYEN_CV">
+            <End Role="CONGVIEC" EntitySet="CONGVIEC" />
+            <End Role="UNGTUYEN" EntitySet="UNGTUYEN" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JobAppModelStoreContainer" CdmEntityContainer="JobAppDFContext">
+          <EntitySetMapping Name="ACCOUNT">
+            <EntityTypeMapping TypeName="JobAppModel.ACCOUNT">
+              <MappingFragment StoreEntitySet="ACCOUNT">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+                <ScalarProperty Name="vaitro" ColumnName="vaitro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMPANY">
+            <EntityTypeMapping TypeName="JobAppModel.COMPANY">
+              <MappingFragment StoreEntitySet="COMPANY">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="ngaythanhlap" ColumnName="ngaythanhlap" />
+                <ScalarProperty Name="ngdungdau" ColumnName="ngdungdau" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="masothue" ColumnName="masothue" />
+                <ScalarProperty Name="linhvuc" ColumnName="linhvuc" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="thongtin" ColumnName="thongtin" />
+                <ScalarProperty Name="website" ColumnName="website" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CONGVIEC">
+            <EntityTypeMapping TypeName="JobAppModel.CONGVIEC">
+              <MappingFragment StoreEntitySet="CONGVIEC">
+                <ScalarProperty Name="jobid" ColumnName="jobid" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="tencv" ColumnName="tencv" />
+                <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+                <ScalarProperty Name="vitri" ColumnName="vitri" />
+                <ScalarProperty Name="mucluong" ColumnName="mucluong" />
+                <ScalarProperty Name="linhvuc" ColumnName="linhvuc" />
+                <ScalarProperty Name="thongtin" ColumnName="thongtin" />
+                <ScalarProperty Name="phucloi" ColumnName="phucloi" />
+                <ScalarProperty Name="yeucau" ColumnName="yeucau" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="noilamviec" ColumnName="noilamviec" />
+                <ScalarProperty Name="diadiem" ColumnName="diadiem" />
+                <ScalarProperty Name="handangki" ColumnName="handangki" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+                <ScalarProperty Name="dadangki" ColumnName="dadangki" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JOBSEEKER">
+            <EntityTypeMapping TypeName="JobAppModel.JOBSEEKER">
+              <MappingFragment StoreEntitySet="JOBSEEKER">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="ho" ColumnName="ho" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="ngsinh" ColumnName="ngsinh" />
+                <ScalarProperty Name="cmnd" ColumnName="cmnd" />
+                <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="thongtin" ColumnName="thongtin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UNGTUYEN">
+            <EntityTypeMapping TypeName="JobAppModel.UNGTUYEN">
+              <MappingFragment StoreEntitySet="UNGTUYEN">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="jobid" ColumnName="jobid" />
+                <ScalarProperty Name="tencv" ColumnName="tencv" />
+                <ScalarProperty Name="thoigian" ColumnName="thoigian" />
+                <ScalarProperty Name="congty" ColumnName="congty" />
+                <ScalarProperty Name="trangthaiphanhoi" ColumnName="trangthaiphanhoi" />
+                <ScalarProperty Name="loinhan" ColumnName="loinhan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

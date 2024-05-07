@@ -101,11 +101,11 @@ go
 
 create trigger del_ungtuyen_cv
 on UNGTUYEN
-after delete
+for delete
 as
 begin
 	declare @nmacv varchar(255) 
-	select @nmacv = ne.jobid from inserted ne
+	select @nmacv = ol.jobid from deleted ol
 	update CONGVIEC set dadangki = dadangki - 1 where jobid = @nmacv
 end
 go
@@ -247,3 +247,5 @@ delete from ACCOUNT
 
 delete from COMPANY
 update CONGVIEC set mucluong = 30000000 where jobid = 264895
+update CONGVIEC set dadangki = dadangki - 1 where jobid = 'HS002'
+select * from CONGVIEC cv join UNGTUYEN ut on  cv.jobid = ut.jobid

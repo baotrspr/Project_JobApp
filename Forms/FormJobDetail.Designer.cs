@@ -44,7 +44,6 @@
             this.lblMacv = new System.Windows.Forms.Label();
             this.btnUngtuyen = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblUserID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblNgaytao = new System.Windows.Forms.Label();
             this.lblLinhvuc = new System.Windows.Forms.Label();
@@ -68,12 +67,12 @@
             // 
             // dock
             // 
-            this.dock.BackColor = System.Drawing.Color.DarkViolet;
+            this.dock.BackColor = System.Drawing.Color.Indigo;
             this.dock.Controls.Add(this.btnBack);
             this.dock.Dock = System.Windows.Forms.DockStyle.Top;
             this.dock.Location = new System.Drawing.Point(0, 0);
             this.dock.Name = "dock";
-            this.dock.Size = new System.Drawing.Size(930, 30);
+            this.dock.Size = new System.Drawing.Size(940, 30);
             this.dock.TabIndex = 1;
             this.dock.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dock_MouseDown);
             // 
@@ -82,12 +81,11 @@
             this.btnBack.BackColor = System.Drawing.Color.GhostWhite;
             this.btnBack.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.Brown;
-            this.btnBack.Location = new System.Drawing.Point(855, 0);
+            this.btnBack.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Red;
+            this.btnBack.Location = new System.Drawing.Point(890, 0);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 30);
+            this.btnBack.Size = new System.Drawing.Size(50, 30);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "X";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -100,9 +98,9 @@
             this.pnTab.Controls.Add(this.groupBox2);
             this.pnTab.Controls.Add(this.groupBox1);
             this.pnTab.Controls.Add(this.lblJobName);
-            this.pnTab.Location = new System.Drawing.Point(8, 38);
+            this.pnTab.Location = new System.Drawing.Point(10, 38);
             this.pnTab.Name = "pnTab";
-            this.pnTab.Size = new System.Drawing.Size(920, 650);
+            this.pnTab.Size = new System.Drawing.Size(920, 660);
             this.pnTab.TabIndex = 2;
             // 
             // groupBox2
@@ -201,7 +199,6 @@
             this.groupBox1.Controls.Add(this.lblMacv);
             this.groupBox1.Controls.Add(this.btnUngtuyen);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.lblUserID);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.lblNgaytao);
             this.groupBox1.Controls.Add(this.lblLinhvuc);
@@ -279,15 +276,6 @@
             this.label3.Size = new System.Drawing.Size(84, 21);
             this.label3.TabIndex = 0;
             this.label3.Text = "Người tạo";
-            // 
-            // lblUserID
-            // 
-            this.lblUserID.AutoSize = true;
-            this.lblUserID.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserID.Location = new System.Drawing.Point(164, 85);
-            this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(0, 21);
-            this.lblUserID.TabIndex = 0;
             // 
             // label4
             // 
@@ -444,8 +432,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(930, 700);
+            this.BackColor = System.Drawing.Color.Indigo;
+            this.ClientSize = new System.Drawing.Size(940, 710);
             this.Controls.Add(this.pnTab);
             this.Controls.Add(this.dock);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -482,7 +470,6 @@
         private System.Windows.Forms.Label lblLuong;
         private System.Windows.Forms.Label lblVitri;
         private System.Windows.Forms.Label lblNgaytao;
-        private System.Windows.Forms.Label lblUserID;
         private System.Windows.Forms.Label lblMacv;
         private System.Windows.Forms.Button btnUngtuyen;
         private System.Windows.Forms.GroupBox groupBox1;

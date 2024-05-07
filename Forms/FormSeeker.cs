@@ -32,7 +32,7 @@ namespace Project_JobApp.Forms
         {
             InitializeComponent();
             this.acc = acc;
-            lblInfo.Text = "Chào mừng " + acc.Userid;
+            lblInfo.Text = "Chào mừng " + this.acc.Userid;
         }
 
         private void docker_MouseDown(object sender, MouseEventArgs e)

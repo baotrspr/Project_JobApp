@@ -57,5 +57,11 @@ namespace Project_JobApp.UCMore
                 MessageBox.Show("Có lỗi!", "Thông báo");
             }
         }
+
+        private void btnXemDS_Click(object sender, EventArgs e)
+        {
+            FormViewApplicants viewapl = new FormViewApplicants(j.Jobid);
+            viewapl.ShowDialog();
+        }
     }
 }

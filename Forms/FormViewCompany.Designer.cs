@@ -68,7 +68,7 @@
             this.pnDock.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnDock.Location = new System.Drawing.Point(0, 0);
             this.pnDock.Name = "pnDock";
-            this.pnDock.Size = new System.Drawing.Size(920, 30);
+            this.pnDock.Size = new System.Drawing.Size(930, 30);
             this.pnDock.TabIndex = 0;
             // 
             // btnThoat
@@ -76,12 +76,11 @@
             this.btnThoat.BackColor = System.Drawing.Color.GhostWhite;
             this.btnThoat.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnThoat.FlatAppearance.BorderSize = 0;
-            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnThoat.ForeColor = System.Drawing.Color.Red;
-            this.btnThoat.Location = new System.Drawing.Point(862, 0);
+            this.btnThoat.Location = new System.Drawing.Point(880, 0);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(58, 30);
+            this.btnThoat.Size = new System.Drawing.Size(50, 30);
             this.btnThoat.TabIndex = 0;
             this.btnThoat.Text = "X";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -91,14 +90,14 @@
             // 
             this.pnContent.Controls.Add(this.groupBox2);
             this.pnContent.Controls.Add(this.groupBox1);
-            this.pnContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContent.Location = new System.Drawing.Point(0, 30);
+            this.pnContent.Location = new System.Drawing.Point(5, 30);
             this.pnContent.Name = "pnContent";
             this.pnContent.Size = new System.Drawing.Size(920, 570);
             this.pnContent.TabIndex = 1;
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.lblThongtin);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -125,6 +124,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.lblTen);
             this.groupBox1.Controls.Add(this.lblNgaythanhlap);
             this.groupBox1.Controls.Add(this.label2);
@@ -339,7 +339,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(920, 600);
+            this.BackColor = System.Drawing.Color.Indigo;
+            this.ClientSize = new System.Drawing.Size(930, 610);
             this.Controls.Add(this.pnContent);
             this.Controls.Add(this.pnDock);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

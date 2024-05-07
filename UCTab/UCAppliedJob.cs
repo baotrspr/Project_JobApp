@@ -43,24 +43,22 @@ namespace Project_JobApp.UC
                 }
             }
             DataTable dt = apDAO.GetJobData(acc.Userid);
-            foreach (DataRow dr in dt.Rows)
+            if (dt != null)
             {
-                AppliedList apl = new AppliedList();
-                apl.Userid = dr[0].ToString();
-                apl.Jobid = dr[1].ToString();
-                apl.Tencv = dr[2].ToString();
-                apl.Thoigian = dr[3].ToString();
-                apl.Macty = dr[4].ToString();
-                apl.TTphanhoi = dr[5].ToString();
-                apl.Loinhan = dr[6].ToString();
-                UCAppliedJobs ucApplied = new UCAppliedJobs(apl);
-                flpList.Controls.Add(ucApplied);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    UngTuyen apl = new UngTuyen();
+                    apl.Userid = dr[0].ToString();
+                    apl.Jobid = dr[1].ToString();
+                    apl.Tencv = dr[2].ToString();
+                    apl.Thoigian = dr[3].ToString();
+                    apl.Macty = dr[4].ToString();
+                    apl.TTphanhoi = dr[5].ToString();
+                    apl.Loinhan = dr[6].ToString();
+                    UCAppliedJobs ucApplied = new UCAppliedJobs(apl);
+                    flpList.Controls.Add(ucApplied);
+                }
             }
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            Load();
         }
     }
 }

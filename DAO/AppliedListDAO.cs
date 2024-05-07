@@ -2,11 +2,14 @@
 using Project_JobApp.Database;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Project_JobApp.DAO
 {
@@ -17,46 +20,99 @@ namespace Project_JobApp.DAO
         
         public bool KiemtraUT(string userid)
         {
-            string sqlStr = string.Format("select * from UNGTUYEN where userid = '{0}'", userid);
-            DataTable dt = dba.ExecuteSelect(sqlStr);
-            if (dt.Rows.Count > 0)
-                return true;
-            return false;
-        }
-
-        public DataTable GetSeekerData(string companyid)
-        {
-            string sqlStr = string.Format("select * from UNGTUYEN where congty = '{0}'", companyid);
-            return dba.ExecuteSelect(sqlStr);
+            using (var db = new JobAppDFContext())
+            {
+                var acc = db.UNGTUYEN.Where(s => s.userid == userid).ToList();
+                if (acc.Count > 0 )
+                {
+                    return true;
+                }
+                return false;
+            }
+            //string sqlStr = string.Format("select * from UNGTUYEN where userid = '{0}'", userid);
+            //DataTable dt = dba.ExecuteSelect(sqlStr);
+            //if (dt.Rows.Count > 0)
+            //    return true;
+            //return false;
         }
 
         public DataTable GetJobData(string seekerid)
         {
-            string sqlStr = string.Format("select * from UNGTUYEN where userid = '{0}'", seekerid);
-            return dba.ExecuteSelect(sqlStr);
+            using (var db = new JobAppDFContext())
+            {
+                var acc = db.UNGTUYEN.Where(s => s.userid == seekerid).ToList();
+                if (acc.Count > 0)
+                {
+                    DataTable dt = new DataTable();
+                    dt.Columns.Add("userid", typeof(string));
+                    dt.Columns.Add("jobid", typeof(string));
+                    dt.Columns.Add("tencv", typeof(string));
+                    dt.Columns.Add("thoigian", typeof(string));
+                    dt.Columns.Add("congty", typeof(string));
+                    dt.Columns.Add("trangthaiphanhoi", typeof(string));
+                    dt.Columns.Add("loinhan", typeof(string));
+                    foreach (var item in acc)
+                    {
+                        dt.Rows.Add(item.userid, item.jobid, item.tencv, item.thoigian, item.congty, item.trangthaiphanhoi, item.loinhan);
+                    }
+                    return dt;
+                }
+                return null;
+            }
         }
 
-        public bool Them(AppliedList ap)
+        public bool Them(UngTuyen ap)
         {
-            string sqlStr = string.Format("insert into UNGTUYEN values ('{0}','{1}',N'{2}','{3}','{4}','{5}', '{6}')",
-                                            ap.Userid, ap.Jobid, ap.Tencv, ap.Thoigian, ap.Macty, ap.TTphanhoi, "none");
-            return dba.Execute(sqlStr);
+            using (var db = new JobAppDFContext())
+            {
+                var ut = new UNGTUYEN
+                {
+                    userid = ap.Userid,
+                    jobid = ap.Jobid,
+                    tencv = ap.Tencv,
+                    thoigian = ap.Thoigian,
+                    congty = ap.Macty,
+                    trangthaiphanhoi = ap.TTphanhoi,
+                    loinhan = "none",
+                };
+
+                db.UNGTUYEN.Add(ut);
+                db.SaveChanges();
+                return true;
+            }
         }
 
-        public bool ChapNhan(AppliedList ap)
+        public bool ChapNhan(UngTuyen ap)
         {
-            string sqlStr = string.Format("update UNGTUYEN set trangthaiphanhoi = '{0}' where userid = '{1}'", "accepted", ap.Userid);
-            return dba.Execute(sqlStr);
+            using (var db = new JobAppDFContext())
+            {
+                var ut = db.UNGTUYEN.Where(s => s.userid == ap.Userid && s.jobid == ap.Jobid).Single();
+                ut.trangthaiphanhoi = "accepted";
+                ut.loinhan = ap.Loinhan;
+                db.SaveChanges();
+                return true;
+            }
         }
-        public bool TuChoi(AppliedList ap)
+        public bool TuChoi(UngTuyen ap)
         {
-            string sqlStr = string.Format("update UNGTUYEN set trangthaiphanhoi = '{0}' where userid = '{1}'", "rejected", ap.Userid);
-            return dba.Execute(sqlStr);
+            using (var db = new JobAppDFContext())
+            {
+                var ut = db.UNGTUYEN.Where(s => s.userid == ap.Userid && s.jobid == ap.Jobid).Single();
+                ut.trangthaiphanhoi = "rejected";
+                ut.loinhan = ap.Loinhan;
+                db.SaveChanges();
+                return true;
+            }
         }
-        public bool Xoa(AppliedList ap)
+        public bool Xoa(UngTuyen ap)
         {
-            string sqlStr = string.Format("delete from UNGTUYEN where userid = '{0}' and jobid = '{1}'", ap.Userid, ap.Jobid);
-            return dba.Execute(sqlStr);
+            using (var db = new JobAppDFContext())
+            {
+                var ut = db.UNGTUYEN.Where(s => s.userid == ap.Userid && s.jobid == ap.Jobid).Single();
+                db.UNGTUYEN.Remove(ut);
+                db.SaveChanges();
+                return true;
+            }
         }
     }
 }

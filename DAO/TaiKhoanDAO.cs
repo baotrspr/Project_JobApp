@@ -17,30 +17,32 @@ namespace Project_JobApp.DAO
         public TaiKhoanDAO() { }
         public bool DoiMK(Account acc)
         {
-            string sqlStr = string.Format("update ACCOUNT set matkhau = '{0}' where userid = '{1}'", acc.Matkhau, acc.Userid);
-            if (dba.Execute(sqlStr))
+            using (var db = new JobAppDFContext())
             {
-                return true;
+                var account = db.ACCOUNT.Where(s => s.userid == acc.Userid).Single();
+                if (account != null)
+                {
+                    account.matkhau = acc.Matkhau;
+                    db.SaveChanges();
+                    return true;
+                }
+                return false;
             }
-            else return false;
         }
 
         public bool XoaTK(Account acc)
         {
-            string sqlStr = string.Format("delete from ACCOUNT where userid = '{0}'", acc.Userid);
-            if (dba.Execute(sqlStr))
+            using (var db = new JobAppDFContext())
             {
-                if (acc.Vaitro == "JobSeeker")
+                var account = db.ACCOUNT.Where(s => s.userid == acc.Userid).Single();
+                if (account != null)
                 {
-                    jsDAO.Xoa(acc.Userid);
+                    db.ACCOUNT.Remove(account);
+                    db.SaveChanges();
+                    return true;
                 }
-                else if (acc.Vaitro == "Company")
-                {
-                    compDAO.Xoa(acc.Userid);
-                }
-                return true;
+                return false;
             }
-            else return false;
         }
     }
 }

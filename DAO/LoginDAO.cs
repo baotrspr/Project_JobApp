@@ -17,9 +17,19 @@ namespace Project_JobApp.DAO
 
         public bool CheckLogin(Account acc)
         {
-            string sqlStr = string.Format("select * from ACCOUNT where userid = '{0}' and matkhau = '{1}' and vaitro = '{2}'", acc.Userid, acc.Matkhau, acc.Vaitro);
-            DataTable dt = dba.ExecuteSelect(sqlStr);
-            return dt.Rows.Count > 0;
+            using (var db = new JobAppDFContext())
+            {
+                var account = new ACCOUNT
+                {
+                    userid = acc.Userid,
+                    matkhau = acc.Matkhau,
+                    vaitro = acc.Vaitro,
+                };
+                var query = db.ACCOUNT.Where(q => q.userid == acc.Userid && q.vaitro == acc.Vaitro).Single();
+
+                if (query != null) return true;
+                else return false;
+            }
         }
     }
 }

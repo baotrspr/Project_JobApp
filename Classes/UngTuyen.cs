@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project_JobApp.Classes
 {
-    public class AppliedList
+    public class UngTuyen
     {
         string userid;
         string jobid;
@@ -16,9 +16,9 @@ namespace Project_JobApp.Classes
         string ttphanhoi;
         string loinhan;
 
-        public AppliedList() { }
+        public UngTuyen() { }
 
-        public AppliedList(string userid, string jobid, string tencv, string thoigian, string macty, string ttphanhoi, string loinhan)
+        public UngTuyen(string userid, string jobid, string tencv, string thoigian, string macty, string ttphanhoi, string loinhan)
         {
             this.userid = userid;
             this.jobid = jobid;

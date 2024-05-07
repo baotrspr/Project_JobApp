@@ -15,7 +15,7 @@ namespace Project_JobApp.UCMore
 {
     public partial class UCAppliedJobs : UserControl
     {
-        AppliedList apl;
+        UngTuyen apl;
         AppliedListDAO apDAO = new AppliedListDAO();
         CongViec j;
         CongviecDAO cvDAO = new CongviecDAO();
@@ -25,12 +25,22 @@ namespace Project_JobApp.UCMore
         {
             InitializeComponent();
         }
-        public UCAppliedJobs(AppliedList apl)
+        public UCAppliedJobs(UngTuyen apl)
         {
             InitializeComponent();
             this.apl = apl;
-
-            lblTrangthai.Text = apl.TTphanhoi;
+            if (apl.TTphanhoi == "waiting")
+                lblTrangthai.Text = "Đang chờ xét duyệt";
+            else if (apl.TTphanhoi == "accepted")
+            {
+                lblTrangthai.Text = "Đã xét duyệt";
+                lblTrangthai.ForeColor = Color.Green;
+            }
+            else if (apl.TTphanhoi == "rejected")
+            {
+                lblTrangthai.Text = "Không được xét duyệt";
+                lblTrangthai.ForeColor = Color.DarkRed;
+            }
             lblTencv.Text = apl.Tencv;
             lblCongty.Text = apl.Macty;
             lblThoigian.Text = apl.Thoigian;
