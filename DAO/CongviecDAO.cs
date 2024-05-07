@@ -208,7 +208,7 @@ namespace Project_JobApp.DAO
                         noilamviec = j.Noilamviec,
                         diadiem = j.Diadiem,
                         handangki = j.Handangki,
-                        trangthai = j.Trangthai,
+                        trangthai = "avail",
                         dadangki = 0,
                     };
                     db.CONGVIEC.Add(job);
