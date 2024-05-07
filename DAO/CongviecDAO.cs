@@ -208,6 +208,8 @@ namespace Project_JobApp.DAO
                         noilamviec = j.Noilamviec,
                         diadiem = j.Diadiem,
                         handangki = j.Handangki,
+                        trangthai = j.Trangthai,
+                        dadangki = 0,
                     };
                     db.CONGVIEC.Add(job);
                     db.SaveChanges();
@@ -216,7 +218,7 @@ namespace Project_JobApp.DAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.InnerException.Message);
                 return false;
             }
         }

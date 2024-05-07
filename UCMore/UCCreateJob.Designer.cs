@@ -70,7 +70,7 @@
             this.rtxtYeucau.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtYeucau.Location = new System.Drawing.Point(3, 293);
             this.rtxtYeucau.Name = "rtxtYeucau";
-            this.rtxtYeucau.Size = new System.Drawing.Size(1006, 200);
+            this.rtxtYeucau.Size = new System.Drawing.Size(972, 200);
             this.rtxtYeucau.TabIndex = 37;
             this.rtxtYeucau.Text = "";
             // 
@@ -123,7 +123,7 @@
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 493);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1006, 35);
+            this.label5.Size = new System.Drawing.Size(972, 35);
             this.label5.TabIndex = 32;
             this.label5.Text = "Phúc lợi";
             // 
@@ -133,7 +133,7 @@
             this.label12.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(3, 258);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(1006, 35);
+            this.label12.Size = new System.Drawing.Size(972, 35);
             this.label12.TabIndex = 33;
             this.label12.Text = "Yêu cầu";
             // 
@@ -152,7 +152,7 @@
             this.txtVitri.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtVitri.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtVitri.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVitri.Location = new System.Drawing.Point(762, 47);
+            this.txtVitri.Location = new System.Drawing.Point(722, 47);
             this.txtVitri.Name = "txtVitri";
             this.txtVitri.Size = new System.Drawing.Size(250, 22);
             this.txtVitri.TabIndex = 27;
@@ -162,7 +162,7 @@
             this.txtMucluong.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtMucluong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMucluong.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMucluong.Location = new System.Drawing.Point(762, 111);
+            this.txtMucluong.Location = new System.Drawing.Point(722, 111);
             this.txtMucluong.Name = "txtMucluong";
             this.txtMucluong.Size = new System.Drawing.Size(250, 22);
             this.txtMucluong.TabIndex = 36;
@@ -171,7 +171,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(623, 174);
+            this.label11.Location = new System.Drawing.Point(583, 174);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(70, 21);
             this.label11.TabIndex = 31;
@@ -201,7 +201,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(623, 46);
+            this.label6.Location = new System.Drawing.Point(583, 46);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 21);
             this.label6.TabIndex = 21;
@@ -221,7 +221,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(623, 110);
+            this.label10.Location = new System.Drawing.Point(583, 110);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(90, 21);
             this.label10.TabIndex = 30;
@@ -252,7 +252,7 @@
             "Logistic",
             "Dịch vụ",
             "Khác..."});
-            this.cbxLinhvuc.Location = new System.Drawing.Point(762, 171);
+            this.cbxLinhvuc.Location = new System.Drawing.Point(722, 171);
             this.cbxLinhvuc.Name = "cbxLinhvuc";
             this.cbxLinhvuc.Size = new System.Drawing.Size(250, 29);
             this.cbxLinhvuc.TabIndex = 47;
@@ -265,7 +265,7 @@
             this.rtxtMota.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtMota.Location = new System.Drawing.Point(3, 58);
             this.rtxtMota.Name = "rtxtMota";
-            this.rtxtMota.Size = new System.Drawing.Size(1006, 200);
+            this.rtxtMota.Size = new System.Drawing.Size(972, 200);
             this.rtxtMota.TabIndex = 37;
             this.rtxtMota.Text = "";
             // 
@@ -275,7 +275,7 @@
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 23);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1006, 35);
+            this.label7.Size = new System.Drawing.Size(972, 35);
             this.label7.TabIndex = 32;
             this.label7.Text = "Mô tả";
             // 
@@ -287,7 +287,7 @@
             this.rtxtPhucloi.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtPhucloi.Location = new System.Drawing.Point(3, 528);
             this.rtxtPhucloi.Name = "rtxtPhucloi";
-            this.rtxtPhucloi.Size = new System.Drawing.Size(1006, 200);
+            this.rtxtPhucloi.Size = new System.Drawing.Size(972, 200);
             this.rtxtPhucloi.TabIndex = 37;
             this.rtxtPhucloi.Text = "";
             // 
@@ -296,7 +296,7 @@
             this.txtSoluong.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtSoluong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSoluong.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoluong.Location = new System.Drawing.Point(762, 239);
+            this.txtSoluong.Location = new System.Drawing.Point(722, 239);
             this.txtSoluong.Name = "txtSoluong";
             this.txtSoluong.Size = new System.Drawing.Size(250, 22);
             this.txtSoluong.TabIndex = 36;
@@ -305,7 +305,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(623, 238);
+            this.label8.Location = new System.Drawing.Point(583, 238);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 21);
             this.label8.TabIndex = 30;
@@ -337,7 +337,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(623, 302);
+            this.label13.Location = new System.Drawing.Point(583, 302);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(99, 21);
             this.label13.TabIndex = 30;
@@ -391,7 +391,7 @@
             this.gbThongtinchung.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbThongtinchung.Location = new System.Drawing.Point(0, 0);
             this.gbThongtinchung.Name = "gbThongtinchung";
-            this.gbThongtinchung.Size = new System.Drawing.Size(1012, 415);
+            this.gbThongtinchung.Size = new System.Drawing.Size(978, 415);
             this.gbThongtinchung.TabIndex = 48;
             this.gbThongtinchung.TabStop = false;
             this.gbThongtinchung.Text = "Thông tin chung";
@@ -409,7 +409,7 @@
             "Remote",
             "Linh hoạt",
             "Khác..."});
-            this.cbxNoilamviec.Location = new System.Drawing.Point(762, 295);
+            this.cbxNoilamviec.Location = new System.Drawing.Point(722, 295);
             this.cbxNoilamviec.Name = "cbxNoilamviec";
             this.cbxNoilamviec.Size = new System.Drawing.Size(250, 29);
             this.cbxNoilamviec.TabIndex = 47;
@@ -426,7 +426,7 @@
             this.gbChitiet.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbChitiet.Location = new System.Drawing.Point(0, 415);
             this.gbChitiet.Name = "gbChitiet";
-            this.gbChitiet.Size = new System.Drawing.Size(1012, 729);
+            this.gbChitiet.Size = new System.Drawing.Size(978, 729);
             this.gbChitiet.TabIndex = 49;
             this.gbChitiet.TabStop = false;
             this.gbChitiet.Text = "Thông tin chi tiết";
@@ -440,7 +440,7 @@
             this.Controls.Add(this.gbChitiet);
             this.Controls.Add(this.gbThongtinchung);
             this.Name = "UCCreateJob";
-            this.Size = new System.Drawing.Size(1012, 700);
+            this.Size = new System.Drawing.Size(978, 700);
             this.gbThongtinchung.ResumeLayout(false);
             this.gbThongtinchung.PerformLayout();
             this.gbChitiet.ResumeLayout(false);

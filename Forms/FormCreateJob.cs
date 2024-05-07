@@ -53,7 +53,7 @@ namespace Project_JobApp.Forms
             
             CongViec j = new CongViec(ucCreateJob.JobID, ucCreateJob.Userid, ucCreateJob.Tieude, ucCreateJob.Ngaytao, ucCreateJob.Vitri, ucCreateJob.Mucluong, ucCreateJob.Linhvuc, ucCreateJob.Mota, ucCreateJob.Phucloi,ucCreateJob.Yeucau, ucCreateJob.Soluong, ucCreateJob.Noilamviec, ucCreateJob.Diadiem, ucCreateJob.Handk);
             
-                if (jDAO.Them(j))
+            if (jDAO.Them(j))
             {
                 MessageBox.Show("Thêm công việc thành công!", "Thông báo");
                 DialogResult = DialogResult.OK;

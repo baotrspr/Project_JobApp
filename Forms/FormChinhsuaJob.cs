@@ -17,7 +17,7 @@ namespace Project_JobApp.Forms
     {
         CongviecDAO jDAO = new CongviecDAO();
         CongViec cv;
-        UCCreateJob ucCreateJob;
+        UCCreateJob ucThongtin;
         public FormChinhsuaJob()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace Project_JobApp.Forms
             InitializeComponent();
 
             cv = jDAO.GetThongtin(jobid);
-            UCCreateJob ucThongtin = new UCCreateJob(cv);
+            ucThongtin = new UCCreateJob(cv);
             pnTab.Controls.Add(ucThongtin);
             ucThongtin.Dock = DockStyle.Fill;
             ucThongtin.BringToFront();
@@ -40,8 +40,7 @@ namespace Project_JobApp.Forms
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            CongViec j = new CongViec(ucCreateJob.JobID, ucCreateJob.Userid, ucCreateJob.Tieude, ucCreateJob.Ngaytao, ucCreateJob.Vitri, ucCreateJob.Mucluong, ucCreateJob.Linhvuc, ucCreateJob.Mota, ucCreateJob.Phucloi, ucCreateJob.Yeucau, ucCreateJob.Soluong, ucCreateJob.Noilamviec, ucCreateJob.Diadiem, ucCreateJob.Handk);
-
+            CongViec j = new CongViec(ucThongtin.JobID, ucThongtin.Userid, ucThongtin.Tieude, ucThongtin.Ngaytao, ucThongtin.Vitri, ucThongtin.Mucluong, ucThongtin.Linhvuc, ucThongtin.Mota, ucThongtin.Phucloi, ucThongtin.Yeucau, ucThongtin.Soluong, ucThongtin.Noilamviec, ucThongtin.Diadiem, ucThongtin.Handk);
             if (jDAO.Sua(j))
             {
                 MessageBox.Show("Đã cập nhật chỉnh sửa!", "Thông báo");
